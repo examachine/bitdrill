@@ -1,0 +1,750 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ks/call  Ks/call  name    
+ 90.16   4022.21  4022.21 21174447     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool)
+  6.45   4310.10   287.88  1332899     0.00     0.00  KDCI::and_tid_list_count_1(unsigned int*, unsigned int const*, unsigned int const*, int)
+  1.22   4364.66    54.56        1     0.05     0.06  KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&)
+  0.55   4389.11    24.46    94506     0.00     0.00  KDCI::and_tid_list_set_index(unsigned int*, unsigned int const*, unsigned int const*, int*, int)
+  0.53   4412.86    23.75   479811     0.00     0.00  KDCI::and_tid_list(unsigned int*, unsigned int const*, unsigned int const*, int)
+  0.28   4425.45    12.59        4     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::prune_VD(int, KDCI::dci_items&)
+  0.21   4435.01     9.57   936424     0.00     0.00  void KDCI::quick_sort<unsigned short>(unsigned short*, int, int)
+  0.17   4442.65     7.64        5     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::order_bits_diffuse(KDCI::dci_items&)
+  0.11   4447.78     5.13   478603     0.00     0.00  Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format)
+  0.07   4450.76     2.98       11     0.00     0.40  void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&)
+  0.03   4451.98     1.22  6475799     0.00     0.00  KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int)
+  0.03   4453.11     1.13 130987939     0.00     0.00  std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int)
+  0.02   4454.10     0.99   478602     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int)
+  0.02   4455.03     0.93        1     0.00     0.01  KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool)
+  0.02   4455.85     0.82       11     0.00     0.00  KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&)
+  0.02   4456.59     0.74 21174447     0.00     0.00  KDCI::set_of_frequents<unsigned short, unsigned int>::next_cand()
+  0.01   4457.24     0.66 66827908     0.00     0.00  std::vector<int, std::allocator<int> >::size() const
+  0.01   4457.82     0.58                             __i686.get_pc_thunk.bx
+  0.01   4458.40     0.58 36626161     0.00     0.00  KDCI::direct_position2_init(int, int)
+  0.01   4458.83     0.44 65919234     0.00     0.00  std::vector<int, std::allocator<int> >::operator[](unsigned int)
+  0.01   4459.24     0.41   478602     0.00     0.00  Transaction::make_set()
+  0.01   4459.62     0.38                             Transaction_Set::File_Scanner::~File_Scanner()
+  0.01   4459.86     0.24 15120803     0.00     0.00  std::vector<unsigned short, std::allocator<unsigned short> >::size() const
+  0.00   4460.02     0.16  1325859     0.00     0.00  KDCI::set_of_frequents<unsigned short, unsigned int>::get_prefix(unsigned short*)
+  0.00   4460.17     0.15        1     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::init_VD()
+  0.00   4460.31     0.15  2150157     0.00     0.00  std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&)
+  0.00   4460.43     0.12  6475799     0.00     0.00  std::vector<unsigned short, std::allocator<unsigned short> >::push_back(unsigned short const&)
+  0.00   4460.55     0.12                             KDCI::set_of_frequents<unsigned int, unsigned int>::find_one_subset(unsigned int*, unsigned int&, int&)
+  0.00   4460.67     0.12  6475799     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&)
+  0.00   4460.74     0.08  6910075     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int)
+  0.00   4460.81     0.07   478602     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+  0.00   4460.86     0.05                             void KDCI::quick_sort<unsigned int>(unsigned int*, int, int)
+  0.00   4460.90     0.05                             KDCI::DCI_vertical_dataset<unsigned char>::prune_VD(int, KDCI::dci_items&)
+  0.00   4460.94     0.04                             std::vector<unsigned char, std::allocator<unsigned char> >::size() const
+  0.00   4460.96     0.03                             KDCI::kdci_mine_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool)
+  0.00   4460.98     0.02                             KDCI::set_of_itemsets<unsigned short, unsigned short>::add_itemset(unsigned short*, unsigned short)
+  0.00   4461.00     0.02                             KDCI::set_of_frequents<unsigned short, unsigned short>::next_cand()
+  0.00   4461.02     0.02                             KDCI::DCI_vertical_dataset<unsigned char>::candidate_is_frequent_diffuse(unsigned char*, int, int, int, int&, KDCI::DCI_statistics&, bool)
+  0.00   4461.04     0.02                             KDCI::set_of_frequents<unsigned int, unsigned int>::next_cand()
+  0.00   4461.05     0.02                             std::vector<unsigned char, std::allocator<unsigned char> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned int, unsigned char const&)
+  0.00   4461.07     0.02                             void std::partial_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+  0.00   4461.08     0.01  2150144     0.00     0.00  std::vector<int, std::allocator<int> >::push_back(int const&)
+  0.00   4461.09     0.01        1     0.00     4.45  void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int)
+  0.00   4461.10     0.01        1     0.00     0.00  KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int)
+  0.00   4461.11     0.01        1     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort)
+  0.00   4461.12     0.01                             Personal::hypercube_all_to_all(Matrix<std::vector<int, std::allocator<int> > >&)
+  0.00   4461.12     0.01       44     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&)
+  0.00   4461.13     0.01                             KDCI::set_of_frequents<unsigned char, unsigned char>::find_one_subset(unsigned char*, unsigned char&, int&)
+  0.00   4461.13     0.00   478658     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::size() const
+  0.00   4461.13     0.00   478603     0.00     0.00  Transaction_Set::File_Scanner::read(Transaction&)
+  0.00   4461.13     0.00   478603     0.00     0.00  KDCI::Data::getNextTransaction(Transaction&)
+  0.00   4461.13     0.00    44326     0.00     0.00  KDCI::direct_position2(int, int, int)
+  0.00   4461.13     0.00       56     0.00     0.00  std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+  0.00   4461.13     0.00       49     0.00     0.00  std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&)
+  0.00   4461.13     0.00       44     0.00     0.00  std::vector<unsigned short, std::allocator<unsigned short> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned short const&)
+  0.00   4461.13     0.00       14     0.00     0.00  KDCI::Chronos::StartChronos()
+  0.00   4461.13     0.00       13     0.00     0.00  KDCI::FSout::FSout(char const*, int)
+  0.00   4461.13     0.00       11     0.00     0.00  KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int)
+  0.00   4461.13     0.00       11     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::init_cache(int)
+  0.00   4461.13     0.00        9     0.00     0.00  std::allocator<unsigned short>::allocator()
+  0.00   4461.13     0.00        8     0.00     0.00  std::allocator<int>::allocator()
+  0.00   4461.13     0.00        8     0.00     0.00  std::allocator<int>::~allocator()
+  0.00   4461.13     0.00        7     0.00     0.00  std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&)
+  0.00   4461.13     0.00        7     0.00     0.00  std::vector<int, std::allocator<int> >::~vector()
+  0.00   4461.13     0.00        5     0.00     0.00  KDCI::DCI_statistics::get_stats(int, int, int, int, int&, int&, int&)
+  0.00   4461.13     0.00        3     0.00     0.00  KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int)
+  0.00   4461.13     0.00        3     0.00     0.00  std::allocator<unsigned int>::allocator()
+  0.00   4461.13     0.00        3     0.00     0.00  char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag)
+  0.00   4461.13     0.00        3     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::~vector()
+  0.00   4461.13     0.00        2     0.00     0.00  std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&)
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI16print_statisticsEPciiid
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI17TEMPORARY_DATASETE
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to main
+  0.00   4461.13     0.00        1     0.00     0.00  global constructors keyed to num_processors
+  0.00   4461.13     0.00        1     0.00     0.00  initialize(bool)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4461.13     0.00        1     0.00     0.00  init_vars()
+  0.00   4461.13     0.00        1     0.00     0.00  Transaction_Set::gen_scanner()
+  0.00   4461.13     0.00        1     0.00     0.00  Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&)
+  0.00   4461.13     0.00        1     0.00     0.00  Transaction_Set::File_Scanner::~File_Scanner()
+  0.00   4461.13     0.00        1     0.00     0.00  Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format)
+  0.00   4461.13     0.00        1     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::VD_can_be_allocated(unsigned int, unsigned int)
+  0.00   4461.13     0.00        1     0.00     0.00  KDCI::DCI_vertical_dataset<unsigned short>::chk_compact_vertical(int)
+  0.00   4461.13     0.00        1     0.00     0.00  KDCI::Data::Data(Transaction_Set&)
+  0.00   4461.13     0.00        1     0.00     0.00  KDCI::Data::~Data()
+  0.00   4461.13     0.00        1     0.00     4.46  KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool)
+  0.00   4461.13     0.00        1     0.00     0.00  KDCI::dci_items::remap_items(bool)
+  0.00   4461.13     0.00        1     0.00     0.00  KDCI::mem_total()
+  0.00   4461.13     0.00        1     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int, unsigned int const&)
+  0.00   4461.13     0.00        1     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 4461.13 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00 4459.78                 main [1]
+                0.00 4459.78       1/1           KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+                0.00    0.00       1/1           initialize(bool) [1133]
+                0.00    0.00       1/1           Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format) [1147]
+-----------------------------------------------
+                0.00 4459.78       1/1           main [1]
+[2]    100.0    0.00 4459.78       1         KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+                0.01 4451.28       1/1           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+                0.93    7.56       1/1           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.00    0.00       1/14          KDCI::Chronos::StartChronos() [1110]
+                0.00    0.00       1/1           KDCI::Data::Data(Transaction_Set&) [1150]
+                0.00    0.00       1/1           KDCI::Data::~Data() [1151]
+-----------------------------------------------
+                0.01 4451.28       1/1           KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+[3]     99.8    0.01 4451.28       1         void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+                2.98 4383.42      11/11          void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+               54.56   10.16       1/1           KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.15    0.00       1/1           KDCI::DCI_vertical_dataset<unsigned short>::init_VD() [30]
+                0.01    0.00       1/1           KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+                0.00    0.00   44326/130987939     std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+                0.00    0.00       1/2150157     std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&) [31]
+                0.00    0.00       2/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+                0.00    0.00       7/7           std::vector<int, std::allocator<int> >::~vector() [1117]
+                0.00    0.00       3/8           std::allocator<int>::allocator() [1114]
+                0.00    0.00       3/7           std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&) [1116]
+                0.00    0.00       3/8           std::allocator<int>::~allocator() [1115]
+                0.00    0.00       3/3           std::vector<unsigned int, std::allocator<unsigned int> >::~vector() [1122]
+                0.00    0.00       2/3           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+                0.00    0.00       1/1           KDCI::DCI_vertical_dataset<unsigned short>::VD_can_be_allocated(unsigned int, unsigned int) [1148]
+                0.00    0.00       1/1           KDCI::DCI_vertical_dataset<unsigned short>::chk_compact_vertical(int) [1149]
+-----------------------------------------------
+                2.98 4383.42      11/11          void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[4]     98.3    2.98 4383.42      11         void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+             4022.21  336.05 21174447/21174447     KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool) [5]
+               12.59    0.00       4/4           KDCI::DCI_vertical_dataset<unsigned short>::prune_VD(int, KDCI::dci_items&) [10]
+                7.64    0.04       5/5           KDCI::DCI_vertical_dataset<unsigned short>::order_bits_diffuse(KDCI::dci_items&) [13]
+                1.21    1.03 6431473/6475799     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+                0.82    0.47      11/11          KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [19]
+                0.74    0.04 21174447/21174447     KDCI::set_of_frequents<unsigned short, unsigned int>::next_cand() [22]
+                0.37    0.00 42348894/130987939     std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+                0.16    0.06 1325859/1325859     KDCI::set_of_frequents<unsigned short, unsigned int>::get_prefix(unsigned short*) [29]
+                0.00    0.00      11/11          KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.00    0.00     121/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.00    0.00     121/65919234     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.00      11/14          KDCI::Chronos::StartChronos() [1110]
+                0.00    0.00      11/11          KDCI::DCI_vertical_dataset<unsigned short>::init_cache(int) [1112]
+                0.00    0.00      11/13          KDCI::FSout::FSout(char const*, int) [1111]
+                0.00    0.00       5/5           KDCI::DCI_statistics::get_stats(int, int, int, int, int&, int&, int&) [1118]
+-----------------------------------------------
+             4022.21  336.05 21174447/21174447     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[5]     97.7 4022.21  336.05 21174447         KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool) [5]
+              287.88    0.00 1332899/1332899     KDCI::and_tid_list_count_1(unsigned int*, unsigned int const*, unsigned int const*, int) [6]
+               24.46    0.00   94506/94506       KDCI::and_tid_list_set_index(unsigned int*, unsigned int const*, unsigned int const*, int*, int) [8]
+               23.71    0.00  479087/479811      KDCI::and_tid_list(unsigned int*, unsigned int const*, unsigned int const*, int) [9]
+-----------------------------------------------
+              287.88    0.00 1332899/1332899     KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool) [5]
+[6]      6.5  287.88    0.00 1332899         KDCI::and_tid_list_count_1(unsigned int*, unsigned int const*, unsigned int const*, int) [6]
+-----------------------------------------------
+               54.56   10.16       1/1           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[7]      1.5   54.56   10.16       1         KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                9.57    0.00  936424/936424      void KDCI::quick_sort<unsigned short>(unsigned short*, int, int) [11]
+                0.58    0.00 36626161/36626161     KDCI::direct_position2_init(int, int) [25]
+                0.01    0.01   44326/6475799     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+                0.00    0.00       1/14          KDCI::Chronos::StartChronos() [1110]
+                0.00    0.00       1/3           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+                0.00    0.00       1/8           std::allocator<int>::allocator() [1114]
+                0.00    0.00       1/7           std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&) [1116]
+                0.00    0.00       1/8           std::allocator<int>::~allocator() [1115]
+                0.00    0.00       1/13          KDCI::FSout::FSout(char const*, int) [1111]
+-----------------------------------------------
+               24.46    0.00   94506/94506       KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool) [5]
+[8]      0.5   24.46    0.00   94506         KDCI::and_tid_list_set_index(unsigned int*, unsigned int const*, unsigned int const*, int*, int) [8]
+-----------------------------------------------
+                0.04    0.00     724/479811      KDCI::DCI_vertical_dataset<unsigned short>::order_bits_diffuse(KDCI::dci_items&) [13]
+               23.71    0.00  479087/479811      KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool) [5]
+[9]      0.5   23.75    0.00  479811         KDCI::and_tid_list(unsigned int*, unsigned int const*, unsigned int const*, int) [9]
+-----------------------------------------------
+               12.59    0.00       4/4           void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[10]     0.3   12.59    0.00       4         KDCI::DCI_vertical_dataset<unsigned short>::prune_VD(int, KDCI::dci_items&) [10]
+-----------------------------------------------
+                             24041060             void KDCI::quick_sort<unsigned short>(unsigned short*, int, int) [11]
+                9.57    0.00  936424/936424      KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+[11]     0.2    9.57    0.00  936424+24041060 void KDCI::quick_sort<unsigned short>(unsigned short*, int, int) [11]
+                             24041060             void KDCI::quick_sort<unsigned short>(unsigned short*, int, int) [11]
+-----------------------------------------------
+                0.93    7.56       1/1           KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+[12]     0.2    0.93    7.56       1         KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.00    6.60  478603/478603      KDCI::Data::getNextTransaction(Transaction&) [15]
+                0.57    0.00 58202610/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.37    0.00 56766792/65919234     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.01       1/1           KDCI::dci_items::remap_items(bool) [49]
+                0.01    0.00  478602/6910075     std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int) [35]
+                0.00    0.00  478602/478658      std::vector<unsigned int, std::allocator<unsigned int> >::size() const [1106]
+                0.00    0.00      49/49          std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&) [1109]
+                0.00    0.00       1/14          KDCI::Chronos::StartChronos() [1110]
+                0.00    0.00       1/8           std::allocator<int>::allocator() [1114]
+                0.00    0.00       1/8           std::allocator<int>::~allocator() [1115]
+                0.00    0.00       1/13          KDCI::FSout::FSout(char const*, int) [1111]
+-----------------------------------------------
+                7.64    0.04       5/5           void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[13]     0.2    7.64    0.04       5         KDCI::DCI_vertical_dataset<unsigned short>::order_bits_diffuse(KDCI::dci_items&) [13]
+                0.04    0.00     724/479811      KDCI::and_tid_list(unsigned int*, unsigned int const*, unsigned int const*, int) [9]
+-----------------------------------------------
+                0.00    6.60  478603/478603      KDCI::Data::getNextTransaction(Transaction&) [15]
+[14]     0.1    0.00    6.60  478603         Transaction_Set::File_Scanner::read(Transaction&) [14]
+                5.13    0.00  478603/478603      Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [16]
+                0.41    1.06  478602/478602      Transaction::make_set() [18]
+-----------------------------------------------
+                0.00    6.60  478603/478603      KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+[15]     0.1    0.00    6.60  478603         KDCI::Data::getNextTransaction(Transaction&) [15]
+                0.00    6.60  478603/478603      Transaction_Set::File_Scanner::read(Transaction&) [14]
+-----------------------------------------------
+                5.13    0.00  478603/478603      Transaction_Set::File_Scanner::read(Transaction&) [14]
+[16]     0.1    5.13    0.00  478603         Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [16]
+                0.00    0.00      15/56          std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [1108]
+-----------------------------------------------
+                0.01    0.01   44326/6475799     KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                1.21    1.03 6431473/6475799     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[17]     0.1    1.22    1.04 6475799         KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+                0.34    0.00 39594772/130987939     std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+                0.23    0.00 15076339/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+                0.15    0.00 2150144/2150157     std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&) [31]
+                0.12    0.00 6475799/6475799     std::vector<unsigned short, std::allocator<unsigned short> >::push_back(unsigned short const&) [32]
+                0.12    0.01 6475799/6475799     std::vector<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [33]
+                0.04    0.00 4325655/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.03    0.00 4325655/65919234     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.01    0.00 2150144/2150144     std::vector<int, std::allocator<int> >::push_back(int const&) [48]
+-----------------------------------------------
+                0.41    1.06  478602/478602      Transaction_Set::File_Scanner::read(Transaction&) [14]
+[18]     0.0    0.41    1.06  478602         Transaction::make_set() [18]
+                0.99    0.00  478602/478602      void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [21]
+                0.07    0.00  478602/478602      void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) [36]
+-----------------------------------------------
+                0.82    0.47      11/11          void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[19]     0.0    0.82    0.47      11         KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [19]
+                0.37    0.00 42382788/130987939     std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+                0.07    0.00 6431473/6910075     std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int) [35]
+                0.02    0.00 2149475/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.01    0.00 2149475/65919234     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+-----------------------------------------------
+                0.00    0.00   44326/130987939     void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+                0.00    0.00   88652/130987939     KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+                0.06    0.00 6528507/130987939     KDCI::set_of_frequents<unsigned short, unsigned int>::get_prefix(unsigned short*) [29]
+                0.34    0.00 39594772/130987939     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+                0.37    0.00 42348894/130987939     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+                0.37    0.00 42382788/130987939     KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [19]
+[20]     0.0    1.13    0.00 130987939         std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+-----------------------------------------------
+                             4509128             void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [21]
+                0.99    0.00  478602/478602      Transaction::make_set() [18]
+[21]     0.0    0.99    0.00  478602+4509128 void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [21]
+                             4509128             void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [21]
+-----------------------------------------------
+                0.74    0.04 21174447/21174447     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[22]     0.0    0.74    0.04 21174447         KDCI::set_of_frequents<unsigned short, unsigned int>::next_cand() [22]
+                0.02    0.00 2150033/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.01    0.00 2150022/65919234     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+-----------------------------------------------
+                0.00    0.00       2/66827908     KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+                0.00    0.00      12/66827908     KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.00    0.00     121/66827908     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+                0.02    0.00 2149475/66827908     KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [19]
+                0.02    0.00 2150033/66827908     KDCI::set_of_frequents<unsigned short, unsigned int>::next_cand() [22]
+                0.04    0.00 4325655/66827908     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+                0.57    0.00 58202610/66827908     KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+[23]     0.0    0.66    0.00 66827908         std::vector<int, std::allocator<int> >::size() const [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.0    0.58    0.00                 __i686.get_pc_thunk.bx [24]
+-----------------------------------------------
+                0.58    0.00 36626161/36626161     KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+[25]     0.0    0.58    0.00 36626161         KDCI::direct_position2_init(int, int) [25]
+-----------------------------------------------
+                0.00    0.00     121/65919234     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+                0.00    0.00  527169/65919234     KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+                0.01    0.00 2149475/65919234     KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [19]
+                0.01    0.00 2150022/65919234     KDCI::set_of_frequents<unsigned short, unsigned int>::next_cand() [22]
+                0.03    0.00 4325655/65919234     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+                0.37    0.00 56766792/65919234     KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+[26]     0.0    0.44    0.00 65919234         std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.0    0.38    0.00                 Transaction_Set::File_Scanner::~File_Scanner() [27]
+-----------------------------------------------
+                0.00    0.00       2/15120803     void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+                0.00    0.00      44/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned short const&) [55]
+                0.00    0.00      45/15120803     KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.00    0.00      46/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&) [31]
+                0.00    0.00   44327/15120803     KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+                0.23    0.00 15076339/15120803     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+[28]     0.0    0.24    0.00 15120803         std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+-----------------------------------------------
+                0.16    0.06 1325859/1325859     void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[29]     0.0    0.16    0.06 1325859         KDCI::set_of_frequents<unsigned short, unsigned int>::get_prefix(unsigned short*) [29]
+                0.06    0.00 6528507/130987939     std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+-----------------------------------------------
+                0.15    0.00       1/1           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[30]     0.0    0.15    0.00       1         KDCI::DCI_vertical_dataset<unsigned short>::init_VD() [30]
+-----------------------------------------------
+                0.00    0.00       1/2150157     void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+                0.00    0.00      12/2150157     KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.15    0.00 2150144/2150157     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+[31]     0.0    0.15    0.00 2150157         std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&) [31]
+                0.00    0.00      46/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+-----------------------------------------------
+                0.12    0.00 6475799/6475799     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+[32]     0.0    0.12    0.00 6475799         std::vector<unsigned short, std::allocator<unsigned short> >::push_back(unsigned short const&) [32]
+                0.00    0.00      44/44          std::vector<unsigned short, std::allocator<unsigned short> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned short const&) [55]
+-----------------------------------------------
+                0.12    0.01 6475799/6475799     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+[33]     0.0    0.12    0.01 6475799         std::vector<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [33]
+                0.01    0.00      44/44          std::vector<unsigned int, std::allocator<unsigned int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&) [52]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.0    0.12    0.00                 KDCI::set_of_frequents<unsigned int, unsigned int>::find_one_subset(unsigned int*, unsigned int&, int&) [34]
+-----------------------------------------------
+                0.01    0.00  478602/6910075     KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.07    0.00 6431473/6910075     KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [19]
+[35]     0.0    0.08    0.00 6910075         std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int) [35]
+-----------------------------------------------
+                0.07    0.00  478602/478602      Transaction::make_set() [18]
+[36]     0.0    0.07    0.00  478602         void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) [36]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.0    0.05    0.00                 void KDCI::quick_sort<unsigned int>(unsigned int*, int, int) [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[38]     0.0    0.05    0.00                 KDCI::DCI_vertical_dataset<unsigned char>::prune_VD(int, KDCI::dci_items&) [38]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.0    0.04    0.00                 std::vector<unsigned char, std::allocator<unsigned char> >::size() const [39]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.0    0.03    0.00                 KDCI::kdci_mine_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [40]
+-----------------------------------------------
+                                                 <spontaneous>
+[41]     0.0    0.02    0.00                 KDCI::set_of_itemsets<unsigned short, unsigned short>::add_itemset(unsigned short*, unsigned short) [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.0    0.02    0.00                 KDCI::set_of_frequents<unsigned short, unsigned short>::next_cand() [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.0    0.02    0.00                 KDCI::DCI_vertical_dataset<unsigned char>::candidate_is_frequent_diffuse(unsigned char*, int, int, int, int&, KDCI::DCI_statistics&, bool) [43]
+-----------------------------------------------
+                                                 <spontaneous>
+[44]     0.0    0.02    0.00                 KDCI::set_of_frequents<unsigned int, unsigned int>::next_cand() [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.0    0.02    0.00                 std::vector<unsigned char, std::allocator<unsigned char> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned int, unsigned char const&) [45]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.0    0.02    0.00                 void std::partial_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) [46]
+-----------------------------------------------
+                0.01    0.00       1/1           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[47]     0.0    0.01    0.00       1         KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+                0.00    0.00  527169/65919234     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.00   88652/130987939     std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int) [20]
+                0.00    0.00   44327/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+                0.00    0.00       2/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.00    0.00   44326/44326       KDCI::direct_position2(int, int, int) [1107]
+                0.00    0.00       1/2           std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [1123]
+-----------------------------------------------
+                0.01    0.00 2150144/2150144     KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [17]
+[48]     0.0    0.01    0.00 2150144         std::vector<int, std::allocator<int> >::push_back(int const&) [48]
+                0.00    0.00      41/56          std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [1108]
+-----------------------------------------------
+                0.00    0.01       1/1           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+[49]     0.0    0.00    0.01       1         KDCI::dci_items::remap_items(bool) [49]
+                0.01    0.00       1/1           void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [50]
+                0.00    0.00       1/1           void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort) [1154]
+-----------------------------------------------
+                                1721             void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [50]
+                0.01    0.00       1/1           KDCI::dci_items::remap_items(bool) [49]
+[50]     0.0    0.01    0.00       1+1721    void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [50]
+                                1721             void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [50]
+-----------------------------------------------
+                                                 <spontaneous>
+[51]     0.0    0.01    0.00                 Personal::hypercube_all_to_all(Matrix<std::vector<int, std::allocator<int> > >&) [51]
+-----------------------------------------------
+                0.01    0.00      44/44          std::vector<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [33]
+[52]     0.0    0.01    0.00      44         std::vector<unsigned int, std::allocator<unsigned int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&) [52]
+                0.00    0.00      44/478658      std::vector<unsigned int, std::allocator<unsigned int> >::size() const [1106]
+-----------------------------------------------
+                                                 <spontaneous>
+[53]     0.0    0.01    0.00                 KDCI::set_of_frequents<unsigned char, unsigned char>::find_one_subset(unsigned char*, unsigned char&, int&) [53]
+-----------------------------------------------
+                0.00    0.00      11/11          void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[54]     0.0    0.00    0.00      11         KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.00    0.00      12/2150157     std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&) [31]
+                0.00    0.00      45/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+                0.00    0.00      12/66827908     std::vector<int, std::allocator<int> >::size() const [23]
+                0.00    0.00      12/478658      std::vector<unsigned int, std::allocator<unsigned int> >::size() const [1106]
+                0.00    0.00       1/2           std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [1123]
+                0.00    0.00       1/1           std::vector<unsigned int, std::allocator<unsigned int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int, unsigned int const&) [1153]
+-----------------------------------------------
+                0.00    0.00      44/44          std::vector<unsigned short, std::allocator<unsigned short> >::push_back(unsigned short const&) [32]
+[55]     0.0    0.00    0.00      44         std::vector<unsigned short, std::allocator<unsigned short> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned short const&) [55]
+                0.00    0.00      44/15120803     std::vector<unsigned short, std::allocator<unsigned short> >::size() const [28]
+-----------------------------------------------
+                0.00    0.00      12/478658      KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.00    0.00      44/478658      std::vector<unsigned int, std::allocator<unsigned int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&) [52]
+                0.00    0.00  478602/478658      KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+[1106]   0.0    0.00    0.00  478658         std::vector<unsigned int, std::allocator<unsigned int> >::size() const [1106]
+-----------------------------------------------
+                0.00    0.00   44326/44326       KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+[1107]   0.0    0.00    0.00   44326         KDCI::direct_position2(int, int, int) [1107]
+-----------------------------------------------
+                0.00    0.00      15/56          Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [16]
+                0.00    0.00      41/56          std::vector<int, std::allocator<int> >::push_back(int const&) [48]
+[1108]   0.0    0.00    0.00      56         std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [1108]
+-----------------------------------------------
+                0.00    0.00      49/49          KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+[1109]   0.0    0.00    0.00      49         std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&) [1109]
+-----------------------------------------------
+                0.00    0.00       1/14          KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.00    0.00       1/14          KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+                0.00    0.00       1/14          KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.00    0.00      11/14          void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[1110]   0.0    0.00    0.00      14         KDCI::Chronos::StartChronos() [1110]
+-----------------------------------------------
+                0.00    0.00       1/13          KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.00    0.00       1/13          KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.00    0.00      11/13          void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[1111]   0.0    0.00    0.00      13         KDCI::FSout::FSout(char const*, int) [1111]
+-----------------------------------------------
+                0.00    0.00      11/11          void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[1112]   0.0    0.00    0.00      11         KDCI::DCI_vertical_dataset<unsigned short>::init_cache(int) [1112]
+-----------------------------------------------
+                0.00    0.00       9/9           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+[1113]   0.0    0.00    0.00       9         std::allocator<unsigned short>::allocator() [1113]
+-----------------------------------------------
+                0.00    0.00       1/8           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.00    0.00       1/8           KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.00    0.00       3/8           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+                0.00    0.00       3/8           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1114]   0.0    0.00    0.00       8         std::allocator<int>::allocator() [1114]
+-----------------------------------------------
+                0.00    0.00       1/8           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [12]
+                0.00    0.00       1/8           KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.00    0.00       3/8           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+                0.00    0.00       3/8           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1115]   0.0    0.00    0.00       8         std::allocator<int>::~allocator() [1115]
+-----------------------------------------------
+                0.00    0.00       1/7           KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.00    0.00       3/7           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+                0.00    0.00       3/7           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1116]   0.0    0.00    0.00       7         std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&) [1116]
+-----------------------------------------------
+                0.00    0.00       7/7           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1117]   0.0    0.00    0.00       7         std::vector<int, std::allocator<int> >::~vector() [1117]
+-----------------------------------------------
+                0.00    0.00       5/5           void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [4]
+[1118]   0.0    0.00    0.00       5         KDCI::DCI_statistics::get_stats(int, int, int, int, int&, int&, int&) [1118]
+-----------------------------------------------
+                0.00    0.00       1/3           KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [7]
+                0.00    0.00       2/3           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1119]   0.0    0.00    0.00       3         KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+                0.00    0.00       9/9           std::allocator<unsigned short>::allocator() [1113]
+                0.00    0.00       3/8           std::allocator<int>::allocator() [1114]
+                0.00    0.00       3/7           std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&) [1116]
+                0.00    0.00       3/8           std::allocator<int>::~allocator() [1115]
+                0.00    0.00       3/3           std::allocator<unsigned int>::allocator() [1120]
+-----------------------------------------------
+                0.00    0.00       3/3           KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1119]
+[1120]   0.0    0.00    0.00       3         std::allocator<unsigned int>::allocator() [1120]
+-----------------------------------------------
+                0.00    0.00       1/3           initialize(bool) [1133]
+                0.00    0.00       2/3           init_vars() [1143]
+[1121]   0.0    0.00    0.00       3         char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) [1121]
+-----------------------------------------------
+                0.00    0.00       3/3           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1122]   0.0    0.00    0.00       3         std::vector<unsigned int, std::allocator<unsigned int> >::~vector() [1122]
+-----------------------------------------------
+                0.00    0.00       1/2           KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+                0.00    0.00       1/2           KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [47]
+[1123]   0.0    0.00    0.00       2         std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [1123]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1124]   0.0    0.00    0.00       1         global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE [1124]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1136]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1125]   0.0    0.00    0.00       1         global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE [1125]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1135]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1126]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI16print_statisticsEPciiid [1126]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1141]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1127]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI17TEMPORARY_DATASETE [1127]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1139]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1128]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set [1128]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1142]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1129]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv [1129]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1140]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1130]   0.0    0.00    0.00       1         global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii [1130]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1138]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1131]   0.0    0.00    0.00       1         global constructors keyed to main [1131]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1134]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1813]
+[1132]   0.0    0.00    0.00       1         global constructors keyed to num_processors [1132]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1137]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[1133]   0.0    0.00    0.00       1         initialize(bool) [1133]
+                0.00    0.00       1/3           char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) [1121]
+                0.00    0.00       1/1           init_vars() [1143]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to main [1131]
+[1134]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1134]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE [1125]
+[1135]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1135]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE [1124]
+[1136]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1136]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to num_processors [1132]
+[1137]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1137]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii [1130]
+[1138]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1138]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI17TEMPORARY_DATASETE [1127]
+[1139]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1139]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv [1129]
+[1140]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1140]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI16print_statisticsEPciiid [1126]
+[1141]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1141]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set [1128]
+[1142]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1142]
+-----------------------------------------------
+                0.00    0.00       1/1           initialize(bool) [1133]
+[1143]   0.0    0.00    0.00       1         init_vars() [1143]
+                0.00    0.00       2/3           char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) [1121]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::Data::Data(Transaction_Set&) [1150]
+[1144]   0.0    0.00    0.00       1         Transaction_Set::gen_scanner() [1144]
+                0.00    0.00       1/1           Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&) [1145]
+-----------------------------------------------
+                0.00    0.00       1/1           Transaction_Set::gen_scanner() [1144]
+[1145]   0.0    0.00    0.00       1         Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&) [1145]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::Data::~Data() [1151]
+[1146]   0.0    0.00    0.00       1         Transaction_Set::File_Scanner::~File_Scanner() [1146]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[1147]   0.0    0.00    0.00       1         Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format) [1147]
+-----------------------------------------------
+                0.00    0.00       1/1           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1148]   0.0    0.00    0.00       1         KDCI::DCI_vertical_dataset<unsigned short>::VD_can_be_allocated(unsigned int, unsigned int) [1148]
+                0.00    0.00       1/1           KDCI::mem_total() [1152]
+-----------------------------------------------
+                0.00    0.00       1/1           void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [3]
+[1149]   0.0    0.00    0.00       1         KDCI::DCI_vertical_dataset<unsigned short>::chk_compact_vertical(int) [1149]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+[1150]   0.0    0.00    0.00       1         KDCI::Data::Data(Transaction_Set&) [1150]
+                0.00    0.00       1/1           Transaction_Set::gen_scanner() [1144]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [2]
+[1151]   0.0    0.00    0.00       1         KDCI::Data::~Data() [1151]
+                0.00    0.00       1/1           Transaction_Set::File_Scanner::~File_Scanner() [1146]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::DCI_vertical_dataset<unsigned short>::VD_can_be_allocated(unsigned int, unsigned int) [1148]
+[1152]   0.0    0.00    0.00       1         KDCI::mem_total() [1152]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [54]
+[1153]   0.0    0.00    0.00       1         std::vector<unsigned int, std::allocator<unsigned int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int, unsigned int const&) [1153]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::dci_items::remap_items(bool) [49]
+[1154]   0.0    0.00    0.00       1         void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort) [1154]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+ [1124] global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE (Transaction.cxx) [3] void KDCI::following_scans<unsigned short, unsigned int>(int, KDCI::dci_items&, int) [51] Personal::hypercube_all_to_all(Matrix<std::vector<int, std::allocator<int> > >&)
+ [1125] global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE (Transaction_Set.cxx) [17] KDCI::set_of_itemsets<unsigned short, unsigned int>::add_itemset(unsigned short*, unsigned int) [39] std::vector<unsigned char, std::allocator<unsigned char> >::size() const
+ [1126] global constructors keyed to _ZN4KDCI16print_statisticsEPciiid (utils.cc) [54] KDCI::set_of_itemsets<unsigned short, unsigned int>::reset(int) [23] std::vector<int, std::allocator<int> >::size() const
+ [1127] global constructors keyed to _ZN4KDCI17TEMPORARY_DATASETE (fim_all.cc) [1119] KDCI::set_of_itemsets<unsigned short, unsigned int>::set_of_itemsets(int) [1106] std::vector<unsigned int, std::allocator<unsigned int> >::size() const
+ [1128] global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set (database.cc) [41] KDCI::set_of_itemsets<unsigned short, unsigned short>::add_itemset(unsigned short*, unsigned short) [28] std::vector<unsigned short, std::allocator<unsigned short> >::size() const
+ [1129] global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv (items.cc) [4] void KDCI::DCI_iter_diffuse<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::set_of_frequents<unsigned short, unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [1114] std::allocator<int>::allocator()
+ [1130] global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii (Personal.cxx) [1107] KDCI::direct_position2(int, int, int) [1115] std::allocator<int>::~allocator()
+ [1131] global constructors keyed to main (freq-kdci.cc) [53] KDCI::set_of_frequents<unsigned char, unsigned char>::find_one_subset(unsigned char*, unsigned char&, int&) [1120] std::allocator<unsigned int>::allocator()
+ [1132] global constructors keyed to num_processors (Parallel.cxx) [34] KDCI::set_of_frequents<unsigned int, unsigned int>::find_one_subset(unsigned int*, unsigned int&, int&) [1113] std::allocator<unsigned short>::allocator()
+ [1133] initialize(bool)      [44] KDCI::set_of_frequents<unsigned int, unsigned int>::next_cand() [1121] char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag)
+ [1134] __static_initialization_and_destruction_0(int, int) (freq-kdci.cc) [29] KDCI::set_of_frequents<unsigned short, unsigned int>::get_prefix(unsigned short*) [1109] std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&)
+ [1135] __static_initialization_and_destruction_0(int, int) (Transaction_Set.cxx) [19] KDCI::set_of_frequents<unsigned short, unsigned int>::dump_itemsets(KDCI::dci_items&, KDCI::FSout&) [45] std::vector<unsigned char, std::allocator<unsigned char> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned int, unsigned char const&)
+ [1136] __static_initialization_and_destruction_0(int, int) (Transaction.cxx) [47] KDCI::set_of_frequents<unsigned short, unsigned int>::initDA(int) [1108] std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+ [1137] __static_initialization_and_destruction_0(int, int) (Parallel.cxx) [22] KDCI::set_of_frequents<unsigned short, unsigned int>::next_cand() [1123] std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&)
+ [1138] __static_initialization_and_destruction_0(int, int) (Personal.cxx) [42] KDCI::set_of_frequents<unsigned short, unsigned short>::next_cand() [48] std::vector<int, std::allocator<int> >::push_back(int const&)
+ [1139] __static_initialization_and_destruction_0(int, int) (fim_all.cc) [43] KDCI::DCI_vertical_dataset<unsigned char>::candidate_is_frequent_diffuse(unsigned char*, int, int, int, int&, KDCI::DCI_statistics&, bool) [1116] std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&)
+ [1140] __static_initialization_and_destruction_0(int, int) (items.cc) [38] KDCI::DCI_vertical_dataset<unsigned char>::prune_VD(int, KDCI::dci_items&) [1117] std::vector<int, std::allocator<int> >::~vector()
+ [1141] __static_initialization_and_destruction_0(int, int) (utils.cc) [1112] KDCI::DCI_vertical_dataset<unsigned short>::init_cache(int) [26] std::vector<int, std::allocator<int> >::operator[](unsigned int)
+ [1142] __static_initialization_and_destruction_0(int, int) (database.cc) [13] KDCI::DCI_vertical_dataset<unsigned short>::order_bits_diffuse(KDCI::dci_items&) [52] std::vector<unsigned int, std::allocator<unsigned int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&)
+ [1143] init_vars()         [1148] KDCI::DCI_vertical_dataset<unsigned short>::VD_can_be_allocated(unsigned int, unsigned int) [1153] std::vector<unsigned int, std::allocator<unsigned int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int, unsigned int const&)
+  [16] Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [1149] KDCI::DCI_vertical_dataset<unsigned short>::chk_compact_vertical(int) [33] std::vector<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&)
+  [18] Transaction::make_set() [5] KDCI::DCI_vertical_dataset<unsigned short>::candidate_is_frequent_diffuse(unsigned short*, int, int, int, int&, KDCI::DCI_statistics&, bool) [1122] std::vector<unsigned int, std::allocator<unsigned int> >::~vector()
+ [1144] Transaction_Set::gen_scanner() [30] KDCI::DCI_vertical_dataset<unsigned short>::init_VD() [35] std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int)
+  [14] Transaction_Set::File_Scanner::read(Transaction&) [10] KDCI::DCI_vertical_dataset<unsigned short>::prune_VD(int, KDCI::dci_items&) [55] std::vector<unsigned short, std::allocator<unsigned short> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned short const&)
+ [1145] Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&) [6] KDCI::and_tid_list_count_1(unsigned int*, unsigned int const*, unsigned int const*, int) (tid_list_macros.hh) [31] std::vector<unsigned short, std::allocator<unsigned short> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned short*, std::vector<unsigned short, std::allocator<unsigned short> > >, unsigned int, unsigned short const&)
+ [1146] Transaction_Set::File_Scanner::~File_Scanner() [25] KDCI::direct_position2_init(int, int) [32] std::vector<unsigned short, std::allocator<unsigned short> >::push_back(unsigned short const&)
+  [27] Transaction_Set::File_Scanner::~File_Scanner() [8] KDCI::and_tid_list_set_index(unsigned int*, unsigned int const*, unsigned int const*, int*, int) (tid_list_macros.hh) [20] std::vector<unsigned short, std::allocator<unsigned short> >::operator[](unsigned int)
+ [1147] Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format) [15] KDCI::Data::getNextTransaction(Transaction&) [46] void std::partial_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+  [12] KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [1150] KDCI::Data::Data(Transaction_Set&) [1154] void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort)
+  [37] void KDCI::quick_sort<unsigned int>(unsigned int*, int, int) [1151] KDCI::Data::~Data() [36] void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+  [11] void KDCI::quick_sort<unsigned short>(unsigned short*, int, int) [1111] KDCI::FSout::FSout(char const*, int) [50] void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort)
+   [7] KDCI::set_of_frequents<unsigned short, unsigned int>* KDCI::second_scan<unsigned short, unsigned int>(int, KDCI::dci_items&, KDCI::cand_2_iter<unsigned int>&, KDCI::DCI_vertical_dataset<unsigned short>&) [1110] KDCI::Chronos::StartChronos() [21] void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int)
+   [9] KDCI::and_tid_list(unsigned int*, unsigned int const*, unsigned int const*, int) (tid_list_macros.hh) [2] KDCI::kdci_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [24] __i686.get_pc_thunk.bx
+  [40] KDCI::kdci_mine_all(Transaction_Set&, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, bool) [49] KDCI::dci_items::remap_items(bool)
+ [1118] KDCI::DCI_statistics::get_stats(int, int, int, int, int&, int&, int&) [1152] KDCI::mem_total()

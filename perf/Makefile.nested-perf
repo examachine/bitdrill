@@ -1,0 +1,82 @@
+# -*-makefile-*-
+# Benchmark nested partitioning performance
+
+experiments= $(wildcard *.exp)
+out0 = $(patsubst %.exp,%.out,$(experiments))
+info0= $(patsubst %.exp,%.info,$(experiments))
+ps0= $(patsubst %.info,%.ps,$(info0))
+
+part0= $(wildcard *.data.part.?)
+out = $(addsuffix .out,$(part0))
+info1= $(patsubst %.out,%.info,$(out))
+ps1= $(patsubst %.info,%.ps,$(info1))
+
+dot=nested-perf
+
+ifndef SUPPORT_THRESHOLD
+SUPPORT_THRESHOLD=0.001
+endif
+
+all: out $(ps0)
+
+out: level0 level1
+
+level0:
+	$(MAKE) SERIAL=1
+
+level1: $(out)
+
+%.ps: %.dot
+	dot -Tps $< -o $@
+
+%.dot: %.info
+	@echo Generating graphs
+	  echo digraph G { > $@;
+	  echo node[shape=box] >> $@;
+	  echo rankdir=LR >> $@;
+	  echo "	$* -> $*part1;" >>$@;
+	  echo "	$* -> $*part2;" >>$@;
+	  echo "	$* -> $*part3;" >>$@;
+	  echo "	$* [label = \"$*\n `cat $*.info`\"];" >>$@;
+	  echo "	$*part1 [label = \"$* P1 \n\
+`cat $*.data.part.1.info`\"];" >>$@;
+	  echo "	$*part2 [label = \"$* P2 \n\
+`cat $*.data.part.2.info`\"];" >>$@;
+	  echo "	$*part3 [label = \"$* P3 \n\
+`cat $*.data.part.3.info`\"];" >>$@;
+	  echo } >> $@;
+
+
+# extract num. of items
+nitems=$(shell expr `gawk '{print $$6;}' $(1)` '*' 1000)
+
+# run parfreq
+
+define parfreq
+	parfreq $< $(call nitems,$*.exp) $(SUPPORT_THRESHOLD) &> $@
+endef
+
+%.data.part.1.out : %.data.part.1
+	$(parfreq)
+
+%.data.part.2.out : %.data.part.2
+	$(parfreq)
+
+%.data.part.3.out : %.data.part.3
+	$(parfreq)
+
+%.info : %.out
+	(grep Nvtxs $<; \
+	 grep vsize $<) | awk '{print $$0 "\\n" (FNR==4 ? "" : "\\");}'>$@
+
+test:
+	@echo part0=$(part0)
+	@echo out=$(out)
+	@echo info=$(info0)
+	@echo ps0=$(ps0)
+
+clean:
+	rm *part*.out
+
+.PHONY:	all out level0 level1 test clean
+

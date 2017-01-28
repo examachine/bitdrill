@@ -1,0 +1,19 @@
+# Makefile to run performance tests with a specific support threshold
+
+datadir=$(top_srcdir)/data/assoc-gen
+perfdir=$(top_srcdir)/perf
+speedups=$(shell cat $(datadir)/zaki.experiments | awk '{print $1".speedup";}')
+
+ifdef SUPPORT
+all: startmsg speedups
+
+startmsg:
+	echo "Running performance tests with epsilon=" $(SUPPORT)
+else
+all:
+	$(error SUPPORT must be defined)
+endif
+
+speedups: $(speedups)
+
+$(speedups): 

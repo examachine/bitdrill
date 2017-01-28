@@ -1,0 +1,13 @@
+kosarak
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.01
+retail
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0025
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.003
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0035
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0045
+bms-pos
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0025
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0035
+pirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.003
+mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0045
+mpirun n1-24 -np 4 ../bin/par-analyze-ts /tmp/x 0.0075

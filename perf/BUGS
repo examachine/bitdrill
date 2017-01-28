@@ -1,0 +1,12 @@
+* inflated times in T20.I6.6000K and others
+
+  explanation: hardware failure: it seems some hardware failure or
+  some guy running processes in the middle of my runs messed up the
+  entire results.
+
+* improved run times after one run in T40.I8.4000K
+
+  linux fs cache: might make the algo run better in the next run
+  it seems. not sure. seems to have happened with T40.I8.4000K but on
+  second thought, looks impossible since i thought i saw an improvement
+  in the mining phase, data is generated dynamically there...

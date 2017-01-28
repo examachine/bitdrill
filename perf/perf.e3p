@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-3.8.dtd">
+<!-- Project file for project perf -->
+<!-- Saved: 2005-11-28, 21:51:10 -->
+<!-- Copyright (C) 2005 ,  -->
+<Project version="3.8">
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <UIType>Console</UIType>
+  <Description></Description>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Sources>
+    <Source>
+      <Name>plot-par-time.py</Name>
+    </Source>
+    <Source>
+      <Name>fimi-calc-avg.py</Name>
+    </Source>
+    <Source>
+      <Name>space.py</Name>
+    </Source>
+    <Source>
+      <Name>serial-time.py</Name>
+    </Source>
+    <Source>
+      <Name>par-time.py</Name>
+    </Source>
+    <Source>
+      <Name>par-analysis.py</Name>
+    </Source>
+    <Source>
+      <Name>stats-par-time.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-par-dissection.py</Name>
+    </Source>
+    <Source>
+      <Name>stats-space.py</Name>
+    </Source>
+    <Source>
+      <Name>perf.py</Name>
+    </Source>
+    <Source>
+      <Name>avg-dissection.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-space.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-degree-dist.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-imbalance-all.py</Name>
+    </Source>
+    <Source>
+      <Name>remove-serial.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-serial-time.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-imbalance.py</Name>
+    </Source>
+    <Source>
+      <Name>stats-serial-time.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-scalability.py</Name>
+    </Source>
+    <Source>
+      <Name>analysis.py</Name>
+    </Source>
+    <Source>
+      <Name>time-regression.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-par-time-aim.py</Name>
+    </Source>
+    <Source>
+      <Name>util.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-analysis.py</Name>
+    </Source>
+    <Source>
+      <Name>plot-scalability-scatter.py</Name>
+    </Source>
+    <Source>
+      <Name>cat-analysis.py</Name>
+    </Source>
+    <Source>
+      <Name>par-time-regression.py</Name>
+    </Source>
+    <Source>
+      <Name>cat-db.py</Name>
+    </Source>
+    <Source>
+      <Name>par-time-aim.py</Name>
+    </Source>
+    <Source>
+      <Name>serial-time-aim.py</Name>
+    </Source>
+  </Sources>
+  <Forms>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <MainScript>
+    <Name>plot-par-time.py</Name>
+  </MainScript>
+  <Vcs>
+    <VcsType>CVS</VcsType>
+    <VcsOptions>{'status': [u'-v'], 'log': [], 'global': [u'-f'], 'update': [u'-dP'], 'remove': [u'-f'], 'add': [], 'tag': [u'-c'], 'export': [], 'diff': [u'-u3', u'-p'], 'commit': [], 'checkout': [], 'history': [u'-e', u'-a']}</VcsOptions>
+    <VcsOtherData>{}</VcsOtherData>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+  </FiletypeAssociations>
+</Project>

@@ -1,0 +1,850 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ks/call  Ks/call  name    
+ 65.89   3066.29  3066.29 18618519     0.00     0.00  Bit_Vector::count_intersection(Bit_Vector const&)
+ 12.08   3628.37   562.08  8002687     0.00     0.00  Bit_Vector::intersect(Bit_Vector const&, Bit_Vector&)
+ 11.85   4179.86   551.49 223334235     0.00     0.00  bool Trie<int>::query_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >)
+  7.86   4545.42   365.57 139001044     0.00     0.00  Trie<int>::check_supports(std::vector<int, std::allocator<int> > const&)
+  0.65   4575.82    30.40 139001044     0.00     0.00  __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::merge<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq)
+  0.46   4597.09    21.27        1     0.02     4.65  Miner::discover(bool)
+  0.31   4611.46    14.37  6474941     0.00     0.00  void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >)
+  0.24   4622.45    11.00 139001060     0.00     0.00  std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&)
+  0.22   4632.75    10.30   957206     0.00     0.00  Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format)
+  0.09   4637.16     4.41  6476749     0.00     0.00  Trie<int>::Walk_Tidlist::next()
+  0.07   4640.54     3.38   478602     0.00     0.00  Vertical_DB::insert(std::vector<int, std::allocator<int> > const&, int)
+  0.04   4642.62     2.09   957204     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int)
+  0.04   4644.37     1.75  6475799     0.00     0.00  Miner::write_pattern(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&, int)
+  0.03   4645.70     1.33                             __i686.get_pc_thunk.bx
+  0.03   4646.89     1.19 121447108     0.00     0.00  std::vector<int, std::allocator<int> >::size() const
+  0.02   4647.97     1.09 113570858     0.00     0.00  std::vector<int, std::allocator<int> >::operator[](unsigned int)
+  0.02   4648.88     0.91   957204     0.00     0.00  Transaction::make_set()
+  0.02   4649.76     0.88        1     0.00     0.01  KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool)
+  0.01   4650.39     0.63  8004482     0.00     0.00  __gnu_cxx::slist<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_create_node(std::pair<int, Trie<int>*> const&)
+  0.01   4650.97     0.58                             Miner::~Miner()
+  0.01   4651.36     0.39       14     0.00     0.00  Trie<int>::~Trie()
+  0.01   4651.72     0.36  6476736     0.00     0.00  void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >)
+  0.01   4651.98     0.26  8004497     0.00     0.00  __gnu_cxx::_Slist_base<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_erase_after(__gnu_cxx::_Slist_node_base*, __gnu_cxx::_Slist_node_base*)
+  0.01   4652.22     0.24  3480272     0.00     0.00  std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+  0.00   4652.45     0.23       34     0.00     0.00  boost::pool<boost::default_user_allocator_new_delete>::malloc_need_resize()
+  0.00   4652.67     0.22       54     0.00     0.00  std::vector<Trie<int>*, std::allocator<Trie<int>*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Trie<int>**, std::vector<Trie<int>*, std::allocator<Trie<int>*> > >, Trie<int>* const&)
+  0.00   4652.85     0.18   957204     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+  0.00   4653.02     0.17     1044     0.00     0.00  std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&)
+  0.00   4653.13     0.11                             boost::details::pool::singleton_default<boost::singleton_pool<boost::fast_pool_allocator_tag, 8u, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u>::pool_type>::instance()
+  0.00   4653.22     0.09                             boost::pool<boost::default_user_allocator_new_delete>::ordered_malloc(unsigned int)
+  0.00   4653.31     0.09                             Vertical_DB::sort_decreasing_freq(std::vector<int, std::allocator<int> >&)
+  0.00   4653.38     0.07        1     0.00     0.01  Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&)
+  0.00   4653.41     0.03   957206     0.00     0.00  Transaction_Set::File_Scanner::read(Transaction&)
+  0.00   4653.44     0.03   478603     0.00     0.00  KDCI::Data::getNextTransaction(Transaction&)
+  0.00   4653.45     0.02                             std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&)
+  0.00   4653.47     0.02                             void std::partial_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+  0.00   4653.48     0.02   478604     0.00     0.00  Transaction_Set::File_Scanner::end()
+  0.00   4653.49     0.01       15     0.00     0.00  Trie<int>::Trie()
+  0.00   4653.50     0.01                             Transaction_Set::Buffer_Scanner::end()
+  0.00   4653.50     0.01                             std::basic_ostream<char, std::char_traits<char> >& Utility::operator<< <int, std::allocator<int> >(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&)
+  0.00   4653.51     0.01                             __tcf_1
+  0.00   4653.51     0.00   479567     0.00     0.00  std::allocator<int>::allocator()
+  0.00   4653.51     0.00   478602     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::size() const
+  0.00   4653.51     0.00   478602     0.00     0.00  std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int)
+  0.00   4653.51     0.00    11025     0.00     0.00  Vertical_DB::Greater_Freq::operator()(int, int)
+  0.00   4653.51     0.00     1795     0.00     0.00  std::vector<unsigned long, std::allocator<unsigned long> >::operator=(std::vector<unsigned long, std::allocator<unsigned long> > const&)
+  0.00   4653.51     0.00     1041     0.00     0.00  void std::_Construct<Bit_Vector, Bit_Vector>(Bit_Vector*, Bit_Vector const&)
+  0.00   4653.51     0.00      969     0.00     0.00  std::vector<int, std::allocator<int> >::~vector()
+  0.00   4653.51     0.00      951     0.00     0.00  std::allocator<int>::~allocator()
+  0.00   4653.51     0.00      937     0.00     0.00  std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::insert_unique(int const&)
+  0.00   4653.51     0.00      937     0.00     0.00  std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&)
+  0.00   4653.51     0.00       54     0.00     0.00  std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > >::_M_insert_aux(__gnu_cxx::__normal_iterator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>*, std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > > >, __gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> const&)
+  0.00   4653.51     0.00       49     0.00     0.00  std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&)
+  0.00   4653.51     0.00       16     0.00     0.00  Bit_Vector::Bit_Vector(int)
+  0.00   4653.51     0.00       14     0.00     0.00  std::vector<Bit_Vector, std::allocator<Bit_Vector> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Bit_Vector*, std::vector<Bit_Vector, std::allocator<Bit_Vector> > >, unsigned int, Bit_Vector const&)
+  0.00   4653.51     0.00       13     0.00     0.00  Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int)
+  0.00   4653.51     0.00       13     0.00     0.00  std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
+  0.00   4653.51     0.00        9     0.00     0.00  std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*)
+  0.00   4653.51     0.00        6     0.00     0.00  std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&)
+  0.00   4653.51     0.00        4     0.00     0.00  Utility::Wall_Time::operator-(Utility::Wall_Time) const
+  0.00   4653.51     0.00        3     0.00     0.00  std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   4653.51     0.00        2     0.00     0.00  Transaction_Set::gen_scanner()
+  0.00   4653.51     0.00        2     0.00     0.00  Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&)
+  0.00   4653.51     0.00        2     0.00     0.00  Graph::Graph()
+  0.00   4653.51     0.00        2     0.00     0.00  std::vector<int, std::allocator<int> >::resize(unsigned int, int const&)
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _Z15kdci_first_scanR15Transaction_SetiRjS1_
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _Z23vertex_induced_subgraphR5GraphSt3setIiSt4lessIiESaIiEES0_
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN10TS_Counter17estimate_load_allENS_18Load_Estimate_FuncE
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN11Vertical_DBC2Ev
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN15Undir_Mtx_Graph5statsEv
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI16print_statisticsEPciiid
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI21candidate_check_countE
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN5GraphC2Ej
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN5MinerC2ERKSsN11Transaction11File_FormatEb
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN6Getopt11get_optionsEiPPcRNS_7OptionsE
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN9Broadcast10one_to_allEPiii
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to _ZN9UT_MatrixC2Ei
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to main
+  0.00   4653.51     0.00        1     0.00     0.00  global constructors keyed to num_processors
+  0.00   4653.51     0.00        1     0.00     0.00  initialize(bool)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  TS_Counter::large_items()
+  0.00   4653.51     0.00        1     0.00     0.01  TS_Counter::count_items_serial()
+  0.00   4653.51     0.00        1     0.00     0.01  TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&)
+  0.00   4653.51     0.00        1     0.00     0.01  TS_Counter::count_items_absolute(int, int)
+  0.00   4653.51     0.00        1     0.00     0.00  TS_Counter::TS_Counter(Transaction_Set&, bool)
+  0.00   4653.51     0.00        1     0.00     0.00  TS_Counter::~TS_Counter()
+  0.00   4653.51     0.00        1     0.00     0.00  Transaction_Set::File_Scanner::~File_Scanner()
+  0.00   4653.51     0.00        1     0.00     0.00  Transaction_Set::Transaction_Set(Transaction_Set::Representation, Transaction::File_Format)
+  0.00   4653.51     0.00        1     0.00     0.00  Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format)
+  0.00   4653.51     0.00        1     0.00     0.00  KDCI::Data::Data(Transaction_Set&)
+  0.00   4653.51     0.00        1     0.00     0.00  KDCI::Chronos::StartChronos()
+  0.00   4653.51     0.00        1     0.00     0.00  KDCI::dci_items::remap_items(bool)
+  0.00   4653.51     0.00        1     0.00     4.65  Miner::discover_absolute(int, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, int)
+  0.00   4653.51     0.00        1     0.00     0.00  Miner::Miner(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format, bool)
+  0.00   4653.51     0.00        1     0.00     0.00  Getopt::get_options(int, char**, Getopt::Options&)
+  0.00   4653.51     0.00        1     0.00     0.00  char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag)
+  0.00   4653.51     0.00        1     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort)
+  0.00   4653.51     0.00        1     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq)
+  0.00   4653.51     0.00        1     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort)
+  0.00   4653.51     0.00        1     0.00     0.00  void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 4653.51 seconds
+
+index % time    self  children    called     name
+               21.27 4629.99       1/1           Miner::discover_absolute(int, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, int) [3]
+[1]    100.0   21.27 4629.99       1         Miner::discover(bool) [1]
+             3066.29    0.00 18618519/18618519     Bit_Vector::count_intersection(Bit_Vector const&) [4]
+              365.57  562.48 139001044/139001044     Trie<int>::check_supports(std::vector<int, std::allocator<int> > const&) [5]
+                4.41  562.26 6476749/6476749     Trie<int>::Walk_Tidlist::next() [6]
+               30.40    0.00 139001044/139001044     __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::merge<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq) [9]
+               14.37    1.22 6474941/6474941     void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+                0.07   11.52       1/1           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    8.90       1/1           TS_Counter::count_items_absolute(int, int) [16]
+                1.75    0.00 6475799/6475799     Miner::write_pattern(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&, int) [23]
+                0.39    0.26      14/14          Trie<int>::~Trie() [28]
+                0.06    0.00 6476762/121447108     std::vector<int, std::allocator<int> >::size() const [25]
+                0.00    0.06      13/13          Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [40]
+                0.01    0.00      15/15          Trie<int>::Trie() [44]
+                0.00    0.00      13/16          Bit_Vector::Bit_Vector(int) [48]
+                0.00    0.00    1795/6476736     void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+                0.00    0.00     937/3480272     std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [32]
+                0.00    0.00      13/139001060     std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [13]
+                0.00    0.00     969/969         std::vector<int, std::allocator<int> >::~vector() [1108]
+                0.00    0.00     950/479567      std::allocator<int>::allocator() [1102]
+                0.00    0.00     950/951         std::allocator<int>::~allocator() [1109]
+                0.00    0.00      13/13          std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base() [1115]
+                0.00    0.00       4/4           Utility::Wall_Time::operator-(Utility::Wall_Time) const [1118]
+                0.00    0.00       1/1           TS_Counter::~TS_Counter() [1163]
+                0.00    0.00       1/1           TS_Counter::TS_Counter(Transaction_Set&, bool) [1162]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]    100.0    0.00 4651.26                 main [2]
+                0.00 4651.26       1/1           Miner::discover_absolute(int, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, int) [3]
+                0.00    0.00       1/1           initialize(bool) [1142]
+                0.00    0.00       1/1           Getopt::get_options(int, char**, Getopt::Options&) [1171]
+                0.00    0.00       1/1           Miner::Miner(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format, bool) [1170]
+-----------------------------------------------
+                0.00 4651.26       1/1           main [2]
+[3]    100.0    0.00 4651.26       1         Miner::discover_absolute(int, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, int) [3]
+               21.27 4629.99       1/1           Miner::discover(bool) [1]
+-----------------------------------------------
+             3066.29    0.00 18618519/18618519     Miner::discover(bool) [1]
+[4]     65.9 3066.29    0.00 18618519         Bit_Vector::count_intersection(Bit_Vector const&) [4]
+-----------------------------------------------
+              365.57  562.48 139001044/139001044     Miner::discover(bool) [1]
+[5]     19.9  365.57  562.48 139001044         Trie<int>::check_supports(std::vector<int, std::allocator<int> > const&) [5]
+              551.49    0.00 223334235/223334235     bool Trie<int>::query_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [8]
+               11.00    0.00 139001044/139001060     std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [13]
+-----------------------------------------------
+                4.41  562.26 6476749/6476749     Miner::discover(bool) [1]
+[6]     12.2    4.41  562.26 6476749         Trie<int>::Walk_Tidlist::next() [6]
+              562.08    0.01 8002687/8002687     Bit_Vector::intersect(Bit_Vector const&, Bit_Vector&) [7]
+                0.17    0.00      41/54          std::vector<Trie<int>*, std::allocator<Trie<int>*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Trie<int>**, std::vector<Trie<int>*, std::allocator<Trie<int>*> > >, Trie<int>* const&) [34]
+                0.00    0.00      50/3480272     std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [32]
+                0.00    0.00    1795/1795        std::vector<unsigned long, std::allocator<unsigned long> >::operator=(std::vector<unsigned long, std::allocator<unsigned long> > const&) [1106]
+                0.00    0.00      41/54          std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > >::_M_insert_aux(__gnu_cxx::__normal_iterator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>*, std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > > >, __gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> const&) [1112]
+-----------------------------------------------
+              562.08    0.01 8002687/8002687     Trie<int>::Walk_Tidlist::next() [6]
+[7]     12.1  562.08    0.01 8002687         Bit_Vector::intersect(Bit_Vector const&, Bit_Vector&) [7]
+                0.01    0.00      78/1044        std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&) [36]
+-----------------------------------------------
+                             28853690             bool Trie<int>::query_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [8]
+              551.49    0.00 223334235/223334235     Trie<int>::check_supports(std::vector<int, std::allocator<int> > const&) [5]
+[8]     11.9  551.49    0.00 223334235+28853690 bool Trie<int>::query_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [8]
+                             28853690             bool Trie<int>::query_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [8]
+-----------------------------------------------
+               30.40    0.00 139001044/139001044     Miner::discover(bool) [1]
+[9]      0.7   30.40    0.00 139001044         __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::merge<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq) [9]
+-----------------------------------------------
+                             2845595             void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+               14.37    1.22 6474941/6474941     Miner::discover(bool) [1]
+[10]     0.3   14.37    1.22 6474941+2845595 void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+                0.51    0.09 6474941/8004482     __gnu_cxx::slist<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_create_node(std::pair<int, Trie<int>*> const&) [27]
+                0.36    0.18 6474941/6476736     void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+                0.08    0.00      12/34          boost::pool<boost::default_user_allocator_new_delete>::malloc_need_resize() [33]
+                             2845595             void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+-----------------------------------------------
+                0.02    6.86  478603/957206      Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.02    6.86  478603/957206      KDCI::Data::getNextTransaction(Transaction&) [19]
+[11]     0.3    0.03   13.72  957206         Transaction_Set::File_Scanner::read(Transaction&) [11]
+               10.30    0.24  957206/957206      Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [14]
+                0.91    2.27  957204/957204      Transaction::make_set() [21]
+-----------------------------------------------
+                0.07   11.52       1/1           Miner::discover(bool) [1]
+[12]     0.2    0.07   11.52       1         Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.02    6.86  478603/957206      Transaction_Set::File_Scanner::read(Transaction&) [11]
+                3.38    1.10  478602/478602      Vertical_DB::insert(std::vector<int, std::allocator<int> > const&, int) [20]
+                0.15    0.00     937/1044        std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&) [36]
+                0.02    0.00  478604/478604      Transaction_Set::File_Scanner::end() [43]
+                0.00    0.00       3/16          Bit_Vector::Bit_Vector(int) [48]
+                0.00    0.00    1874/113570858     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.00     940/121447108     std::vector<int, std::allocator<int> >::size() const [25]
+                0.00    0.00      11/3480272     std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [32]
+                0.00    0.00       2/2           std::vector<int, std::allocator<int> >::resize(unsigned int, int const&) [50]
+                0.00    0.00  478609/479567      std::allocator<int>::allocator() [1102]
+                0.00    0.00    3086/11025       Vertical_DB::Greater_Freq::operator()(int, int) [1105]
+                0.00    0.00       6/6           std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&) [1117]
+                0.00    0.00       1/1           void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq) [1176]
+                0.00    0.00       1/2           Transaction_Set::gen_scanner() [1120]
+                0.00    0.00       1/1           Transaction_Set::File_Scanner::~File_Scanner() [1164]
+                0.00    0.00       1/1           void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq) [1174]
+                0.00    0.00       1/14          std::vector<Bit_Vector, std::allocator<Bit_Vector> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Bit_Vector*, std::vector<Bit_Vector, std::allocator<Bit_Vector> > >, unsigned int, Bit_Vector const&) [1114]
+-----------------------------------------------
+                0.00    0.00       1/139001060     TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+                0.00    0.00       2/139001060     std::vector<int, std::allocator<int> >::resize(unsigned int, int const&) [50]
+                0.00    0.00      13/139001060     Miner::discover(bool) [1]
+               11.00    0.00 139001044/139001060     Trie<int>::check_supports(std::vector<int, std::allocator<int> > const&) [5]
+[13]     0.2   11.00    0.00 139001060         std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [13]
+-----------------------------------------------
+               10.30    0.24  957206/957206      Transaction_Set::File_Scanner::read(Transaction&) [11]
+[14]     0.2   10.30    0.24  957206         Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [14]
+                0.24    0.00 3479274/3480272     std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [32]
+-----------------------------------------------
+                0.00    8.90       1/1           TS_Counter::count_items_absolute(int, int) [16]
+[15]     0.2    0.00    8.90       1         TS_Counter::count_items_serial() [15]
+                0.00    8.90       1/1           TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+                0.00    0.00       1/1           TS_Counter::large_items() [49]
+-----------------------------------------------
+                0.00    8.90       1/1           Miner::discover(bool) [1]
+[16]     0.2    0.00    8.90       1         TS_Counter::count_items_absolute(int, int) [16]
+                0.00    8.90       1/1           TS_Counter::count_items_serial() [15]
+-----------------------------------------------
+                0.00    8.90       1/1           TS_Counter::count_items_serial() [15]
+[17]     0.2    0.00    8.90       1         TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+                0.88    8.02       1/1           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+                0.00    0.00   17700/113570858     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.00       1/139001060     std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [13]
+                0.00    0.00       1/1           char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) [1172]
+                0.00    0.00       1/1           KDCI::Data::Data(Transaction_Set&) [1167]
+-----------------------------------------------
+                0.88    8.02       1/1           TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+[18]     0.2    0.88    8.02       1         KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+                0.03    6.87  478603/478603      KDCI::Data::getNextTransaction(Transaction&) [19]
+                0.57    0.00 58202610/121447108     std::vector<int, std::allocator<int> >::size() const [25]
+                0.54    0.00 56766792/113570858     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.00  478602/478602      std::vector<unsigned int, std::allocator<unsigned int> >::size() const [1103]
+                0.00    0.00  478602/478602      std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int) [1104]
+                0.00    0.00      49/49          std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&) [1113]
+                0.00    0.00       1/1           KDCI::Chronos::StartChronos() [1168]
+                0.00    0.00       1/479567      std::allocator<int>::allocator() [1102]
+                0.00    0.00       1/951         std::allocator<int>::~allocator() [1109]
+                0.00    0.00       1/1           KDCI::dci_items::remap_items(bool) [1169]
+-----------------------------------------------
+                0.03    6.87  478603/478603      KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[19]     0.1    0.03    6.87  478603         KDCI::Data::getNextTransaction(Transaction&) [19]
+                0.02    6.86  478603/957206      Transaction_Set::File_Scanner::read(Transaction&) [11]
+-----------------------------------------------
+                3.38    1.10  478602/478602      Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[20]     0.1    3.38    1.10  478602         Vertical_DB::insert(std::vector<int, std::allocator<int> > const&, int) [20]
+                0.56    0.00 56766792/121447108     std::vector<int, std::allocator<int> >::size() const [25]
+                0.54    0.00 56766792/113570858     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+-----------------------------------------------
+                0.91    2.27  957204/957204      Transaction_Set::File_Scanner::read(Transaction&) [11]
+[21]     0.1    0.91    2.27  957204         Transaction::make_set() [21]
+                2.09    0.00  957204/957204      void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [22]
+                0.18    0.00  957204/957204      void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) [35]
+-----------------------------------------------
+                             9018256             void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [22]
+                2.09    0.00  957204/957204      Transaction::make_set() [21]
+[22]     0.0    2.09    0.00  957204+9018256 void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [22]
+                             9018256             void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int) [22]
+-----------------------------------------------
+                1.75    0.00 6475799/6475799     Miner::discover(bool) [1]
+[23]     0.0    1.75    0.00 6475799         Miner::write_pattern(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&, int) [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.0    1.33    0.00                 __i686.get_pc_thunk.bx [24]
+-----------------------------------------------
+                0.00    0.00       4/121447108     std::vector<int, std::allocator<int> >::resize(unsigned int, int const&) [50]
+                0.00    0.00     940/121447108     Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.06    0.00 6476762/121447108     Miner::discover(bool) [1]
+                0.56    0.00 56766792/121447108     Vertical_DB::insert(std::vector<int, std::allocator<int> > const&, int) [20]
+                0.57    0.00 58202610/121447108     KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[25]     0.0    1.19    0.00 121447108         std::vector<int, std::allocator<int> >::size() const [25]
+-----------------------------------------------
+                0.00    0.00    1874/113570858     Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    0.00   17700/113570858     TS_Counter::large_items() [49]
+                0.00    0.00   17700/113570858     TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+                0.54    0.00 56766792/113570858     Vertical_DB::insert(std::vector<int, std::allocator<int> > const&, int) [20]
+                0.54    0.00 56766792/113570858     KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[26]     0.0    1.09    0.00 113570858         std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+-----------------------------------------------
+                0.12    0.02 1529541/8004482     void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+                0.51    0.09 6474941/8004482     void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+[27]     0.0    0.63    0.12 8004482         __gnu_cxx::slist<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_create_node(std::pair<int, Trie<int>*> const&) [27]
+                0.12    0.00      17/34          boost::pool<boost::default_user_allocator_new_delete>::malloc_need_resize() [33]
+-----------------------------------------------
+                             8004482             Trie<int>::~Trie() [28]
+                0.39    0.26      14/14          Miner::discover(bool) [1]
+[28]     0.0    0.39    0.26      14+8004482 Trie<int>::~Trie() [28]
+                0.26    0.00 8004496/8004497     __gnu_cxx::_Slist_base<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_erase_after(__gnu_cxx::_Slist_node_base*, __gnu_cxx::_Slist_node_base*) [31]
+                             8004482             Trie<int>::~Trie() [28]
+-----------------------------------------------
+                                                 <spontaneous>
+[29]     0.0    0.58    0.00                 Miner::~Miner() [29]
+-----------------------------------------------
+                             1529541             void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+                0.00    0.00    1795/6476736     Miner::discover(bool) [1]
+                0.36    0.18 6474941/6476736     void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+[30]     0.0    0.36    0.18 6476736+1529541 void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+                0.12    0.02 1529541/8004482     __gnu_cxx::slist<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_create_node(std::pair<int, Trie<int>*> const&) [27]
+                0.03    0.00       5/34          boost::pool<boost::default_user_allocator_new_delete>::malloc_need_resize() [33]
+                             1529541             void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+-----------------------------------------------
+                0.00    0.00       1/8004497     __tcf_3 [51]
+                0.26    0.00 8004496/8004497     Trie<int>::~Trie() [28]
+[31]     0.0    0.26    0.00 8004497         __gnu_cxx::_Slist_base<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_erase_after(__gnu_cxx::_Slist_node_base*, __gnu_cxx::_Slist_node_base*) [31]
+-----------------------------------------------
+                0.00    0.00      11/3480272     Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    0.00      50/3480272     Trie<int>::Walk_Tidlist::next() [6]
+                0.00    0.00     937/3480272     Miner::discover(bool) [1]
+                0.24    0.00 3479274/3480272     Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [14]
+[32]     0.0    0.24    0.00 3480272         std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [32]
+-----------------------------------------------
+                0.03    0.00       5/34          void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [30]
+                0.08    0.00      12/34          void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [10]
+                0.12    0.00      17/34          __gnu_cxx::slist<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_create_node(std::pair<int, Trie<int>*> const&) [27]
+[33]     0.0    0.23    0.00      34         boost::pool<boost::default_user_allocator_new_delete>::malloc_need_resize() [33]
+-----------------------------------------------
+                0.05    0.00      13/54          Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [40]
+                0.17    0.00      41/54          Trie<int>::Walk_Tidlist::next() [6]
+[34]     0.0    0.22    0.00      54         std::vector<Trie<int>*, std::allocator<Trie<int>*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Trie<int>**, std::vector<Trie<int>*, std::allocator<Trie<int>*> > >, Trie<int>* const&) [34]
+-----------------------------------------------
+                0.18    0.00  957204/957204      Transaction::make_set() [21]
+[35]     0.0    0.18    0.00  957204         void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) [35]
+-----------------------------------------------
+                0.00    0.00      13/1044        Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [40]
+                0.00    0.00      16/1044        Bit_Vector::Bit_Vector(int) [48]
+                0.01    0.00      78/1044        Bit_Vector::intersect(Bit_Vector const&, Bit_Vector&) [7]
+                0.15    0.00     937/1044        Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[36]     0.0    0.17    0.00    1044         std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&) [36]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.0    0.11    0.00                 boost::details::pool::singleton_default<boost::singleton_pool<boost::fast_pool_allocator_tag, 8u, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u>::pool_type>::instance() [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[38]     0.0    0.09    0.00                 boost::pool<boost::default_user_allocator_new_delete>::ordered_malloc(unsigned int) [38]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.0    0.09    0.00                 Vertical_DB::sort_decreasing_freq(std::vector<int, std::allocator<int> >&) [39]
+-----------------------------------------------
+                0.00    0.06      13/13          Miner::discover(bool) [1]
+[40]     0.0    0.00    0.06      13         Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [40]
+                0.05    0.00      13/54          std::vector<Trie<int>*, std::allocator<Trie<int>*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Trie<int>**, std::vector<Trie<int>*, std::allocator<Trie<int>*> > >, Trie<int>* const&) [34]
+                0.00    0.00      13/1044        std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&) [36]
+                0.00    0.00      13/14          std::vector<Bit_Vector, std::allocator<Bit_Vector> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Bit_Vector*, std::vector<Bit_Vector, std::allocator<Bit_Vector> > >, unsigned int, Bit_Vector const&) [1114]
+                0.00    0.00      13/54          std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > >::_M_insert_aux(__gnu_cxx::__normal_iterator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>*, std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > > >, __gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> const&) [1112]
+-----------------------------------------------
+                                                 <spontaneous>
+[41]     0.0    0.02    0.00                 std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.0    0.02    0.00                 void std::partial_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) [42]
+-----------------------------------------------
+                0.02    0.00  478604/478604      Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[43]     0.0    0.02    0.00  478604         Transaction_Set::File_Scanner::end() [43]
+-----------------------------------------------
+                0.01    0.00      15/15          Miner::discover(bool) [1]
+[44]     0.0    0.01    0.00      15         Trie<int>::Trie() [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.0    0.01    0.00                 Transaction_Set::Buffer_Scanner::end() [45]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.0    0.01    0.00                 std::basic_ostream<char, std::char_traits<char> >& Utility::operator<< <int, std::allocator<int> >(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&) [46]
+-----------------------------------------------
+                                                 <spontaneous>
+[47]     0.0    0.01    0.00                 __tcf_1 [47]
+-----------------------------------------------
+                0.00    0.00       3/16          Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    0.00      13/16          Miner::discover(bool) [1]
+[48]     0.0    0.00    0.00      16         Bit_Vector::Bit_Vector(int) [48]
+                0.00    0.00      16/1044        std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&) [36]
+-----------------------------------------------
+                0.00    0.00       1/1           TS_Counter::count_items_serial() [15]
+[49]     0.0    0.00    0.00       1         TS_Counter::large_items() [49]
+                0.00    0.00   17700/113570858     std::vector<int, std::allocator<int> >::operator[](unsigned int) [26]
+                0.00    0.00     937/937         std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::insert_unique(int const&) [1110]
+-----------------------------------------------
+                0.00    0.00       2/2           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[50]     0.0    0.00    0.00       2         std::vector<int, std::allocator<int> >::resize(unsigned int, int const&) [50]
+                0.00    0.00       2/139001060     std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&) [13]
+                0.00    0.00       4/121447108     std::vector<int, std::allocator<int> >::size() const [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[51]     0.0    0.00    0.00                 __tcf_3 [51]
+                0.00    0.00       1/8004497     __gnu_cxx::_Slist_base<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_erase_after(__gnu_cxx::_Slist_node_base*, __gnu_cxx::_Slist_node_base*) [31]
+-----------------------------------------------
+                0.00    0.00       1/479567      KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+                0.00    0.00       2/479567      Graph::Graph() [1122]
+                0.00    0.00       5/479567      TS_Counter::TS_Counter(Transaction_Set&, bool) [1162]
+                0.00    0.00     950/479567      Miner::discover(bool) [1]
+                0.00    0.00  478609/479567      Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[1102]   0.0    0.00    0.00  479567         std::allocator<int>::allocator() [1102]
+-----------------------------------------------
+                0.00    0.00  478602/478602      KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[1103]   0.0    0.00    0.00  478602         std::vector<unsigned int, std::allocator<unsigned int> >::size() const [1103]
+-----------------------------------------------
+                0.00    0.00  478602/478602      KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[1104]   0.0    0.00    0.00  478602         std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int) [1104]
+-----------------------------------------------
+                0.00    0.00      67/11025       void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq) [1174]
+                0.00    0.00    3086/11025       Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    0.00    7872/11025       void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq) [1176]
+[1105]   0.0    0.00    0.00   11025         Vertical_DB::Greater_Freq::operator()(int, int) [1105]
+-----------------------------------------------
+                0.00    0.00    1795/1795        Trie<int>::Walk_Tidlist::next() [6]
+[1106]   0.0    0.00    0.00    1795         std::vector<unsigned long, std::allocator<unsigned long> >::operator=(std::vector<unsigned long, std::allocator<unsigned long> > const&) [1106]
+-----------------------------------------------
+                0.00    0.00    1041/1041        std::vector<Bit_Vector, std::allocator<Bit_Vector> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Bit_Vector*, std::vector<Bit_Vector, std::allocator<Bit_Vector> > >, unsigned int, Bit_Vector const&) [1114]
+[1107]   0.0    0.00    0.00    1041         void std::_Construct<Bit_Vector, Bit_Vector>(Bit_Vector*, Bit_Vector const&) [1107]
+-----------------------------------------------
+                0.00    0.00     969/969         Miner::discover(bool) [1]
+[1108]   0.0    0.00    0.00     969         std::vector<int, std::allocator<int> >::~vector() [1108]
+-----------------------------------------------
+                0.00    0.00       1/951         KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+                0.00    0.00     950/951         Miner::discover(bool) [1]
+[1109]   0.0    0.00    0.00     951         std::allocator<int>::~allocator() [1109]
+-----------------------------------------------
+                0.00    0.00     937/937         TS_Counter::large_items() [49]
+[1110]   0.0    0.00    0.00     937         std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::insert_unique(int const&) [1110]
+                0.00    0.00     937/937         std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) [1111]
+-----------------------------------------------
+                0.00    0.00     937/937         std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::insert_unique(int const&) [1110]
+[1111]   0.0    0.00    0.00     937         std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) [1111]
+-----------------------------------------------
+                0.00    0.00      13/54          Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [40]
+                0.00    0.00      41/54          Trie<int>::Walk_Tidlist::next() [6]
+[1112]   0.0    0.00    0.00      54         std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > >::_M_insert_aux(__gnu_cxx::__normal_iterator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>*, std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > > >, __gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> const&) [1112]
+-----------------------------------------------
+                0.00    0.00      49/49          KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[1113]   0.0    0.00    0.00      49         std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&) [1113]
+-----------------------------------------------
+                0.00    0.00       1/14          Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    0.00      13/14          Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [40]
+[1114]   0.0    0.00    0.00      14         std::vector<Bit_Vector, std::allocator<Bit_Vector> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Bit_Vector*, std::vector<Bit_Vector, std::allocator<Bit_Vector> > >, unsigned int, Bit_Vector const&) [1114]
+                0.00    0.00    1041/1041        void std::_Construct<Bit_Vector, Bit_Vector>(Bit_Vector*, Bit_Vector const&) [1107]
+-----------------------------------------------
+                0.00    0.00      13/13          Miner::discover(bool) [1]
+[1115]   0.0    0.00    0.00      13         std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base() [1115]
+-----------------------------------------------
+                                  27             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [1116]
+                0.00    0.00       9/9           TS_Counter::~TS_Counter() [1163]
+[1116]   0.0    0.00    0.00       9+27      std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [1116]
+                                  27             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [1116]
+-----------------------------------------------
+                0.00    0.00       6/6           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[1117]   0.0    0.00    0.00       6         std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&) [1117]
+-----------------------------------------------
+                0.00    0.00       4/4           Miner::discover(bool) [1]
+[1118]   0.0    0.00    0.00       4         Utility::Wall_Time::operator-(Utility::Wall_Time) const [1118]
+-----------------------------------------------
+                0.00    0.00       3/3           Getopt::get_options(int, char**, Getopt::Options&) [1171]
+[1119]   0.0    0.00    0.00       3         std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [1119]
+-----------------------------------------------
+                0.00    0.00       1/2           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+                0.00    0.00       1/2           KDCI::Data::Data(Transaction_Set&) [1167]
+[1120]   0.0    0.00    0.00       2         Transaction_Set::gen_scanner() [1120]
+                0.00    0.00       2/2           Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&) [1121]
+-----------------------------------------------
+                0.00    0.00       2/2           Transaction_Set::gen_scanner() [1120]
+[1121]   0.0    0.00    0.00       2         Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&) [1121]
+-----------------------------------------------
+                0.00    0.00       2/2           TS_Counter::TS_Counter(Transaction_Set&, bool) [1162]
+[1122]   0.0    0.00    0.00       2         Graph::Graph() [1122]
+                0.00    0.00       2/479567      std::allocator<int>::allocator() [1102]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1123]   0.0    0.00    0.00       1         global constructors keyed to _Z15kdci_first_scanR15Transaction_SetiRjS1_ [1123]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1147]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1124]   0.0    0.00    0.00       1         global constructors keyed to _Z23vertex_induced_subgraphR5GraphSt3setIiSt4lessIiESaIiEES0_ [1124]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1154]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1125]   0.0    0.00    0.00       1         global constructors keyed to _ZN10TS_Counter17estimate_load_allENS_18Load_Estimate_FuncE [1125]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1148]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1126]   0.0    0.00    0.00       1         global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE [1126]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1150]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1127]   0.0    0.00    0.00       1         global constructors keyed to _ZN11Vertical_DBC2Ev [1127]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1145]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1128]   0.0    0.00    0.00       1         global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE [1128]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1149]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1129]   0.0    0.00    0.00       1         global constructors keyed to _ZN15Undir_Mtx_Graph5statsEv [1129]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1153]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1130]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI16print_statisticsEPciiid [1130]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1161]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1131]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI21candidate_check_countE [1131]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1159]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1132]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set [1132]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1158]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1133]   0.0    0.00    0.00       1         global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv [1133]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1160]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1134]   0.0    0.00    0.00       1         global constructors keyed to _ZN5GraphC2Ej [1134]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1151]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1135]   0.0    0.00    0.00       1         global constructors keyed to _ZN5MinerC2ERKSsN11Transaction11File_FormatEb [1135]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1144]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1136]   0.0    0.00    0.00       1         global constructors keyed to _ZN6Getopt11get_optionsEiPPcRNS_7OptionsE [1136]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1146]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1137]   0.0    0.00    0.00       1         global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii [1137]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1156]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1138]   0.0    0.00    0.00       1         global constructors keyed to _ZN9Broadcast10one_to_allEPiii [1138]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1157]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1139]   0.0    0.00    0.00       1         global constructors keyed to _ZN9UT_MatrixC2Ei [1139]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1152]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1140]   0.0    0.00    0.00       1         global constructors keyed to main [1140]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1143]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [1992]
+[1141]   0.0    0.00    0.00       1         global constructors keyed to num_processors [1141]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [1155]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[1142]   0.0    0.00    0.00       1         initialize(bool) [1142]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to main [1140]
+[1143]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1143]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN5MinerC2ERKSsN11Transaction11File_FormatEb [1135]
+[1144]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1144]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN11Vertical_DBC2Ev [1127]
+[1145]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1145]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN6Getopt11get_optionsEiPPcRNS_7OptionsE [1136]
+[1146]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1146]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _Z15kdci_first_scanR15Transaction_SetiRjS1_ [1123]
+[1147]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1147]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN10TS_Counter17estimate_load_allENS_18Load_Estimate_FuncE [1125]
+[1148]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1148]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE [1128]
+[1149]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1149]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE [1126]
+[1150]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1150]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN5GraphC2Ej [1134]
+[1151]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1151]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN9UT_MatrixC2Ei [1139]
+[1152]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1152]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN15Undir_Mtx_Graph5statsEv [1129]
+[1153]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1153]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _Z23vertex_induced_subgraphR5GraphSt3setIiSt4lessIiESaIiEES0_ [1124]
+[1154]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1154]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to num_processors [1141]
+[1155]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1155]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii [1137]
+[1156]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1156]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN9Broadcast10one_to_allEPiii [1138]
+[1157]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1157]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set [1132]
+[1158]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1158]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI21candidate_check_countE [1131]
+[1159]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1159]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv [1133]
+[1160]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1160]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to _ZN4KDCI16print_statisticsEPciiid [1130]
+[1161]   0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [1161]
+-----------------------------------------------
+                0.00    0.00       1/1           Miner::discover(bool) [1]
+[1162]   0.0    0.00    0.00       1         TS_Counter::TS_Counter(Transaction_Set&, bool) [1162]
+                0.00    0.00       5/479567      std::allocator<int>::allocator() [1102]
+                0.00    0.00       2/2           Graph::Graph() [1122]
+                0.00    0.00       1/1           Transaction_Set::Transaction_Set(Transaction_Set::Representation, Transaction::File_Format) [1165]
+-----------------------------------------------
+                0.00    0.00       1/1           Miner::discover(bool) [1]
+[1163]   0.0    0.00    0.00       1         TS_Counter::~TS_Counter() [1163]
+                0.00    0.00       9/9           std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [1116]
+-----------------------------------------------
+                0.00    0.00       1/1           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[1164]   0.0    0.00    0.00       1         Transaction_Set::File_Scanner::~File_Scanner() [1164]
+-----------------------------------------------
+                0.00    0.00       1/1           TS_Counter::TS_Counter(Transaction_Set&, bool) [1162]
+[1165]   0.0    0.00    0.00       1         Transaction_Set::Transaction_Set(Transaction_Set::Representation, Transaction::File_Format) [1165]
+-----------------------------------------------
+                0.00    0.00       1/1           Miner::Miner(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format, bool) [1170]
+[1166]   0.0    0.00    0.00       1         Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format) [1166]
+-----------------------------------------------
+                0.00    0.00       1/1           TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+[1167]   0.0    0.00    0.00       1         KDCI::Data::Data(Transaction_Set&) [1167]
+                0.00    0.00       1/2           Transaction_Set::gen_scanner() [1120]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[1168]   0.0    0.00    0.00       1         KDCI::Chronos::StartChronos() [1168]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [18]
+[1169]   0.0    0.00    0.00       1         KDCI::dci_items::remap_items(bool) [1169]
+                0.00    0.00       1/1           void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [1175]
+                0.00    0.00       1/1           void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort) [1173]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[1170]   0.0    0.00    0.00       1         Miner::Miner(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format, bool) [1170]
+                0.00    0.00       1/1           Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format) [1166]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[1171]   0.0    0.00    0.00       1         Getopt::get_options(int, char**, Getopt::Options&) [1171]
+                0.00    0.00       3/3           std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [1119]
+-----------------------------------------------
+                0.00    0.00       1/1           TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [17]
+[1172]   0.0    0.00    0.00       1         char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) [1172]
+-----------------------------------------------
+                0.00    0.00       1/1           KDCI::dci_items::remap_items(bool) [1169]
+[1173]   0.0    0.00    0.00       1         void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort) [1173]
+-----------------------------------------------
+                0.00    0.00       1/1           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[1174]   0.0    0.00    0.00       1         void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq) [1174]
+                0.00    0.00      67/11025       Vertical_DB::Greater_Freq::operator()(int, int) [1105]
+-----------------------------------------------
+                                1721             void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [1175]
+                0.00    0.00       1/1           KDCI::dci_items::remap_items(bool) [1169]
+[1175]   0.0    0.00    0.00       1+1721    void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [1175]
+                                1721             void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort) [1175]
+-----------------------------------------------
+                                 103             void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq) [1176]
+                0.00    0.00       1/1           Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [12]
+[1176]   0.0    0.00    0.00       1+103     void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq) [1176]
+                0.00    0.00    7872/11025       Vertical_DB::Greater_Freq::operator()(int, int) [1105]
+                                 103             void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq) [1176]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+ [1123] global constructors keyed to _Z15kdci_first_scanR15Transaction_SetiRjS1_ (Count.cxx) [49] TS_Counter::large_items() [1171] Getopt::get_options(int, char**, Getopt::Options&)
+ [1124] global constructors keyed to _Z23vertex_induced_subgraphR5GraphSt3setIiSt4lessIiESaIiEES0_ (Vertex_Induced_Subgraph.cxx) [15] TS_Counter::count_items_serial() [46] std::basic_ostream<char, std::char_traits<char> >& Utility::operator<< <int, std::allocator<int> >(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&)
+ [1125] global constructors keyed to _ZN10TS_Counter17estimate_load_allENS_18Load_Estimate_FuncE (Load_Estimate.cxx) [17] TS_Counter::count_1_items_local(std::vector<int, std::allocator<int> >&) [31] __gnu_cxx::_Slist_base<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_erase_after(__gnu_cxx::_Slist_node_base*, __gnu_cxx::_Slist_node_base*)
+ [1126] global constructors keyed to _ZN11Transaction13read_unsortedERSiNS_11File_FormatE (Transaction.cxx) [16] TS_Counter::count_items_absolute(int, int) [27] __gnu_cxx::slist<std::pair<int, Trie<int>*>, boost::fast_pool_allocator<std::pair<int, Trie<int>*>, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u> >::_M_create_node(std::pair<int, Trie<int>*> const&)
+ [1127] global constructors keyed to _ZN11Vertical_DBC2Ev (Vertical_DB.cxx) [1162] TS_Counter::TS_Counter(Transaction_Set&, bool) [1118] Utility::Wall_Time::operator-(Utility::Wall_Time) const
+ [1128] global constructors keyed to _ZN15Transaction_SetC2ENS_14RepresentationEN11Transaction11File_FormatE (Transaction_Set.cxx) [1163] TS_Counter::~TS_Counter() [25] std::vector<int, std::allocator<int> >::size() const
+ [1129] global constructors keyed to _ZN15Undir_Mtx_Graph5statsEv (Mtx_Graph.cxx) [14] Transaction::read_unsorted(std::basic_istream<char, std::char_traits<char> >&, Transaction::File_Format) [1103] std::vector<unsigned int, std::allocator<unsigned int> >::size() const
+ [1130] global constructors keyed to _ZN4KDCI16print_statisticsEPciiid (utils.cc) [21] Transaction::make_set() [1102] std::allocator<int>::allocator()
+ [1131] global constructors keyed to _ZN4KDCI21candidate_check_countE (fim_all.cc) [1105] Vertical_DB::Greater_Freq::operator()(int, int) [1109] std::allocator<int>::~allocator()
+ [1132] global constructors keyed to _ZN4KDCI4DataC2ER15Transaction_Set (database.cc) [39] Vertical_DB::sort_decreasing_freq(std::vector<int, std::allocator<int> >&) [1172] char* std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag)
+ [1133] global constructors keyed to _ZN4KDCI9dci_items19init_global_pruningEv (items.cc) [20] Vertical_DB::insert(std::vector<int, std::allocator<int> > const&, int) [1115] std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
+ [1134] global constructors keyed to _ZN5GraphC2Ej (Graph.cxx) [12] Vertical_DB::Vertical_DB(std::set<int, std::less<int>, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&, int, int, Transaction_Set&) [1114] std::vector<Bit_Vector, std::allocator<Bit_Vector> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Bit_Vector*, std::vector<Bit_Vector, std::allocator<Bit_Vector> > >, unsigned int, Bit_Vector const&)
+ [1135] global constructors keyed to _ZN5MinerC2ERKSsN11Transaction11File_FormatEb (Miner.cxx) [1120] Transaction_Set::gen_scanner() [1113] std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> >::_M_fill_insert(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, unsigned int, KDCI::dci_item const&)
+ [1136] global constructors keyed to _ZN6Getopt11get_optionsEiPPcRNS_7OptionsE (Getopt.cxx) [43] Transaction_Set::File_Scanner::end() [1112] std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > >::_M_insert_aux(__gnu_cxx::__normal_iterator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>*, std::vector<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*>, std::allocator<__gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> > > >, __gnu_cxx::_Slist_iterator<std::pair<int, Trie<int>*>, std::pair<int, Trie<int>*>&, std::pair<int, Trie<int>*>*> const&)
+ [1137] global constructors keyed to _ZN8Personal12send_receiveERSt6vectorIiSaIiEEiS3_iii (Personal.cxx) [11] Transaction_Set::File_Scanner::read(Transaction&) [34] std::vector<Trie<int>*, std::allocator<Trie<int>*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Trie<int>**, std::vector<Trie<int>*, std::allocator<Trie<int>*> > >, Trie<int>* const&)
+ [1138] global constructors keyed to _ZN9Broadcast10one_to_allEPiii (Broadcast.cxx) [1121] Transaction_Set::File_Scanner::File_Scanner(Transaction_Set&) [1119] std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+ [1139] global constructors keyed to _ZN9UT_MatrixC2Ei (UT_Matrix.cxx) [1164] Transaction_Set::File_Scanner::~File_Scanner() [32] std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+ [1140] global constructors keyed to main (freq-bitdrill.cxx) [45] Transaction_Set::Buffer_Scanner::end() [13] std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned int, int const&)
+ [1141] global constructors keyed to num_processors (Parallel.cxx) [1165] Transaction_Set::Transaction_Set(Transaction_Set::Representation, Transaction::File_Format) [50] std::vector<int, std::allocator<int> >::resize(unsigned int, int const&)
+ [1142] initialize(bool)    [1166] Transaction_Set::Transaction_Set(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format) [1117] std::vector<int, std::allocator<int> >::vector(std::allocator<int> const&)
+ [1143] __static_initialization_and_destruction_0(int, int) (freq-bitdrill.cxx) [18] KDCI::first_scan(KDCI::Data*, KDCI::dci_items&, unsigned int&, bool) [1108] std::vector<int, std::allocator<int> >::~vector()
+ [1144] __static_initialization_and_destruction_0(int, int) (Miner.cxx) [19] KDCI::Data::getNextTransaction(Transaction&) [41] std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&)
+ [1145] __static_initialization_and_destruction_0(int, int) (Vertical_DB.cxx) [1167] KDCI::Data::Data(Transaction_Set&) [26] std::vector<int, std::allocator<int> >::operator[](unsigned int)
+ [1146] __static_initialization_and_destruction_0(int, int) (Getopt.cxx) [1168] KDCI::Chronos::StartChronos() [1104] std::vector<unsigned int, std::allocator<unsigned int> >::operator[](unsigned int)
+ [1147] __static_initialization_and_destruction_0(int, int) (Count.cxx) [1169] KDCI::dci_items::remap_items(bool) [36] std::vector<unsigned long, std::allocator<unsigned long> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned int, unsigned long const&)
+ [1148] __static_initialization_and_destruction_0(int, int) (Load_Estimate.cxx) [6] Trie<int>::Walk_Tidlist::next() [1106] std::vector<unsigned long, std::allocator<unsigned long> >::operator=(std::vector<unsigned long, std::allocator<unsigned long> > const&)
+ [1149] __static_initialization_and_destruction_0(int, int) (Transaction_Set.cxx) [40] Trie<int>::Walk_Tidlist::Walk_Tidlist(Trie<int>*, Vertical_DB&, int) [1110] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::insert_unique(int const&)
+ [1150] __static_initialization_and_destruction_0(int, int) (Transaction.cxx) [5] Trie<int>::check_supports(std::vector<int, std::allocator<int> > const&) [1116] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*)
+ [1151] __static_initialization_and_destruction_0(int, int) (Graph.cxx) [8] bool Trie<int>::query_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [1111] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&)
+ [1152] __static_initialization_and_destruction_0(int, int) (UT_Matrix.cxx) [10] void Trie<int>::insert_iterator<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [1107] void std::_Construct<Bit_Vector, Bit_Vector>(Bit_Vector*, Bit_Vector const&)
+ [1153] __static_initialization_and_destruction_0(int, int) (Mtx_Graph.cxx) [30] void Trie<int>::insert_newbranch<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) [42] void std::partial_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+ [1154] __static_initialization_and_destruction_0(int, int) (Vertex_Induced_Subgraph.cxx) [44] Trie<int>::Trie() [1173] void std::__insertion_sort<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, KDCI::AscendingItemsSort)
+ [1155] __static_initialization_and_destruction_0(int, int) (Parallel.cxx) [28] Trie<int>::~Trie() [35] void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)
+ [1156] __static_initialization_and_destruction_0(int, int) (Personal.cxx) [1122] Graph::Graph() [1174] void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq)
+ [1157] __static_initialization_and_destruction_0(int, int) (Broadcast.cxx) [23] Miner::write_pattern(std::basic_ostream<char, std::char_traits<char> >&, std::vector<int, std::allocator<int> > const&, int) [1175] void std::__introsort_loop<__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort>(__gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, __gnu_cxx::__normal_iterator<KDCI::dci_item*, std::vector<KDCI::dci_item, std::allocator<KDCI::dci_item> > >, int, KDCI::AscendingItemsSort)
+ [1158] __static_initialization_and_destruction_0(int, int) (database.cc) [3] Miner::discover_absolute(int, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, int) [22] void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int)
+ [1159] __static_initialization_and_destruction_0(int, int) (fim_all.cc) [1] Miner::discover(bool) [1176] void std::__introsort_loop<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, Vertical_DB::Greater_Freq)
+ [1160] __static_initialization_and_destruction_0(int, int) (items.cc) [1170] Miner::Miner(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transaction::File_Format, bool) [9] __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::merge<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int*, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, Vertical_DB::Greater_Freq)
+ [1161] __static_initialization_and_destruction_0(int, int) (utils.cc) [29] Miner::~Miner() [24] __i686.get_pc_thunk.bx
+   [4] Bit_Vector::count_intersection(Bit_Vector const&) [38] boost::pool<boost::default_user_allocator_new_delete>::ordered_malloc(unsigned int) [47] __tcf_1 (singleton.hpp)
+   [7] Bit_Vector::intersect(Bit_Vector const&, Bit_Vector&) [33] boost::pool<boost::default_user_allocator_new_delete>::malloc_need_resize()
+  [48] Bit_Vector::Bit_Vector(int) [37] boost::details::pool::singleton_default<boost::singleton_pool<boost::fast_pool_allocator_tag, 8u, boost::default_user_allocator_new_delete, boost::details::pool::pthread_mutex, 32u>::pool_type>::instance()
