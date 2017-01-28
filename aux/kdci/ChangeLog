@@ -1,0 +1,10 @@
+16.28 11/11/2003
+
+"DA" stata structure is introduced for a fast DCP for the 3rd iteration.
+"DA" had been added both in "frequent_itemsets" and "DCP_candidates",
+but with different meaning. In "frequent itemset" it's used
+to retrive fast (direct_position) the position of an itemset 2 items long.
+in "DCP_candidates" it's used to obatain the position of the first 3-candidate
+with a given prefix (i0, i1).
+"subset_and_count" with "scan_candidates3" have been changed accordingly
+to the "brasilian way ...."

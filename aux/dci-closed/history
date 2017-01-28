@@ -1,0 +1,69 @@
+TODO 
++ nessuna tripla e' frequent o nessuna coppia ?
+
++ syncrho output
+
++ sistemare la pulizia dei file temporanei
+
++ introdurre maximum length
+
+
+
+
++ |F1| non e' incluso nel limite di memoria
++ fissare limit byte kb una volta per tutte
+
++ se la proiezione sul singolo item non entra in memoria ?? !!!
+
++ optimal partitioning ?
++ partial_tri_upper as type long as indices
++ controllare se l'output sia completo
++ aggiustare statistiche bytes included in tidlist macros
++ remove dataset kind
++  velocizzare l'output 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2006 October 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++ Tolto un fclose di troppo in fourth_scan
++ non viene fatto il foruth_scan se non è necessairo
++ elapsed time ad ogni scan
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2006 September 27
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+trying to include sse ...
+core dump
+risolto sse incluse ! =)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2006 September 14
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+command ./fim_closed.exe ../../../../datasets/pumsb_star.dat 11000 o 300
+Fixed sbagliato numero di closed itemsets : tolto index_init in second scan
+passare ub e lb dal tipo int al tipo T
+
+**********
+*  DONE  *
+**********
+
+se la tabella delle statistiche non entra
+in memoria, multiple scans
+
+**********
+*  DONE  *
+**********
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2006 September 13
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+sistemato partial tri matrix
+command ./fim_closed.exe ../../../../datasets/pumsb_star.dat 11000 o 300
+
+
+
+
