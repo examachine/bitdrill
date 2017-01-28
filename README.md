@@ -16,4 +16,8 @@ Please cite it if you use it in your research.
 
 We are making this tool publicly available for the sake of sharing our results with the data mining community. Thanks a lot to the researchers in the data mining and parallel computing community who read our work and cited the paper. We are likely going to release the parallel version, as well, but it needs a bit of a cleanup.
 
+Just using make should build everything, but to avoid the compilation of auxiliary tools and everything you might want to try:
+$ make programs
+
 Eray Ozkural, PhD
+
