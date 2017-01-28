@@ -1,0 +1,31 @@
+
+
+1. Fast candidate generation using prefix trees to store itemsets
+
+
+
+Suppose trie
+
+     |--- c
+     |
+a -- b -- e
+  |
+  |- c -- e
+
+b -- c -- e
+
+
+How to generate candidate a b c e? All length-3 subsets must be available.
+thus we should have b c e, a b c, a c e, a b e. Due to the downward closure
+property, if there is a valid k-length candidate, then there are two 
+k-1 length frequent subsets of it that share the first k-2 items in the 
+order of the prefix tree. The candidate generation can thus always be made 
+at the leaves of the trie while traversing the trie. For each frequent
+itemset in the prefix tree, we simply merge it with the siblings of the 
+leaf item in the tree.  
+
+In the example, after a b c and a b e are merged to yield candidate itemset
+a b c e, we can also check for one or two k-1 length other subsets of the
+candidate itemset chosen randomly to verify support. In dense itemsets, 
+this should be enough since most of the candidate itemsets thus constructed
+will be frequent.
