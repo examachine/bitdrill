@@ -1,0 +1,37 @@
+
+# default build arguments, can be overridden
+ifndef DEBUG
+LAMARGS=n1-24
+else
+LAMARGS=
+endif
+
+MPIRUN=mpirun -O $(LAMARGS)
+
+# list of processor numbers to compute speedup for
+ifndef PROCESSOR_NUMS
+ $(warning "processor numbers must be given");
+PROCESSOR_NUMS = 4 8 12 16 20 24
+endif
+
+ifndef NUM_PROCESSORS
+NUM_PROCESSORS=4
+endif
+
+ifndef SUPPORT_THRESHOLD
+SUPPORT_THRESHOLD=0.0025
+endif
+
+# convenience shortcuts
+ifdef PN
+PROCESSOR_NUMS=$(PN)
+endif
+ifdef P
+NUM_PROCESSORS=$(P)
+endif
+ifdef S
+SUPPORT_THRESHOLD=$(S)
+endif
+
+# by default load estimate function 0 is used.0,1 and 2 are valid.
+LOAD_ESTIMATE=0

@@ -1,0 +1,5 @@
+assoc-gen/T15.I4.1000K.data 1000000 1 0.002 0.003
+assoc-gen/T15.I4.2000K.data 2000000 1 0.002 0.003
+assoc-gen/T20.I6.1000K.data 1000000 1 0.002 0.003
+assoc-gen/T20.I6.2000K.data 2000000 1 0.002 0.003
+assoc-gen/T40.I8.1000K.data 1000000 1 0.003 0.004

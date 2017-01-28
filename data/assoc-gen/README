@@ -1,0 +1,4 @@
+This directory contains experiments using parfreq code.
+
+By default it will take runs for all datasets using
+given parameters.

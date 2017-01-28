@@ -1,0 +1,35 @@
+# -*-makefile-*-
+# generate experiments
+
+include Makefile.dirs
+include Makefile.args
+
+# targets
+
+experiments= $(wildcard *.exp)
+data = $(patsubst %.exp,%.data,$(experiments))
+
+all: $(data)
+
+clean:
+	@echo Cleaning experiment output
+	@-rm -f *.data.* *.pat *.out log.*
+
+realclean: clean
+	@echo Cleaning data
+	@-rm -f *.data
+
+test: $(data)
+	@echo $(experiments)
+	@echo $(data)
+
+.PHONY:	clean test
+
+# pattern rules
+
+# generate data
+
+%.data: %.exp
+	echo Generating dataset $@
+	gen lit $(shell cat $<) -ascii -fname $(subst .data,,$@)
+

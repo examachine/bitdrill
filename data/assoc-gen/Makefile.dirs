@@ -1,0 +1,8 @@
+# -*-makefile-*
+
+pwd:=$(shell pwd)
+
+ifndef top_srcdir
+top_srcdir=../..
+PATH:=$(PATH):$(top_srcdir)/bin:$(top_srcdir)/aux/ibm-datagen:$(pwd)
+endif

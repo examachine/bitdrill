@@ -1,0 +1,9 @@
+aux/chess.dat 3196 0.3 0.35 0.4 0.45
+aux/connect.dat 67557 0.55 0.6 0.65 0.7
+aux/pumsb.dat 49046 0.6 0.65 0.7 0.75
+assoc-gen/T10.I4.2084K.data 2084000 0.0025 0.003 0.0035 0.0045
+assoc-gen/T15.I4.1471K.data 1471000
+assoc-gen/T20.I6.1137K.data 1137000
+aux/bms-pos.data 515597 0.0002 0.0004 0.0007 0.001
+aux/accidents.dat 340183 0.1 0.2 0.3 0.4
+aux/T40I10D100K.dat 100000 0.004 0.005 0.006 0.0075

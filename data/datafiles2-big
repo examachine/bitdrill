@@ -1,0 +1,8 @@
+assoc-gen/T40.I8.2000K.data  3 1 4000
+assoc-gen/T60.I10.2000K.data 3 6 5000
+real/user-likesmovies.fimi 3 5 20000
+real/trec.fimi 3 5 200000 150000
+real/movie-userslike.fimi 3 5 600 
+real/user-likesmovies.lp.20000.fimi 2 5 5000 4000
+real/user-likesmovies.lp.20000.fimi 3 6 3000 2000
+real/trec.lp.200000.fimi 3 6 20000

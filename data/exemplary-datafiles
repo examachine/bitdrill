@@ -1,0 +1,6 @@
+aux/google.data 910656 1 0.05  0.1
+aux/crawl.data   1883037 1 0.05 0.5
+aux/webdocs.data 1692082 1 0.09 0.175
+assoc-gen/T15.I4.8000K.data 8000000 8  0.0005 0.00125
+assoc-gen/T20.I6.6000K.data 6000000 8  0.00075 0.00125
+assoc-gen/T40.I8.4000K.data 4000000 4  0.0015 0.003

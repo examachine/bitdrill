@@ -1,0 +1,2 @@
+test1, -ntrans 1 -tlen 8 -nitems 1 -npats 8 -patlen 3
+test2, -ntrans 1 -tlen 10 -nitems 1 -npats 16 -patlen 4

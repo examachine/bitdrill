@@ -1,0 +1,4 @@
+T15.I4.4000K, -ntrans 4000 -tlen 15 -patlen 4 -nitems 6
+T20.I6.3000K, -ntrans 3000 -tlen 20 -patlen 6 -nitems 6
+T40.I8.2000K, -ntrans 2000 -tlen 40 -patlen 8 -nitems 6
+T60.I10.2000K, -ntrans 2000 -tlen 60 -patlen 10 -nitems 6

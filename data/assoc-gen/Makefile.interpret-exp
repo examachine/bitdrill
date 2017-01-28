@@ -1,0 +1,46 @@
+# -*-makefile-*-
+# experiment programs
+# each .experiment file denotes a set of experiments
+
+#.SUFFIXES: .exps-sh .dep .experiments
+
+include Makefile.dirs
+
+experiments= $(wildcard *.experiments)
+strip-exp=$(shell gawk 'BEGIN { FS = "," } ; { print $$1 ".exp"; }' $1)
+exps= $(foreach experiment,$(experiments),$(call strip-exp,$(experiment)))
+exps-sh= $(subst .experiments,.exps-sh,$(experiments))
+gen-exps= $(subst .experiments,,$(experiments))
+exps-dep= $(subst .experiments,.dep,$(experiments))
+
+default: $(exps)
+
+$(exps-dep): %.dep: %.experiments
+	@echo Generating dependencies for experiment $<
+	@$(shell gawk -f gen-deps.awk EXP=$(subst .experiments,,$<) $< >$@)
+
+include $(exps-dep)
+
+$(exps-sh): %.exps-sh : %.experiments
+	@echo Generating experiment parameters for $<
+	@$(shell gawk -f gen-param.awk $< >$@)
+
+$(gen-exps): %: %.exps-sh
+	sh $<
+	touch $@
+
+clean:
+	@echo Cleaning experiments
+	-rm -f exp.sh *.exps-sh $(gen-exps) 
+
+realclean: clean
+	-rm -f *.exp *.conf *.data *.dep
+
+test:
+	@echo experiments = $(experiments)
+	@echo exps = $(exps)
+	@echo exps-sh = $(exps-sh)
+	@echo exps-dep = $(exps-dep)
+	@echo gen-exps = $(gen-exps)
+
+.PHONY:	exp-clean clean realclean test $(gen-exps)

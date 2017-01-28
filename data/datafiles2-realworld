@@ -1,0 +1,4 @@
+real/trec.fimi 3 1 200000 150000
+real/user-likesmovies.fimi 3 1 20000 15000
+real/movie-userslike.fimi 3 1 700 600
+real/crawl.data 3 1 80000 70000 60000
