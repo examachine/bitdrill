@@ -1,0 +1,155 @@
+
+
+****
+**** DATASET SPARSO
+****
+
+
+
+!!!!!!!!!!!!!!!!  ALGORITMO ORIGINALE  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+$ ./fim_all.exe ../../../datasets/T10I4D100K.dat 10 sets.txt
+# Database statistics:
+#       100000 transactions
+#       1000 different items
+#       Max transaction length = 29
+#
+# Min support = 0.01%    Min count   = 10
+
+# DCP   |F1| = 867              (|C1| =1000,  time=0.370000)
+# DCP   |F2| = 110793           (|C2| =375411,  time=0.843000)
+# DCIs  |F3| = 152805           (|C3| =11051970,  time=65.409000)
+# DCIs  |F4| = 80710            (|C4| =1590924,  time=52.337000)
+# DCIs  |F5| = 39954            (|C5| =494035,  time=14.478000)
+# DCIs  |F6| = 16172            (|C6| =150531,  time=5.533000)
+# DCIs  |F7| = 6225             (|C7| =33949,  time=0.094000)
+# DCIs  |F8| = 2473             (|C8| =6733,  time=0.028000)
+# DCIs  |F9| = 954              (|C9| =1338,  time=0.010000)
+# DCIs  |F10| = 318             (|C10| =328,  time=0.005000)
+# DCIs  |F11| = 80              (|C11| =80,  time=0.001000)
+# DCIs  |F12| = 13              (|C12| =13,  time=0.001000)
+# DCIs  |F13| = 1               (|C13| =1,  time=0.000000)
+Total time: 139.255
+
+
+!!!!!!!!!!!!!!!!  ALGORITMO ORIGINALE  solo DCP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+$ ./fim_all.exe ../../../datasets/T10I4D100K.dat 10 sets.txt
+# Database statistics:
+#       100000 transactions
+#       1000 different items
+#       Max transaction length = 29
+#
+# Min support = 0.01%    Min count   = 10
+
+# DCP   |F1| = 867              (|C1| =1000,  time=0.371000)
+# DCP   |F2| = 110793           (|C2| =375411,  time=0.894000)
+# DCP   |F3| = 152805           (|C3| =10940751,  time=10.628000)
+# DCP   |F4| = 80710            (|C4| =155634,  time=2.725000)
+# DCP   |F5| = 39954            (|C5| =40189,  time=0.946000)
+# DCP   |F6| = 16172            (|C6| =16187,  time=0.296000)
+# DCP   |F7| = 6225             (|C7| =6226,  time=0.094000)
+# DCP   |F8| = 2473             (|C8| =2473,  time=0.036000)
+# DCP   |F9| = 954              (|C9| =954,  time=0.013000)
+# DCP   |F10| = 318             (|C10| =318,  time=0.005000)
+# DCP   |F11| = 80              (|C11| =80,  time=0.003000)
+# DCP   |F12| = 13              (|C12| =13,  time=0.002000)
+# DCP   |F13| = 1               (|C13| =1,  time=0.002000)
+Total time: 19.726
+
+
+!!!!!!!!!!!!!!!!  BRASILIANI  solo DCP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+$ ./fim_all.exe ../../../datasets/T10I4D100K.dat 10 sets.txt
+# Database statistics:
+#       100000 transactions
+#       1000 different items
+#       Max transaction length = 29
+#
+# Min support = 0.01%    Min count   = 10
+
+# DCP   |F1| = 867              (|C1| =1000,  time=0.368000)
+# DCP   |F2| = 110793           (|C2| =375411,  time=0.841000)
+# DCP   |F3| = 152805           (|C3| =11051970,  time=5.627000)
+# DCP   |F4| = 80710            (|C4| =155634,  time=2.730000)
+# DCP   |F5| = 39954            (|C5| =40189,  time=0.954000)
+# DCP   |F6| = 16172            (|C6| =16187,  time=0.298000)
+# DCP   |F7| = 6225             (|C7| =6226,  time=0.094000)
+# DCP   |F8| = 2473             (|C8| =2473,  time=0.034000)
+# DCP   |F9| = 954              (|C9| =954,  time=0.013000)
+# DCP   |F10| = 318             (|C10| =318,  time=0.006000)
+# DCP   |F11| = 80              (|C11| =80,  time=0.003000)
+# DCP   |F12| = 13              (|C12| =13,  time=0.002000)
+# DCP   |F13| = 1               (|C13| =1,  time=0.002000)
+Total time: 14.616
+
+
+
+***
+*** DATASET DENSO
+***
+
+!!!!!!!!!!!!!!!!  ALGORITMO ORIGINALE  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+$ ./fim_all.exe ../../../datasets/connect.dat 45000 sets.txt
+# Database statistics:
+#       67557 transactions
+#       130 different items
+#       Max transaction length = 43
+#
+# Min support = 66.6104%    Min count   = 45000
+
+# DCP   |F1| = 32               (|C1| =130,  time=0.812000)
+# DCP   |F2| = 454              (|C2| =496,  time=0.662000)
+# DCIdk |F3| = 3780             (|C3| =3973,  time=0.142000)
+# DCIdk |F4| = 20949            (|C4| =21446,  time=0.290000)
+# DCIdk |F5| = 82876            (|C5| =84083,  time=0.633000)
+# DCIdk |F6| = 244239           (|C6| =246578,  time=1.210000)
+# DCIdk |F7| = 550954           (|C7| =554508,  time=2.338000)
+# DCIdk |F8| = 967831           (|C8| =972228,  time=3.981000)
+# DCIdk |F9| = 1337334          (|C9| =1341745,  time=5.967000)
+# DCIdk |F10| = 1459865         (|C10| =1463293,  time=6.870000)
+# DCIdk |F11| = 1257765         (|C11| =1259715,  time=6.158000)
+# DCIdk |F12| = 849693          (|C12| =850468,  time=4.328000)
+# DCIdk |F13| = 444173          (|C13| =444378,  time=2.354000)
+# DCIdk |F14| = 175695          (|C14| =175729,  time=0.966000)
+# DCIdk |F15| = 50705           (|C15| =50708,  time=0.293000)
+# DCIdk |F16| = 10038           (|C16| =10038,  time=0.061000)
+# DCIdk |F17| = 1213            (|C17| =1213,  time=0.009000)
+# DCIdk |F18| = 67              (|C18| =67,  time=0.001000)
+Total time: 37.255
+
+
+
+!!!!!!!!!!!!!!!!  ALGORITMO ORIGINALE  solo DCP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+$ ./fim_all.exe ../../../datasets/connect.dat 45000 sets.txt
+# Database statistics:
+#       67557 transactions
+#       130 different items
+#       Max transaction length = 43
+#
+# Min support = 66.6104%    Min count   = 45000
+
+# DCP   |F1| = 32               (|C1| =130,  time=1.045000)
+# DCP   |F2| = 454              (|C2| =496,  time=0.705000)
+# DCP   |F3| = 3780             (|C3| =3973,  time=6.972000)
+ ... ... ... ... ... ... ... ... ... ... ... .... ... ... .. .. .
+
+
+!!!!!!!!!!!!!!!!  BRASILIANI  solo DCP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+$ ./fim_all.exe ../../../datasets/connect.dat 45000 sets.txt
+# Database statistics:
+#       67557 transactions
+#       130 different items
+#       Max transaction length = 43
+#
+# Min support = 66.6104%    Min count   = 45000
+
+# DCP   |F1| = 32               (|C1| =130,  time=0.801000)
+# DCP   |F2| = 454              (|C2| =496,  time=0.718000)
+# DCP   |F3| = 3780             (|C3| =3973,  time=8.043000)
+

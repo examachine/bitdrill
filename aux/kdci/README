@@ -1,0 +1,8 @@
+To compile the kDCI++ algorithm for FSC:
+
+	- ./configure
+	- make
+
+this will produce the fim_all in the src/ directory. 
+
+paolo.palmerini@isti.cnr.it
