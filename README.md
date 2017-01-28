@@ -2,7 +2,7 @@
 
 Bitdrill is a high-performance sequential frequent itemset mining tool, library, and assorted tools and bits and pieces.
 
-The algorithm uses kDCI up to level 2, and then uses a vertical mining algorithm which dynamically switches tidlists or a dense representation for items based on sparsity.
+The algorithm uses kDCI up to level 2, and then uses a vertical mining algorithm which dynamically switches between tidlists or a dense representation for items according to sparsity.
 
 The package also includes other sequential miners for comparison and inclusion in a larger framework that permits some algorithmic experimentation. In particular, take a look at the python scripts which might be quite useful when prototyping an algorithm.
 
