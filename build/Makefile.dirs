@@ -1,0 +1,40 @@
+#-*-Makefile-*-
+
+# Directories
+
+
+SUBDIRS = aux/metis aux/ibm-datagen aux/aim aux/kdci aux/lcm \
+aux/eclat-goethals aux/dci-closed aux/rules data/assoc-gen  \
+doc/partitioning doc/performance
+
+# Source and build directories
+
+# Source directory
+srcdir = ./src
+
+# System Resources
+
+INCLUDES = -Isrc -I$(top_srcdir)/aux/metis/Lib -I/sw/include
+LIBDIR = -L$(top_srcdir)/aux/metis
+
+# Directory interdependencies
+
+#doc/partitioning doc/performance: check-ts ts-to-gnuplot part-db
+doc/partitioning: check-ts ts-to-gnuplot part-db
+
+doc/partitioning: aux/ibm-datagen
+
+doc/performance: #plot-perf
+
+#doc/partitioning: data/assoc-gen
+
+data/assoc-gen: aux/ibm-datagen aux/metis
+
+doc: doc/partitioning doc/performance
+
+doc-clean: doc/partitioning-clean doc/performance-clean
+
+.PHONY:	plot-perf doc doc-clean
+
+plot-perf:	
+	cd perf; ./plot.sh

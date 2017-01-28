@@ -1,0 +1,15 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+export PATH:=$(PATH):$(top_srcdir):$(top_srcdir)/bin:$(top_srcdir)/aux/ibm-datagen:$(top_srcdir)/aux/metis:$(top_srcdir)/aux/fpgrowth:$(top_srcdir)/aux/rules:$(top_srcdir)/aux/diffEclat
+
+perf: data/assoc-gen freq-bin
+	cd perf; ./serial-time.py
+
+ebrowse:
+	ebrowse `find . -iname '*.[ch]xx'`
+
+.PHONY:	perf ebrowse
+

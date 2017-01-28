@@ -1,0 +1,234 @@
+# -*- makefile -*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Project files
+
+# Executable files
+PROGRAMS = gen-2-items split-db split-ts \
+freq freq-bin freq-debug freq-kdci 2items-kdci nitems-kdci  \
+freq-bitdrill gen-candidates freq-bitdrill-cand \
+freq-dci-closed analyze-ts estimate-load \
+read-ts check-ts check-patterns \
+ts-to-ascii ts-to-binary ts-to-gnuplot convert-ts\
+test-graph test-structure test-fp-tree \
+sample-freq test-bitdrill
+#freq-aim freq-lcm BUGGY
+#random-ts
+#test-math test-kkstar
+
+# Library files
+LIBRARIES = generic graph 2-items fp-tree \
+ transaction-db aim kdci lcm dci-closed bitdrill
+#dci
+# comment out par-miner math
+# use the following line maybe
+#$(filter-out %main.c, $(wildcard src/sequence-generator/*.c\))
+
+# Source Files
+
+BUILDFILES = Makefile build/Makefile.*
+
+# Sources for 2-items
+2-items_CXXFILES := Count.cxx Load_Estimate.cxx
+2-items_CXXFILES := $(addprefix src/2-items/,$(2-items_CXXFILES))
+2-items_INCFILES = $(wildcard src/2-items/*.hxx)
+
+gen-2-items_CXXFILES := src/2-items/Application.cxx
+gen-2-items_DEPS = generic 2-items graph transaction-db kdci
+gen-2-items_LIBS = -lmetis
+
+analyze-ts_CXXFILES := src/2-items/analyze-ts.cxx
+analyze-ts_DEPS =  2-items graph transaction-db kdci
+analyze-ts_LIBS = -lmetis
+
+# Sources for init-pardb
+init-pardb_CXXFILES = src/cli/init-pardb.cxx
+init-pardb_DEPS = transaction-db
+
+# Sources for init-pardb
+split-db_CXXFILES = src/cli/split-db.cxx
+split-db_DEPS = transaction-db
+
+# Sources for generic
+#generic_CXXFILES = $(wildcard src/generic/*.cxx)
+generic_CXXFILES = Getopt.cxx Log.cxx
+generic_CXXFILES := $(addprefix src/generic/,$(generic_CXXFILES))
+
+math_CXXFILES = KCanonical_Rep.cxx KruskalKatona.cxx
+math_CXXFILES := $(addprefix src/math/,$(math_CXXFILES))
+math_INCFILES = $(wildcard src/math/*.hxx)
+
+test-math_CXXFILES = src/math/Test.cxx
+test-math_DEPS = math
+test-math_LIBS = 
+
+# Sources for graph
+graph_CXXFILES = Graph.cxx Metis_Graph.cxx Vertex_Separator.cxx \
+Graph_Metis_Converter.cxx UT_Matrix.cxx Mtx_Graph.cxx \
+Vertex_Induced_Subgraph.cxx
+graph_CXXFILES := $(addprefix src/graph/,$(graph_CXXFILES))
+graph_INCFILES = $(wildcard src/graph/*.hxx)
+
+test-graph_CXXFILES = src/graph/Test.cxx
+test-graph_DEPS = graph 
+test-graph_LIBS = -lmetis
+
+# Sources for fp-tree
+fp-tree_CXXFILES := $(filter-out Test.cxx, $(wildcard src/fp-tree/*.cxx))
+fp-tree_INCFILES = $(wildcard src/fp-tree/*.hxx)
+
+# Test trie
+test-structure_CXXFILES = src/structure/Test.cxx
+test-structure_LIBS = 
+
+# bitdrill
+bitdrill_CXXFILES := $(filter-out src/bitdrill/Test.cxx, $(wildcard src/bitdrill/*.cxx))
+bitdrill_CXXFILES := $(filter-out src/bitdrill/Miner2.cxx, $(bitdrill_CXXFILES))
+bitdrill_INCFILES = $(wildcard src/bitdrill/*.hxx)
+
+# Test bitdrill
+test-bitdrill_CXXFILES = src/bitdrill/Test.cxx
+test-bitdrill_INCFILES = $(wildcard src/bitdrill/*.hxx)
+test-bitdrill_DEPS = 
+
+# freq bitdrill
+freq-bitdrill_CXXFILES = src/cli/freq-bitdrill.cxx
+freq-bitdrill_DEPS = bitdrill generic 2-items transaction-db graph kdci
+
+# gen candidates
+gen-candidates_CXXFILES = src/cli/gen-candidates.cxx
+gen-candidates_DEPS = bitdrill generic 2-items transaction-db graph kdci
+
+# freq bitdrill cand
+freq-bitdrill-cand_CXXFILES = src/cli/freq-bitdrill-cand.cxx
+freq-bitdrill-cand_DEPS = bitdrill generic 2-items transaction-db graph kdci
+
+
+# replicated parallel bitdrill
+repl-par-bitdrill_CXXFILES = src/cli/repl-par-bitdrill.cxx
+repl-par-bitdrill_DEPS = bitdrill generic 2-items transaction-db graph kdci
+
+# freq
+freq_CXXFILES = src/cli/freq.cxx
+freq_DEPS = generic fp-tree transaction-db 2-items graph kdci
+
+freq-bin_CXXFILES = src/cli/freq-bin.cxx
+freq-bin_DEPS = generic fp-tree transaction-db 2-items graph kdci
+
+freq-debug_CXXFILES = src/cli/freq-debug.cxx
+freq-debug_DEPS = generic fp-tree transaction-db 2-items graph kdci
+
+
+# test fp-tree
+test-fp-tree_CXXFILES = src/fp-tree/Test.cxx
+test-fp-tree_DEPS = fp-tree transaction-db 
+
+# aim
+aim_CPPFILES := $(filter-out src/aim/AIM.cpp, $(wildcard src/aim/*.cpp))
+aim_CPPFILES := $(filter-out src/aim/datatest.cpp, $(aim_CPPFILES))
+aim_INCFILES = $(wildcard src/aim/*.h)
+
+
+freq-aim_CPPFILES = src/aim/AIM.cpp
+freq-aim_DEPS = aim transaction-db 
+freq-aim_LIBS = -lm
+
+test-aim:
+	@echo $(aim_CPPFILES)
+
+# kdci
+kdci_CCFILES := $(filter-out src/kdci/freq-kdci.cc, $(wildcard src/kdci/*.cc))
+kdci_INCFILES = $(wildcard src/kdci/*.hh)
+
+# dci
+dci_CCFILES := $(filter-out src/dci/freq-dci-closed.cc, $(wildcard src/dci/*.cc))
+dci_INCFILES = $(wildcard src/dci/*.hh)
+
+# dci-closed
+dci-closed_CCFILES := $(filter-out src/dci-closed/freq-dci-closed.cc, $(wildcard src/dci-closed/*.cc))
+dci-closed_INCFILES = $(wildcard src/dci-closed/*.hh)
+
+freq-dci-closed_CCFILES := src/dci-closed/freq-dci-closed.cc
+freq-dci-closed_DEPS = transaction-db  dci-closed
+
+freq-kdci_CCFILES = src/kdci/freq-kdci.cc
+freq-kdci_DEPS = generic transaction-db  kdci
+freq-kdci_LIBS = -lm
+
+merge-itemsets_CXXFILES = src/cli/merge-itemsets.cxx
+merge-itemsets_DEPS = transaction-db bitdrill 2-items graph kdci 
+merge-itemsets_LIBS = -lm
+
+2items-kdci_CXXFILES = src/kdci/2items-kdci.cxx
+2items-kdci_DEPS = generic kdci transaction-db 
+2items-kdci_LIBS = -lm
+
+nitems-kdci_CXXFILES = src/kdci/nitems-kdci.cxx
+nitems-kdci_DEPS = generic kdci transaction-db 
+nitems-kdci_LIBS = -lm
+
+# lcm
+
+lcm_CXXFILES := src/lcm20/lib_lcm_freq.cxx
+
+freq-lcm_CXXFILES := src/cli/freq-lcm.cxx
+freq-lcm_DEPS = lcm transaction-db 
+
+#freq-lcm_CFILES := lcm_freq.c
+#freq-lcm_CFILES := $(addprefix src/lcm20/,$(freq-lcm_CFILES))
+#freq-lcm_INCFILES = $(wildcard src/lcm20/*.h)
+
+test-lcm:
+	@echo $(freq-lcm_CFILES)
+
+# Sources for transaction-db
+transaction-db_CXXFILES = $(addprefix src/transaction-db/,\
+ Transaction_Set.cxx Transaction.cxx)
+transaction-db_INCFILES =
+
+split-ts_CXXFILES = src/transaction-db/split-ts.cxx
+split-ts_DEPS = generic transaction-db 
+
+# random-ts
+random-ts_CXXFILES = src/cli/random-ts.cxx
+random-ts_LIBS = -lgsl -lgslcblas -lm
+
+# read-ts
+read-ts_CXXFILES = src/cli/read-ts.cxx
+read-ts_DEPS = transaction-db 
+
+# check-ts
+check-ts_CXXFILES = src/cli/check-ts.cxx
+check-ts_DEPS = transaction-db 
+
+# check-patterns
+check-patterns_CXXFILES = src/cli/check-patterns.cxx
+check-patterns_DEPS = transaction-db  fp-tree
+
+# ts-to-ascii
+ts-to-ascii_CXXFILES = src/cli/ts-to-ascii.cxx
+ts-to-ascii_DEPS = transaction-db 
+
+# ts-to-binary
+ts-to-binary_CXXFILES = src/cli/ts-to-binary.cxx
+ts-to-binary_DEPS = transaction-db 
+
+# convert-ts
+convert-ts_CXXFILES = src/cli/convert-ts.cxx
+convert-ts_DEPS = transaction-db 
+
+# ts-to-gnuplot
+ts-to-gnuplot_CXXFILES = src/cli/ts-to-gnuplot.cxx
+ts-to-gnuplot_DEPS = transaction-db 
+
+sample-freq_CXXFILES = src/test/Sample_TS.cxx src/test/sample-freq.cxx
+sample-freq_DEPS = fp-tree transaction-db 2-items graph kdci
+
+test-kkstar_CXXFILES= src/cli/test-kkstar.cxx
+test-kkstar_DEPS =  2-items graph kdci
+test-kkstar_LIBS = 
+
+AUX = doc/TODO
+

@@ -1,0 +1,44 @@
+# Makefile
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Programs used
+
+# In GNU make $(MAKE) is predefined as itself's name.
+# MAKE =		make		# For subsequent make's
+
+# Standard utilities
+
+# Compilers and related programs
+CC = cc			# C compiler
+CXX = c++			# C++ compiler
+ASM = as			# Assembler (self arch)
+LD = $(CXX)			# Linker
+LIBTOOL = ./libtool		# Library tool
+BISON =	bison --defines		# Syntax Analyzer
+FLEX = flex			# Lexical Analyzer
+
+# Installation commands
+INSTALL = install
+#INSTALL_PROGRAM = $(INSTALL) --mode=755
+#INSTALL_DATA = $(INSTALL) --mode=644
+INSTALL_PROGRAM = $(INSTALL) -m 755
+INSTALL_DATA = $(INSTALL) -m 644
+
+# File utilities
+LS = ls -l
+CP = cp --backup=numbered --preserve --recursive
+TAR = tar -j
+DIST_SUFFIX = .tar.bz2
+RM = rm
+
+# Misc utilities
+EDITOR = xemacs
+LATEX = latex
+BIBTEX = bibtex
+PAGER = most
+
+# Tool Options
+
+OUTPUTFLAG = -o 	# Flag for output

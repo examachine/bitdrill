@@ -1,0 +1,12 @@
+# -*-Makefile-*-
+# The makefile to be included first
+
+PACKAGE = parfreq
+VERSION = 0.8.0
+BUILDARCH = x86_64
+# valid build configs : dbg, opt, optdbg, prof
+BUILD = opt
+
+# arguments to build system
+AUTOMATIC_DEPENDENCIES=1
+EXTENDED_RECURSION=1

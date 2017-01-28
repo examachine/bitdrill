@@ -1,0 +1,30 @@
+# -*- makefile -*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Options
+
+CPPFLAGS = -DLOG -stdlib=libstdc++
+#GENERAL_DEBUG = -g3 -DERROR -Wall -DLOG -DVERBOSE
+GENERAL_DEBUG = -g3 -DERROR -Wall -DLOG -DDEBUG -DVERBOSE -DPROFILE
+#GENERAL_DEBUG = -g3 -DERROR -O3 -pg -DPROFILE -Wall #-DLOG -DDEBUG
+GENERAL_OPTIMISE = -Wall -O6 -DERROR -DWITHOUT_NANA -DNDEBUG
+GENERAL_WARN = -Wcomment -Wswitch -Wunknown-pragmas 
+#-Wimplicit
+GENERAL_OTHER = $(CPPFLAGS) 
+#-march=$(BUILDARCH)
+CXXOPTIMISE =
+CXXDEBUG =
+CXXWARN = -ftemplate-depth-64 -Wall #-Wtemplate-debugging -Weffc++
+CXXOTHER = -fpermissive # -foperator-names
+COPTIMISE =
+CDEBUG =
+CWARN = -Wmain
+COTHER = 
+ASFLAGS =
+LDFLAGS =
+
+# Convenience flags
+CFLAGS =
+CXXFLAGS =

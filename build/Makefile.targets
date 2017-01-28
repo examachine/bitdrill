@@ -1,0 +1,12 @@
+# Makefile
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# hooks
+
+all-local: #TAGS
+
+install-local:
+
+clean-local:
