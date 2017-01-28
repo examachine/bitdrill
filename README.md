@@ -20,5 +20,7 @@ Just using make should build everything, but to avoid the compilation of auxilia
 
 $ make programs
 
+Note: does not compile with Clang compiler currently, requires g++
+
 Eray Ozkural, PhD
 
