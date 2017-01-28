@@ -1,0 +1,42 @@
+Release 1.0.0:
+
++ parallelization of kdci, lcm and aim
++ use kdci for mining F2
+
+Release 0.8.0:
+
++ implement local pruning for computing F2
+
+Release 0.7.5
+
++ optimization: use an UT matrix of size |F| for 2-items computation and
+  communication
+
+Release 0.7.4
++ implement parallel GPVS (best of all)
++ various improvements to build subsystem
+
+Release 0.7.1
++ fix long-standing fp-growth* bug: there was a simple bug in txn prune code
+  which added extra items to transactions before inserting to fp-tree!
++ use non-blocking send routines instead of the more primitive _init
+  routines to implement AABC and AAPC operations
+
+Release 0.5.2
++ too many changes to list :)
++ two-way partitioning
++ corected fp-growth algorithm
+
+Release 0.1.2
+
++ prune transactions (|t_i|<3) while partitioning
+
+Release 0.1.0
+
++ find 2-items in parallel with tree based LAM reduce code
++ provide faster method for iteration in Mtx_Graph
++ optimize 2-items: use upper triangular matrix for representing graph
++ reorg: separate db, 2-items and part code to libs cleanly.
++ compute inverse map when translating to metis graph
++ a vertex separator adapter that translates sep in metis graph to orig graph
++ use the separator in F

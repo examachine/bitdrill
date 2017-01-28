@@ -1,0 +1,29 @@
+# -*- gnuplot -*-
+set size 1.0, 0.5
+set terminal postscript portrait enhanced "Helvetica" 15
+set out "EXP.timing.ps"
+
+set title "Running time for TITLE"
+set xlabel "Processors"
+set ylabel "Support (%)"
+set zlabel "Time (sec)"
+set xtics 4
+#set grid
+set data style lines
+set dgrid3d
+#12,12,12
+#set hidden3d
+set contour base
+set cntrparam levels discrete 12.5,25,37.5,50,75,100,150,200,300,400,600,800
+#set cntrparam bspline
+
+set view 45,20
+set ticslevel 1
+
+#set linestyle 1 lt 4 lw 0.3 pt 2 ps 0.3
+#set linestyle 2 lt 4 lw 0.75 pt 2 ps 0.5
+
+splot "FILE" using 1:($2*100):3 title "TITLE" lt 4
+set nocontour
+set data style impulses
+#splot "FILE" using 1:($2*100):3 title "" ls 2

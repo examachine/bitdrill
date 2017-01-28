@@ -1,0 +1,15 @@
+# -*- gnuplot -*-
+set size 1.0, 0.5
+set terminal postscript portrait enhanced "Helvetica" 20
+set out "EXP.space.ps"
+
+set title "Memory usage for TITLE"
+set xlabel "Support (%)"
+set ylabel "Heap use (Mbytes)"
+set key right top Left box lw 0.25
+#set xtics 4
+set grid
+
+plot "DIR/EXP.space" u 1:2 t 'FP-Growth-Tiny' with linespoints
+#, \
+#     "DIR/EXP.space" u 1:3 t 'FP-Growth' with linespoints

@@ -1,0 +1,104 @@
+# -*-Makefile-*- to plot parallel performance plots
+
+PERFDIR=parallel
+
+ifndef top_srcdir
+top_srcdir=../..
+endif
+
+topperfdir=$(top_srcdir)/perf
+dir=$(topperfdir)/$(PERFDIR)
+
+times=$(wildcard $(dir)/*.time)
+timeplots=$(patsubst %.time,$(PERFDIR)/%.time.ps,$(notdir $(times)))
+speedups=$(wildcard $(dir)/*.speedup)
+speedupplots=$(patsubst %.speedup,$(PERFDIR)/%.speedup.ps,$(notdir $(speedups)))
+#spaces=$(wildcard $(dir)/*.space)
+#spaceplots=$(patsubst %.space,$(PERFDIR)/%.space.ps,$(notdir $(spaces)))
+
+all: time speedup parallel/all.imbl.ps  \
+parallel/all.repl.ps parallel/all.eimbl.ps 
+# parallel/all.work.ps 
+# parallel/num.txn.scale.ps parallel/avg.txn.len.scale.ps \
+# parallel/num.txn.scale.lin.ps
+
+time: $(timeplots)
+	-gnuplot dissection.gp
+
+NUMIMBL=4
+
+parallel/all.eimbl.ps: $(dir)/all.eimbl
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=all.eimbl -DTITLE="" \
+	-DPLOTS=$(NUMIMBL) -DYLABEL="Expected Imbalance (%)" \
+	-DXLABEL=Processors -DKEY="below" -DMAXY="310" \
+	generic.gp.in | gnuplot $3
+
+parallel/all.imbl.ps: $(dir)/all.imbl
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=all.imbl -DTITLE="" \
+	-DPLOTS=$(NUMIMBL) -DYLABEL="Imbalance (%)" -DXLABEL=Processors \
+	-DKEY="below" -DMAXY="310" generic.gp.in | gnuplot $3
+
+parallel/all.repl.ps: $(dir)/all.repl
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=all.repl -DTITLE="" \
+	-DPLOTS=$(NUMIMBL) -DYLABEL="Data Replication (%)" \
+	-DXLABEL=Processors -DKEY="below" -DMAXY="" \
+	generic.gp.in | tee dbg | gnuplot $3
+
+parallel/all.work.ps: $(dir)/all.work
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=all.work -DTITLE="" \
+	-DPLOTS=$(NUMIMBL) -DYLABEL="Redundant Work (%)" \
+	-DXLABEL=Processors -DKEY="below" -DMAXY="" \
+	generic.gp.in | gnuplot $3
+
+parallel/num.txn.scale.ps: $(dir)/num.txn.scale
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=num.txn.scale -DTITLE="" \
+	-DPLOTS=4 -DYLABEL="Parallel Efficiency (%)" \
+	-DXLABEL="Number of Transactions (in millions)" -DKEY="below" -DMAXY="" \
+	generic.gp.in | gnuplot $3
+
+parallel/avg.txn.len.scale.ps: $(dir)/avg.txn.len.scale
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=avg.txn.len.scale -DTITLE="" \
+	-DPLOTS=7 -DYLABEL="Parallel Efficiency (%)" \
+	-DXLABEL="Average Transaction Length" -DKEY="below" -DMAXY="" \
+	generic.gp.in | gnuplot $3
+
+parallel/num.txn.scale.lin.ps: $(dir)/num.txn.scale.lin
+	m4 -DDIR=$(dir) -DOUTDIR=parallel -DEXP=num.txn.scale.lin -DTITLE="" \
+	-DPLOTS=4 -DYLABEL="Parallel Efficiency" \
+	-DXLABEL="Scale" -DKEY="below" -DMAXY="" \
+	generic.gp.in | gnuplot $3
+
+space: $(spaceplots)
+speedup: $(speedupplots)
+
+$(PERFDIR):
+	if [ ! -e $@ ]; then mkdir $@; fi
+
+$(timeplots): %.time.ps: $(topperfdir)/%.time $(PERFDIR)
+	-mkdir $(PERFDIR)
+	export PLOTS=$$(expr `head -1 $(topperfdir)/$*.time | wc -w` - 1); \
+	m4 -DDIR=$(topperfdir) -DEXP=$* -DTITLE=$(notdir $*) \
+	-DPLOTS=$$PLOTS	time-parallel.gp.in | gnuplot $3
+
+$(spaceplots): %.space.ps: $(topperfdir)/%.space $(PERFDIR)
+	-mkdir $(PERFDIR)
+	m4 -DDIR=$(topperfdir) -DEXP=$* -DTITLE=$(notdir $*) \
+	space.gp.in | gnuplot $3
+
+$(speedupplots): %.speedup.ps: $(topperfdir)/%.speedup $(PERFDIR)
+	-mkdir $(PERFDIR)
+	export PLOTS=$$(expr `head -1 $(topperfdir)/$*.speedup | wc -w` - 1); \
+	m4 -DDIR=$(topperfdir) -DEXP=$* -DTITLE=$(notdir $*) \
+	-DPLOTS=$$PLOTS	speedup.gp.in | gnuplot $3
+
+clean:
+	rm *.ps
+
+test:
+	@echo dir: $(dir)
+	@echo PERFDIR: $(PERFDIR)
+	@echo timeplots: $(timeplots)
+	@echo speedupplots: $(speedupplots)
+
+.PHONY:	clean test loadbalance
+

@@ -1,0 +1,83 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Test the features of the makefile suite
+
+.PHONY:	list-vars
+
+test-autodep:
+	@echo NO_AUTODEPENDENCY = $(NO_AUTODEPENDENCY)
+	@echo CXXFILES = $(CXXFILES)
+	@echo CXXDEPS = $(CXXDEPS)
+	@echo DEPENDENCIES = $(DEPENDENCIES)
+
+list-vars:
+	@echo PROGRAMS=$(PROGRAMS)
+	@echo LIBRARIES=$(LIBRARIES)
+	@echo EXECFILES=$(EXECFILES)
+	@echo LIBFILES=$(LIBFILES)
+	@echo OBJFILES=$(OBJFILES)
+	@echo SRCFILES=$(SRCFILES)
+	@echo CXXFILES = $(CXXFILES)
+	@echo CCFILES = $(CCFILES)
+	@echo CFILES = $(CFILES)
+	@echo CPPFLAGS = $(CPPFLAGS)
+	@echo CFLAGS = $(CFLAGS)
+	@echo CXXFLAGS = $(CXXFLAGS)
+
+str = a b c d
+addboo = $(addprefix boo,$(1))
+addboo2 = $(addprefix $(2),$(1))
+
+o := $(call map,addboo,$(str))
+o2 := $(call map2,addboo2,$(str),moo)
+
+esek := $(call eval,ox=realox)
+
+test-eval:
+	@echo $(okuz)
+
+test-map:
+	@echo o = $(o)
+	@echo o2 = $(o2)
+
+ev = echo $(1);$(1)
+
+o3 := $(call map2,addboo2,$(str),$$)
+$(call eval,ox=$$)
+
+test-subst:
+	echo '$(subst dollar,$$,dollar)'
+
+test-kludge:
+	cat << EOF
+	BOOOOOOOKKKKKK
+	EOF
+#	$(write-rule)
+
+define x-macro
+
+	echo eh artik
+endef
+
+haywanlar=esek okuz dana
+esek_hodo=esek.1 esek.2
+okuz_hodo=okuz.1 okuz.2
+dana_hodo=dana.1 dana.2
+x-buildrule = $(call eval,$$($(1)_hodo): $(x-macro))
+$(call map,x-buildrule,$(haywanlar))
+
+define kuffar
+
+	echo xxxx
+endef
+$(eval sicatron: $(kuffar))
+
+test-new-eval: $(esek_hodo) $(okuz_hodo) $(dana_hodo)
+
+x-rule = $(call eval,$(1): checkdir \$($(1)_FILE) install-output-$(1))
+$(call map,prog-deprule,$(PROGRAMS))
+#programs: $(PROGRAMS)
+

@@ -1,0 +1,2 @@
+for each dataset there are makefiles to generate speedup and timing
+data. that data is stored in perf directory.

@@ -1,0 +1,105 @@
+# -*- makefile -*-
+# Makefile to plot speedup vs. support per db
+
+include Makefile.functions
+
+PROC=16
+
+export PROC
+
+ifndef top_srcdir
+top_srcdir=../..
+endif
+
+default: all
+
+datadir=$(top_srcdir)/data/assoc-gen
+perfdir = $(top_srcdir)/perf
+perfdirs = $(notdir $(wildcard $(perfdir)/support-*))
+#dbs = zaki1 zaki2
+define finddb
+awk 'BEGIN { FS = "," } ; {print $$1;}' $(datadir)/zaki.experiments
+endef
+dbs=$(shell $(finddb))
+perfsup=$(patsubst support-%,%,$(perfdirs))
+
+speedup = $(call eval,$(1).speedup := $(addprefix $(perfdir)/,$(addsuffix /$(1).speedup,$(perfdirs))))
+timing = $(call eval,$(1).timing := $(addprefix $(perfdir)/,$(addsuffix /$(1).speedup,$(perfdirs))))
+$(call map,speedup,$(dbs))
+$(call map,timing,$(dbs))
+
+define speedup-support
+	@echo Data files: $+
+	echo >tmp-plot
+	for x in $(perfsup); do \
+	file=$(perfdir)/support-$$x/$(1).speedup; \
+	echo -n $$x " " >> tmp-plot; \
+	cat $$file | awk '{ if ($$1==$(PROC)) print $$2;}' >> tmp-plot ; \
+	done; \
+	cat tmp-plot
+	m4 -DFILE=tmp-plot -DEXP=$(1) -DTITLE=$(1) \
+	speedup-support.gp.in | gnuplot $3
+	rm tmp-plot
+endef
+
+define speedup-support-ruledef
+$(1).speedup-support.ps: $$($(1).speedup)
+	$$(call speedup-support,$(1))
+endef
+
+speedup-support-rule=$(call eval,$(speedup-support-ruledef))
+$(call map,speedup-support-rule,$(dbs))
+
+speedup-support-targets=$(addsuffix .speedup-support.ps,$(dbs))
+
+define timing
+	@echo Data files: $+
+	echo -n >tmp-plot
+	let i=0; for x in $(perfsup); do \
+	file=$(perfdir)/support-$$x/$(1).timing; let i++; \
+	cat $$file | x=$$x gawk '{ print  $$1, ENVIRON["x"],  $$2;}' >> tmp-plot ; \
+	done
+	m4 -DFILE=tmp-plot -DEXP=$(1) -DTITLE=$(1) \
+	timing3d.gp.in | gnuplot
+endef
+
+define timing-ruledef
+$(1).timing.ps: $$($(1).timing)
+	$$(call timing,$(1))
+endef
+
+timing-rule=$(call eval,$(timing-ruledef))
+$(call map,timing-rule,$(dbs))
+
+timing-targets=$(addsuffix .timing.ps,$(dbs))
+
+define speedup
+	@echo Data files: $+
+	echo -n >tmp-plot
+	let i=0; for x in $(perfsup); do \
+	file=$(perfdir)/support-$$x/$(1).speedup; let i++; \
+	cat $$file | x=$$x gawk '{ print  $$1, ENVIRON["x"],  $$2;}' >> tmp-plot ; \
+	done
+	m4 -DFILE=tmp-plot -DEXP=$(1) -DTITLE=$(1) \
+	speedup3d.gp.in | gnuplot
+endef
+
+define speedup-ruledef
+$(1).speedup.ps: $$($(1).speedup)
+	$$(call speedup,$(1))
+endef
+
+speedup-rule=$(call eval,$(speedup-ruledef))
+$(call map,speedup-rule,$(dbs))
+
+speedup-targets=$(addsuffix .speedup.ps,$(dbs))
+
+test:
+	@echo perfdir = $(perfdirs)
+	@echo supports = $(perfsup)
+	@echo dbs = $(dbs)
+	@echo $(speedup-support-targets)
+
+all: $(speedup-support-targets) $(timing-targets) $(speedup-targets)
+
+.PHONY:	default test

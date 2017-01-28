@@ -1,0 +1,118 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+
+# Default rule
+
+do-all: defaultmesg compileinfo checkdir programs libraries $(DOC)
+
+defaultmesg:
+	@echo Default rule invoked, building everything.
+
+compileinfo:
+	@echo Package name: $(PACKAGE)
+	@echo Version: $(VERSION)
+	@echo Build architecture: $(BUILDARCH)
+	@echo Build configuration: $(BUILD)
+	@echo C preprocessor flags: $(CPPFLAGS)
+	@echo C flags: $(CFLAGS)
+	@echo C++ flags: $(CXXFLAGS)
+	@echo Building programs: $(PROGRAMS)
+	@echo Building libraries: $(LIBRARIES)
+
+checkdir:
+	$(check-dir)
+
+do-TAGS: $(SRCFILES)
+	@echo Building Emacs tags from sources
+	@-etags $^
+
+# Install commands
+
+do-install:
+	@echo Installing binaries in $(bindir)
+	@echo Installing datas in $(datadir)
+#@echo Standard dirs: $($(standard_dirs))
+	@echo Standard dirs: $(standard_dirs)
+	#@echo in \"$(package_dirs)\" pkgbindir= $(pkgbindir)
+#	$(foreach prg, $(EXECFILES), $(shell echo $(INSTALL_PROGRAM) $(prg) $(bindir)/$(notdir $(prg))\n) )
+	$(foreach prg, $(EXECFILES), $(shell echo $(INSTALL_PROGRAM) $(prg) $(bindir)/$(notdir $(prg)))${\n})
+
+do-uninstall:
+	@echo Installing binaries in $(bindir)
+	@echo Installing datas in $(pkgbindir)
+	@echo $($(standard_dirs))
+	@echo in \"$(package_dirs)\" pkgbindir= $(pkgbindir)
+	$(foreach prg, $(EXECFILES), $(shell $(RM) $(bindir)/$(notdir $(prg))) )
+
+# Clean commands
+
+do-clean:
+#NO_AUTODEPENDENCY=1
+	@echo Deleting object modules, executables and libraries
+	@-rm -f $(OBJFILES) $(EXECFILES) $(LIBFILES) $(LIB_OBJFILES:%.lo=%.o)
+	@echo Deleting dependencies
+	@-find $(workingdir) -iname '*.d' | xargs rm -f
+	#@echo Deleting symbolic links in current directory
+	@-rmdir $(workingdir)
+
+do-distclean: do-clean
+	@echo Deleting archive
+	@-rm -rf $(DISTRIBUTION)
+
+do-maintainer-clean: do-distclean
+	@echo Deleting miscellaneous files
+	@-rm -rf $(srcdir)/*.bak $(srcdir)/*~ $(builddir)/*~
+
+do-realclean: do-maintainer-clean
+	@-rm -rf $(workingdir)
+
+# List commands
+
+do-list: $(SRCFILES) $(AUX)
+	@$(LS) $^
+
+do-listsrc: $(SRCFILES)
+	@$(LS) $^
+
+# Distribution
+
+do-dist:	$(DISTRIBUTION)
+
+$(DISTRIBUTION): $(SRCFILES) $(VER) $(DOC) $(AUX)
+	@cd .. ;\
+	echo Creating tar archive $(DISTRIBUTION);\
+	tar czvf $(dirname)/$(DISTRIBUTION) $(addprefix $(dirname)/,$?)
+
+do-listdist:
+	@echo Listing content of tar archive; \
+	tar tzvf $(DISTRIBUTION) | $(PAGER)
+
+do-extractdist:
+	@cd .. ;\
+	echo Extracting from tar archive $(DISTRIBUTION);\
+	tar xzvf $(dirname)/$(DISTRIBUTION)
+
+do-updatedist:
+	@cd .. ;\
+	echo Updating tar archive $(DISTRIBUTION);\
+	tar uzvf $(dirname)/$(DISTRIBUTION) $(addprefix $(dirname)/,$?)
+
+do-rmdist:
+	@Removing tar archive
+	@-rm -rf $(DISTRIBUTION)
+
+do-backup: $(DISTRIBUTION)
+	@echo Backing up archive $(DISTRIBUTION)
+	@$(CP) $(DISTRIBUTION) $(ARCPATH)
+
+do-restore:
+	@echo Restoring archive
+	@$(CP) $(ARCPATH)/$(DISTRIBUTION) .
+
+do-edit:	$(SRCFILES)
+	@echo Invoking editor for all source files
+	@$(EDITOR) $^&
+

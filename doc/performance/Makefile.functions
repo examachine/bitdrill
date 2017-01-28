@@ -1,0 +1,9 @@
+# -*- makefile -*-
+#
+# functions
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+map = $(foreach a,$(2),$(call $(1),$(a)))
+map2 = $(foreach a,$(2),$(call $(1),$(a),$(3)))

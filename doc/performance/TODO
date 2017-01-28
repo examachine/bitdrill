@@ -1,0 +1,10 @@
++ generate timing graphs for each dataset and for different thresholds
+  time vs. processors
+
++ generate speedup graphs for each dataset and different thresholds
+  speedup vs. processors
+
++ speedup vs. support graphs
+
++ 3d support, processors -> speedup
+  for each dataset

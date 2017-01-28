@@ -1,0 +1,30 @@
+
+1) missing condition in fp-growth
+there is a missing condition in fp-growth
+
+input database:
+h,b,i,c
+b,i,c,
+h,i,c
+
+epsilon=2.
+
+fp-growth can't find the support of c,i,h because there isn't a
+way to determine support of a pattern if the code has hit the single
+tree condition.
+the mistake is as follows:
+if the minimum support in beta is sufficient to pass support
+threshold, there is no problem since the minimum support cannot be
+larger than "alpha"s support.
+however, if there is no way to know the support of alpha alone. in
+this case alpha can only be generated together with beta, which is
+insufficient to pass support threshold.
+
+solution:
+determine beta's count from conut array
+
+2) sorting of inserted transactions
+ the order of all transactions must be the same, even if counts
+are the same! if a and d have the same count they must always be
+inserted in the same order. I implemented it in increasing index
+order.

@@ -1,0 +1,102 @@
+# Directories -*-Makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+include build/Makefile.dirs
+
+# TopLevel source directory
+top_srcdir = $(shell pwd)
+parentdir := $(shell cd ..; pwd)
+dirname := $(subst $(parentdir)/,,$(builddir))
+
+# Default build configuration
+ifndef BUILD
+BUILD=dbg
+endif
+workingdir = ./$(BUILD)
+# Backup directory
+backupdir = ./arc
+
+# TopLevel Build directory
+top_builddir := $(shell cd $(workingdir); pwd)
+
+VPATH = $(srcdir) $(workingdir)
+#vpath %.cc $(srcdir)
+
+# Standard installation directories
+
+# Installation root directory
+prefix = /usr/local
+
+# Machine-specific prefix
+exec_prefix = $(prefix)
+
+# Executable file installation
+# Normal binaries
+bindir = $(prefix)/bin
+# Super user binaries
+sbindir = $(prefix)/sbin
+# Executables used only by programs
+libexecdir = $(exec_prefix)/libexec
+
+# Data file installation
+# ro arch-independent data files
+datadir = $(prefix)/share
+# ro ASCII host-configuration files
+sysconfdir = $(prefix)/etc
+# rw arch-independent data files
+sharedstatedir = $(prefix)/com
+# rw arch-dependent data
+localstatedir = $(prefix)/var
+
+# Dirs that are necessary for running program
+# object files and libraries of object code.
+libdir = $(exec_prefix)/lib
+# elisp files
+lispdir =
+# include files
+includedir = $(prefix)/include
+
+# Documentation
+# Info root
+infodir = $(prefix)/info
+# Man root
+mandir=$(prefix)/man
+man1dir = $(mandir)/man1
+man2dir = $(mandir)/man2
+man3dir = $(mandir)/man3
+man4dir = $(mandir)/man4
+man5dir = $(mandir)/man5
+man6dir = $(mandir)/man6
+man7dir = $(mandir)/man7
+man8dir = $(mandir)/man8
+man9dir = $(mandir)/man9
+htmldir = $(prefix)/html
+
+# Package directories
+
+#standard_dirs := bindir sbindir libexecdir sysconfdir sharedstatedir localstatedir libdir lispdir includedir infodir mandir htmldir
+standard_dirs := $(bindir) $(sbindir) $(libexecdir) $(sysconfdir) $(sharedstatedir) $(localstatedir) $(libdir) $(lispdir) $(includedir) $(infodir) $(mandir) $(htmldir)
+#$(PACKAGE_DIRS) := $(addsuffix /$(PACKAGE), $($(STANDARD_DIRS)) )
+#standard_dirs:=bindir
+
+
+#package_dirs := $(addprefix pkg, $(standard_dirs))
+
+#TODO: get package dirs right
+#$(package_dirs)=$($(standard_dirs))
+#$(package_dirs)=x
+#pkg$(pkg)=$(addsuffix /$(PACKAGE), $($(pkg)))
+#pkgbindir := $(addsuffix /$(PACKAGE), $(bindir) )
+#pkgsbindir := $(addsuffix /$(PACKAGE), $(sbindir) )
+#pkglibexecdir := $(addsuffix /$(PACKAGE), $(libexecdir) )
+#pkgsysconfdir := $(addsuffix /$(PACKAGE), $(sysconfdir) )
+#pkgsharedstatedir := $(addsuffix /$(PACKAGE), $(sharedstatedir) )
+#pkglocalestatedir := $(addsuffix /$(PACKAGE), $(localstatedir) )
+#pkglibdir := $(addsuffix /$(PACKAGE), $(libdir) )
+#pkglispdir := $(addsuffix /$(PACKAGE), $(lispdir) )
+#pkgincludedir := $(addsuffix /$(PACKAGE), $(includedir) )
+#pkginfodir := $(addsuffix /$(PACKAGE), $(infodir) )
+#pkgmandir := $(addsuffix /$(PACKAGE), $(mandir) )
+#pkghtmldir := $(addsuffix /$(PACKAGE), $(htmldir) )

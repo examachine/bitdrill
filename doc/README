@@ -1,0 +1,24 @@
+	noclique - a parallel frequency mining tool for sparse problems
+
+parfreq implements a generic parallel frequency mining algorithm that can
+use any serial mining algorithm in its concurrent mining step on each
+processor. This implementation uses MPI as the message passing 
+subsystem and supports FP-Growth* for the serial mining algorithm, as 
+well as kDCI, AIM and LCM. The best parallelization is kDCI. Serial kDCI 
+is also used for mining F2 in parallel which is necessary for the item 
+distribution.
+
+parallel aim and fp-growth can achieve tremendous speedups. to verify
+the correctness of the outputs produced you can use two scripts under
+bin count-patterns.py which breaks down the frequent item sets by
+length and merge-patterns.py which you can use to combine the patterns
+output on different processors. the easiest way to test is to simulate
+a parallel computer on a single processor using MPI.
+
+
+  Copyright (C) 2001-2004 Eray Ozkural
+
+
+Comments are welcome.
+
+	- Eray Ozkural <erayo@cs.bilkent.edu.tr>

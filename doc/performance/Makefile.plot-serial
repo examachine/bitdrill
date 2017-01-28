@@ -1,0 +1,44 @@
+# -*-Makefile-*-
+# Makefile to plot serial graphs
+
+PERFDIR=serial
+
+ifndef top_srcdir
+top_srcdir=../..
+endif
+
+topperfdir=$(top_srcdir)/perf
+dir=$(topperfdir)/$(PERFDIR)
+
+times=$(wildcard $(dir)/*.time)
+timeplots=$(patsubst %.time,$(PERFDIR)/%.time.ps,$(notdir $(times)))
+spaces=$(wildcard $(dir)/*.space)
+spaceplots=$(patsubst %.space,$(PERFDIR)/%.space.ps,$(notdir $(spaces)))
+
+all: time space
+
+time: $(timeplots)
+space: $(spaceplots)
+
+$(PERFDIR):
+	if [ ! -e $@ ]; then mkdir $@; fi
+
+$(timeplots): %.time.ps: $(topperfdir)/%.time $(PERFDIR)
+	-mkdir $(PERFDIR)
+	m4 -DDIR=$(topperfdir) -DEXP=$* -DTITLE=$(notdir $*) \
+	time.gp.in | gnuplot $3
+
+$(spaceplots): %.space.ps: $(topperfdir)/%.space $(PERFDIR)
+	-mkdir $(PERFDIR)
+	m4 -DDIR=$(topperfdir) -DEXP=$* -DTITLE=$(notdir $*) \
+	space.gp.in | gnuplot $3
+
+clean:
+	rm *.ps
+
+test:
+	@echo dir: $(dir)
+	@echo timeplots: $(timeplots)
+
+.PHONY:	clean test loadbalance
+

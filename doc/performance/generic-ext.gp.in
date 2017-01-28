@@ -1,0 +1,34 @@
+# -*- gnuplot -*-
+
+set size 1.0, 0.5
+set terminal postscript portrait enhanced "Helvetica" 15
+set out "OUTDIR/EXP.ps"
+
+set title "TITLE"
+set xlabel "XLABEL"
+set ylabel "YLABEL"
+set datafile missing "-"
+set key left top Left box lw 0.25 samplen 3 spacing 1.1
+
+if (LOGX==1) set logscale x
+
+if (LOGY==1) set logscale y
+
+set style data linespoints
+
+if (PLOTS==1)  plot 'DIR/EXP' using 1:2 ti col
+
+if (PLOTS==2)  plot 'DIR/EXP' using 1:2 ti col, \
+   '' u 1:3 ti col
+
+if (PLOTS==3)  plot 'DIR/EXP' using 1:2 title col, \
+   '' u 1:3 ti col, '' u 1:4 ti col
+
+if (PLOTS==4)  plot 'DIR/EXP' using 1:2 title col, \
+   '' u 1:3 ti col, '' u 1:4 ti col, '' u 1:5 ti col
+
+if (PLOTS==5)  plot 'DIR/EXP' using 1:2 title col, \
+   '' u 1:3 ti col, '' u 1:4 ti col, '' u 1:5 ti col, '' u 6 ti col
+
+if (PLOTS>=6)  plot 'DIR/EXP' using 1:2 title col, \
+   '' u 1:3 ti col, '' u 1:4 ti col, '' u 1:5 ti col, '' u 1:6 ti col, '' u 1:7 ti col

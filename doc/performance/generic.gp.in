@@ -1,0 +1,65 @@
+# -*- gnuplot -*-
+
+set size 1.0, 0.6
+set terminal postscript portrait enhanced "Helvetica" 18
+set out "OUTDIR/EXP.ps"
+
+set title "TITLE"
+set xlabel "XLABEL"
+set ylabel "YLABEL"
+set key autotitle columnheader
+#set datafile missing '-'
+
+set auto x
+
+set key left top
+set key box lw 0.25
+#set key spacing 4
+
+#if ("KEY" eq "nokey") print 'bok' ; set nokey ; else  set key  KEY
+
+#set ylabel
+
+#set style data linespoints
+
+#BUG:the following doesn't work!
+set style data histogram
+set style histogram cluster gap 1
+set style fill pattern 1 border -1
+set boxwidth 0.5
+set bmargin 5
+
+if ("MAXY" ne "") set yrange [:MAXY]
+
+
+if (PLOTS==1)  plot 'DIR/EXP' using 1:2:xtic(1) ti col
+
+if (PLOTS==2)  plot 'DIR/EXP' using 1:2:xtic(1) ti col, \
+   '' u 1:3:xtic(1) ti col
+
+if (PLOTS==3)  plot 'DIR/EXP' using 1:2:xtic(1) title col, \
+   '' u 1:3:xtic(1) ti col, '' u 1:4:xtic(1) ti col
+
+if (PLOTS==4)  plot 'DIR/EXP' using 2:xtic(1) title col, \
+   '' u 3:xtic(1) ti col, '' u 4:xtic(1) ti col, '' u 5:xtic(1) ti col
+
+if (PLOTS==5)  plot 'DIR/EXP' using 1:2:xtic(1) title col, \
+   '' u 1:3:xtic(1) ti col, '' u 1:4:xtic(1) ti col, '' u 1:5:xtic(1) ti col, '' u 1:6:xtic(1) ti col
+
+if (PLOTS==6)  plot 'DIR/EXP' using 1:2:xtic(1) title col, \
+   '' u 1:3:xtic(1) ti col, '' u 1:4:xtic(1) ti col, '' u 1:5:xtic(1) ti col, '' u 1:6:xtic(1) ti col, '' u 1:7:xtic(1) ti col
+
+if (PLOTS==7)  plot 'DIR/EXP' using 1:2:xtic(1) title col, \
+'' u 1:3:xtic(1) ti col, '' u 1:4:xtic(1) ti col, '' u 1:5:xtic(1) ti  col, \
+'' u 1:6:xtic(1) ti col, '' u 1:7:xtic(1) ti col, '' u 1:8:xtic(1) ti col
+
+if (PLOTS==8)  plot 'DIR/EXP' using 1:2:xtic(1) title col, \
+'' u 1:3:xtic(1) ti col, '' u 1:4:xtic(1) ti col, '' u 1:5:xtic(1) ti  col, \
+'' u 1:6:xtic(1) ti col, '' u 1:7:xtic(1) ti col, '' u 1:8:xtic(1) ti col, \
+'' u 1:9:xtic(1) ti col
+
+if (PLOTS>=9)  plot 'DIR/EXP' using 1:2:xtic(1) title col, \
+'' u 1:3:xtic(1) ti col, '' u 1:4:xtic(1) ti col, '' u 1:5:xtic(1) ti  col, \
+'' u 1:6:xtic(1) ti col, '' u 1:7:xtic(1) ti col, '' u 1:8:xtic(1) ti col, \
+'' u 1:9:xtic(1) ti col, '' u 1:10:xtic(1) ti col
+

@@ -1,0 +1,46 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Recursive make support
+
+# Exported variables
+export INCLUDES
+export CXX
+export PATH
+export top_srcdir
+
+# Each global target depends on its subdirectories' targets
+# according to the following schema
+#x:	x-recursive x-local do-x
+dir-deprule = $(call eval,$(1): $(addsuffix -$(1),$(SUBDIRS)) \
+$(1)-local do-$(1)-info do-$(1))
+$(call map,dir-deprule,$(targets))
+define do-x-info
+
+	@echo;echo "** Making $(1) in current directory"
+endef
+do-x-inforule = $(call eval,do-$(1)-info: $(do-x-info))
+$(call map,do-x-inforule,$(targets))
+
+# Make targets of a dir
+# Takes into account directory interdependencies
+define make-dir-targets
+
+	@echo;echo "** Recursively making $(1) in $(2)"
+	@-(cd $(2) && $(MAKE) $(1))
+endef
+dir-target = $(call eval,$(2)-$(1): $($(2)_DEPS)-$(1) $(make-dir-targets) )
+x-target = $(call map2,dir-target,$(targets),$(1))
+
+# Each dir defines a set of targets using x-target
+
+dir-x = $(call x-target,$(1))
+$(call map,dir-x,$(SUBDIRS))
+
+# Default target for a dir is: all
+dir-def-dep = $(call eval,$(1): $(1)-all)
+$(call map,dir-def-dep,$(SUBDIRS))
+
+.PHONY:	CURRENT $(SUBDIRS) 

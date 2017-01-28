@@ -1,0 +1,87 @@
+Remaining bugs:
+---------------
+
+* freq-lcm doesn't work correctly, try a.data with 5 threshold, the output is written wrong, does not match the reported numbers of patterns
+
+* CRASH
+mpirun n1-32  -np 24 ../bin/init-pardb ../data/assoc-gen/T15.I4.4000K.data /tmp/x
+mpirun n1-32  -np 24 ../bin/parfreq-kdci /tmp/x 0.00025 /tmp/patterns 2
+
+mpirun n1-32  -np 16 ../bin/init-pardb ../data/assoc-gen/T15.I4.8000K.data /tmp/x
+mpirun n1-32  -np 16 ../bin/parfreq-kdci /tmp/x 0.0005 /tmp/patterns 2
+
+* undirected edges incorrectly computed as # of directed edges (twice...)
+Number of edges: 60
+F = {25,126,141,294,319,449,453,499,526,538,639,653,658,701,765,805,953}
+F' = [ 25,126,141,294,319,449,453,499,526,538,639,653,658,701,765,805,953]
+Graph
+ #Vertices: 17, #Edges: 30
+
+Correct one is 30, I report 60. Have to look if this wrong number gets in
+any code path.
+
+* fix args in cli of Bart's apriori code
+
+Fixed:
+---------------
+
+
+* major partitioning bug:
+GPVS: total weight: 2250430
+GPVS: Nvtxs: 161, Parts: [A:552750 B:532314 S:1165366]
+part_items[0]={0,1,2,3,5,7,8,9,10,11,12,16,17,19,23,28,30,33,34,35,36,37,38,42,4
+3,47,53,57,58,60,61,62,63,64,65,66,68,69,70,71,74,76,79,81,82,83,85,86,89,91,92,
+95,96,98,99,105,109,116,118,122,127,129,134,139,143,144,155,157,164,172,173,180,
+...
+....
+part_items[0]={0,1,2,3,8,9,10,12,16,17,18,19,23,29,30,32,33,34,35,36,42,43,58,62
+,65,70,74,82,83,95,96,112,136,143,144,145,146,155,157,161,164,168,172,184,186,19
+4,196,206,210,222,227,240,246,250,251,258,273,298,306,307,347,352,372,453}
+part_items[1]={1,2,3,7,8,9,10,14,15,16,17,18,19,20,21,23,24,26,30,31,32,33,34,35
+,42,44,54,55,56,59,64,65,67,72,77,78,80,89,90,94,97,102,104,106,110,111,114,115,
+119,121,123,125,128,130,132,137,141,145,147,148,150,152,156,158,175,178,192,193,
+197,200,203,205,209,216,218,223,231,236,241,242,249,255,261,267,270,275,280,281,
+282,283,284,299,302,312,317,322,327,332,333,335,336,337,339,349,358,366,369,377,
+380,383,397,407,409,477,498,894}
+compute_part_sizes!
+total size of P1 = 1.90173e+07
+total size of P2 = 8.71788e+06
+total partition size = 2.77352e+07
+W_par(2)=1.90173e+07
+best one is 1 with weight 1.65105e+07
+broadcast vertex separator
+part_items[0]={0,1,2,3,5,7,8,9,10,11,12,16,17,18,19,20,23,24,28,29,30,32,33,34,3
+5,36,38,42,43,53,57,58,59,62,64,65,66,68,69,70,71,74,76,79,82,83,85,89,91,94,95,
+...
+...
+
+**** part_items[0] got overwritten from an old copy (the toplevel
+     partitioning namely) during second level recursive bisection
+
+
+* a communication error (also happens with 4 procs)
+splitting database ../data/aux/retail.dat into 8
+running mpirun n1-24 -np 8 ../bin/par-analyze-ts /tmp/x 0.0025
+[pass 1] count large items
+[pass 2] count 2-items
+MPI_Recv: process in local group is dead (rank 2, comm 3)
+Rank (5, MPI_COMM_WORLD): Call stack within LAM:
+Rank (5, MPI_COMM_WORLD):  - MPI_Recv()
+Rank (5, MPI_COMM_WORLD):  - MPI_Bcast()
+Rank (5, MPI_COMM_WORLD):  - MPI_Allgather()
+Rank (5, MPI_COMM_WORLD):  - main()
+-----------------------------------------------------------------------------
+One of the processes started by mpirun has exited with a nonzero exit
+
+* somehow delete two_items in serial count routine crashes... 
+
+* prevent crash when we don't have a graph partition
+
+* total_F2 has weights only at root_processor! every proc. should have it.
+
+* When partitioning basis reached num_processors != number of
+  processors in part, this causes a crash in Split
+
+* This fails: why? have no idea :/
+  time -p mpirun -O n1-30 -np 4 parfreq /tmp/zaki2.data \
+  1000 0.0020 &> zaki2.out

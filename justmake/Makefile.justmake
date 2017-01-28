@@ -1,0 +1,30 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Definitions
+
+include justmake/Makefile.first
+include justmake/Makefile.functions
+include justmake/Makefile.dirs
+include justmake/Makefile.files
+include justmake/Makefile.options
+include justmake/Makefile.utilities
+
+# Rules
+
+include justmake/Makefile.pattern-rules
+include justmake/Makefile.build-rules
+include justmake/Makefile.targets
+include justmake/Makefile.commands
+include justmake/Makefile.automatic-dependencies
+include justmake/Makefile.dependencies
+include justmake/Makefile.recursive
+include justmake/Makefile.cvs
+
+# Last to perform
+
+include justmake/Makefile.test
+include justmake/Makefile.last
+

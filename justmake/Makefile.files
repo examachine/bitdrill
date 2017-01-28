@@ -1,0 +1,79 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+include build/Makefile.files
+
+# DEPRECEATED: Top level classification of source files
+$(PROGRAMS)_IMPLEMENTATION = $($(PROGRAMS)_CXXFILES) \
+ $($(PROGRAMS)_CCFILES) $($(PROGRAMS)_CPPFILES) $($(PROGRAMS)_CFILES) $($(PROGRAMS)_AFILES) \
+ $($(PROGRAMS)_GRAMMARFILES) $($(PROGRAMS)_LEXFILES)
+$(PROGRAMS)_INTERFACE = $($(PROGRAMS)_INCFILES)
+$(PROGRAMS)_SRC = $($(PROGRAMS)_IMPLEMENTATION) \$($(PROGRAMS)_INTERFACE) \
+ $(BUILDFILES)
+VERSUFFIX:=,v
+#VER = $(addsuffix $(VERSUFFIX), $(SRC)) # BUG: gives rise to wrong dep.
+DOC = $(DOCFILES)
+COMPRESSED_SUFFIX = .gz
+COMPRESSOR = gzip
+
+# Distribution filename
+DISTRIBUTION = $(PACKAGE)-$(VERSION)$(DIST_SUFFIX)
+
+# Executable files
+
+# Library objects
+
+libobj = $(call eval,$(1)_OBJFILES := \
+$(addprefix $(workingdir)/,$(patsubst %.cxx,%.lo,$($(1)_CXXFILES))) \
+$(addprefix $(workingdir)/,$(patsubst %.cc,%.lo,$($(1)_CCFILES))) \
+$(addprefix $(workingdir)/,$(patsubst %.cpp,%.lo,$($(1)_CPPFILES))) \
+$(addprefix $(workingdir)/,$(patsubst %.c,%.lo,$($(1)_CFILES))))
+$(call map,libobj,$(LIBRARIES))
+
+progobj = $(call eval,$(1)_OBJFILES := \
+$(addprefix $(workingdir)/,$(patsubst %.cxx,%.o,$($(1)_CXXFILES))) \
+$(addprefix $(workingdir)/,$(patsubst %.cc,%.o,$($(1)_CCFILES))) \
+$(addprefix $(workingdir)/,$(patsubst %.cpp,%.o,$($(1)_CPPFILES))) \
+$(addprefix $(workingdir)/,$(patsubst %.c,%.o,$($(1)_CFILES))))
+$(call map,progobj,$(PROGRAMS))
+
+# Built program files
+prog-exec = $(call eval,$(1)_FILE = $(addprefix $(workingdir)/,$(1)))
+$(call map,prog-exec,$(PROGRAMS))
+EXECFILES = $(addprefix $(workingdir)/,$(PROGRAMS))
+
+# Built library files
+lib-file = $(call eval,$(1)_FILE = $(addsuffix .la,$(addprefix $(workingdir)/lib,$(1))))
+$(call map,lib-file,$(LIBRARIES))
+LIBFILES := $(addprefix $(workingdir)/lib,$(LIBRARIES))
+LIBFILES := $(addsuffix .la,$(LIBFILES))
+
+# All object files
+PROG_OBJFILES = $(foreach prg,$(PROGRAMS),$($(prg)_OBJFILES))
+LIB_OBJFILES = $(foreach lib,$(LIBRARIES),$($(lib)_OBJFILES))
+OBJFILES = $(PROG_OBJFILES) $(LIB_OBJFILES)
+
+# All source files
+PROG_CXXFILES = $(foreach prg,$(PROGRAMS),$($(prg)_CXXFILES))
+PROG_CCFILES = $(foreach prg,$(PROGRAMS),$($(prg)_CCFILES))
+PROG_CPPFILES = $(foreach prg,$(PROGRAMS),$($(prg)_CPPFILES))
+PROG_CFILES = $(foreach prg,$(PROGRAMS),$($(prg)_CFILES))
+
+LIB_CXXFILES = $(foreach lib,$(LIBRARIES),$($(lib)_CXXFILES))
+LIB_CCFILES = $(foreach lib,$(LIBRARIES),$($(lib)_CCFILES))
+LIB_CPPFILES = $(foreach lib,$(LIBRARIES),$($(lib)_CPPFILES))
+LIB_CFILES = $(foreach lib,$(LIBRARIES),$($(lib)_CFILES))
+
+CXXFILES = $(PROG_CXXFILES) $(LIB_CXXFILES)
+CCFILES = $(PROG_CCFILES) $(LIB_CCFILES)
+CPPFILES = $(PROG_CPPFILES) $(LIB_CPPFILES)
+CFILES = $(PROG_CFILES) $(LIB_CFILES)
+
+PROG_INCFILES = $(foreach prg,$(PROGRAMS),$($(prg)_INCFILES))
+LIB_INCFILES = $(foreach lib,$(LIBRARIES),$($(lib)_INCFILES))
+INCFILES = $(PROG_INCFILES) $(LIB_INCFILES)
+
+SRCFILES = $(CXXFILES) $(CCFILES) $(CPPFILES) $(CFILES) $(INCFILES)
+

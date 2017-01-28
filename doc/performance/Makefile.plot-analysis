@@ -1,0 +1,46 @@
+# -*-Makefile-*- to plot parallel performance plots
+
+PERFDIR=analysis
+
+ifndef top_srcdir
+top_srcdir=../..
+endif
+
+topperfdir=$(top_srcdir)/perf
+dir=$(topperfdir)/$(PERFDIR)
+
+f2s=$(wildcard $(dir)/*.f2stats)
+f2plots=$(patsubst %.f2stats,$(PERFDIR)/%.f2stats.ps,$(notdir $(times)))
+
+all: $(PERFDIR) f2 analysis/numvertices.data.ps analysis/avgdegree.data.ps
+
+f2: $(f2plots)
+
+$(PERFDIR):
+	if [ ! -e $@ ]; then mkdir $@; fi
+
+analysis/numvertices.data.ps: $(dir)/numvertices.data
+	m4 -DDIR=$(dir) -DOUTDIR=analysis -DEXP=numvertices.data -DTITLE="" \
+	-DPLOTS=1 -DYLABEL="Number of vertices" -DXLABEL="Support (%)" \
+	-DLOGY=1 -DLOGX=0 generic-ext.gp.in | gnuplot $3
+
+analysis/avgdegree.data.ps: $(dir)/avgdegree.data
+	m4 -DDIR=$(dir) -DOUTDIR=analysis -DEXP=avgdegree.data -DTITLE="" \
+	-DPLOTS=6 -DYLABEL="Average degree" -DXLABEL="Support (%)" \
+	-DLOGY=0 -DLOGX=1 generic-ext.gp.in | gnuplot $3
+
+$(f2plots): %.f2stats.ps: $(topperfdir)/%.f2stats $(PERFDIR)
+	-mkdir $(PERFDIR)
+	export PLOTS=$$(expr `head -1 $(topperfdir)/$*.time | wc -w` - 1); \
+	m4 -DDIR=$(topperfdir) -DEXP=$* -DTITLE=$(notdir $*) \
+	-DPLOTS=$$PLOTS	time-parallel.gp.in | gnuplot $3
+
+clean:
+	rm *.ps
+
+test:
+	@echo dir: $(dir)
+	@echo PERFDIR: $(PERFDIR)
+
+.PHONY:	clean test loadbalance
+

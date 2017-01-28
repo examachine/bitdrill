@@ -1,0 +1,15 @@
+# Makefile
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Experimental stuff
+
+$(interpret $(foreach lib,$(LIBRARIES),$(lib)_OBJFILES := $(lib).lo,newline)
+$(interpret $(foreach lib,$(LIBRARIES),$(lib)_OBJFILES := $(addprefix $(workingdir)/, $($(lib)_OBJFILES)),newline))
+
+# Executable objects
+$(PROGRAMS)_OBJFILES = $(patsubst %.cxx,%.o, $($(PROGRAMS)_CXXFILES))
+$(PROGRAMS)_OBJFILES := $(addprefix $(workingdir)/,$($(PROGRAMS)_OBJFILES))
+$(interpret $(foreach prg,$(PROGRAMS),$(prg)_OBJFILES := $(patsubst %.cxx,%.o, $($(prg)_CXXFILES)),newline))
+$(interpret $(foreach prg,$(PROGRAMS),$(prg)_OBJFILES := $(addprefix $(workingdir)/, $($(prg)_OBJFILES)),newline))

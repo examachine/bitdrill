@@ -1,0 +1,44 @@
+# Makefile 
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+include build/Makefile.cvs
+
+cvsversion = $(shell echo $(VERSION) | sed 's/\./-/'g)
+
+# update ChangeLog
+ChangeLog:
+	cvs2cl
+
+# bump revision of each file
+# tag the release 
+up-version:
+	# bump cvs major revision (ie 2.0 = first release, ...) 
+	make check
+	cvs commit -m '** new relese $(VERSION)' \
+	-r $(shell justmake/bump-revision.sh).0 
+	cvs tag release-$(cvsversion)
+
+up-minorversion:
+	make check
+	cvs commit -m '** new minor relese $(VERSION)'
+	cvs tag release-$(cvsversion)
+
+.PHONY: up-version
+
+cvsdist: ChangeLog
+	# export to a new directory 
+	cvs export -r release-$(cvsversion) \
+	-d../$(PACKAGE)-$(VERSION) $(CVSMODULE)
+	cp ChangeLog ../$(PACKAGE)-$(VERSION)
+	cd ..; $(TAR) -cvf $(DISTRIBUTION) $(PACKAGE)-$(VERSION)
+	rm -rf ../$(PACKAGE)-$(VERSION)
+
+cvs-majorrelease: up-version cvsdist
+	@echo Release the package now! 
+	@echo Send your announcements!
+
+cvs-minorrelease: up-minorversion cvsdist
+	@echo Release the package now! 
+	@echo Send your announcements!

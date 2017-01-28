@@ -1,0 +1,24 @@
+# -*-makefile-*-
+# Automatic dependencies
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Inter-module dependencies implementing dependency specs like:
+# program_DEPS = testtool lib1 lib2 lib3
+
+getfile = $$($(1)_FILE)
+intermod-deprule = $(call eval,$$($(1)_FILE): $(call map,getfile,$($(1)_DEPS)))
+
+# Instantiate intermodule dependency rules for all programs and libraries
+
+$(call map,intermod-deprule,$(PROGRAMS))
+$(call map,intermod-deprule,$(LIBRARIES))
+
+# Some test routines
+
+intermod-tmp1=$(call map,getfile,$(parfreq_DEPS)) :
+intermod-tmp=$(call map,intermod-tmp1,$(PROGRAMS))
+test-intermod-deps:
+	echo $(intermod-tmp)
+.PHONY:	test-intermod-deps

@@ -1,0 +1,17 @@
+#-*-gnuplot-*-
+set size 1.0, 0.5
+set terminal postscript portrait enhanced "Helvetica" 20
+set out "EXP.speedup.balance.ps"
+
+set title "Effect of Load Estimate Function for TITLE"
+set xlabel "Processors"
+set ylabel "Speedup"
+set key left top Left box lw 0.25
+set xtics 4
+set grid
+set data style linespoints
+plot \
+     "DIR/EXP.speedup" t 'load_3', \
+     "DIR/EXP.speedup.1" t 'load_1', \
+     "DIR/EXP.speedup.2" t 'load_2'
+

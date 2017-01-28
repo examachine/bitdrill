@@ -1,0 +1,51 @@
+# -*- gnuplot -*-
+
+set size 1.0, 0.5
+set terminal postscript portrait enhanced "Helvetica" 20
+set out "parallel/crawl.time.ps"
+
+set title "crawl"
+set xlabel "Processors"
+set ylabel "Time (sec)"
+#set key right top Left box lw 0.25
+#set xtics 4
+#set grid
+
+set style data lines
+#set style histogram cluster gap 1
+#set style fill solid border -1
+#set boxwidth 0.9
+#set xtic rotate by -45
+#set bmargin 5
+
+if (1==2)  plot '../../perf/parallel/crawl.time' using 2:xtic(1) title col, \
+   '' u 3 ti col
+
+if (1==3)  plot '../../perf/parallel/crawl.time' using 2:xtic(1) title col, \
+   '' u 3 ti col, '' u 4 ti col
+
+if (1==4)  plot '../../perf/parallel/crawl.time' using 2:xtic(1) title col, \
+   '' u 3 ti col, '' u 4 ti col, '' u 5 ti col
+
+if (1==5)  plot '../../perf/parallel/crawl.time' using 2:xtic(1) title col, \
+   '' u 3 ti col, '' u 4 ti col, '' u 5 ti col, '' u 6 ti col
+
+if (1>=6)  plot '../../perf/parallel/crawl.time' using 2:xtic(1) title col, \
+   '' u 3 ti col, '' u 4 ti col, '' u 5 ti col, '' u 6 ti col, '' u 7 ti col
+
+
+   
+# a kludge to do first($2)/x in gnuplot... heh
+#first(x) = (x==1) ? c : 1
+#fit first(x) "DIR/EXP.timing" using 1:($1<2 ? $2 : 1) via c
+
+#plot 'DIR/EXP.time' using 1:2 ti 2 with linespoints, \
+#     'DIR/EXP.time' using 1:3 ti 3 with linespoints, \
+#     'DIR/EXP.time' using 1:4 ti 4 with linespoints, \
+#     'DIR/EXP.time' using 1:5 ti 5 with linespoints, \
+#     'DIR/EXP.time' using 1:6 ti 6 with linespoints
+
+
+#, c/x t 'Linear speedup'
+
+#plot "T10.I6.800K.timing" using 1:($1<2 ? $2 : 1)

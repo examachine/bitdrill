@@ -1,0 +1,43 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Targets
+
+include build/Makefile.targets
+
+# Standard targets
+
+std-targets = all install uninstall install-strip \
+clean distclean mostlyclean \
+maintainer-clean TAGS info dvi \
+dist check installcheck installdirs
+
+# justmake targets
+
+jm-targets = realclean list listsrc \
+ listdist extractdist rmdist backup restore \
+ libinfo execinfo
+
+simple-targets = compileinfo checkdir edit
+
+targets = $(std-targets) $(jm-targets)
+
+# Classification of targets
+
+# do-x: build steps for target x
+do-x = $(addprefix do-, $(targets))
+
+# x-local: hook for target x
+x-local = $(addsuffix -local, $(targets))
+
+# x-recursive: build target x recursively
+x-recursive = $(addsuffix -recursive, $(targets))
+
+# bottom targets when no dir interdependency present
+bottom-x= $(addprefix -, $(targets))
+
+# Phony Targets
+
+.PHONY:	$(targets) $(do-x) $(x-local) $(x-recursive) $(bottom-x) $(simple-targets)

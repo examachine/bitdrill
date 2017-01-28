@@ -1,0 +1,12 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+replace = $(shell which build/replace.sh)
+#might be better: echo "esek^Mesek" | tr  ^M "\n"
+
+test-misc:
+	echo $(LIB_OBJFILES:%.lo=%.ooo)
+
+include build/Makefile.last

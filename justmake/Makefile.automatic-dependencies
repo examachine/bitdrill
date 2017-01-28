@@ -1,0 +1,26 @@
+# -*-makefile-*-
+# Automatic dependencies
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Include automatic dependencies
+
+CXXDEPS=$(addprefix $(workingdir)/,$(CXXFILES:.cxx=.d))
+CCDEPS=$(addprefix $(workingdir)/,$(CCFILES:.cc=.d))
+CPPDEPS=$(addprefix $(workingdir)/,$(CPPFILES:.cpp=.d))
+CDEPS=$(addprefix $(workingdir)/,$(CFILES:.c=.d))
+
+DEPENDENCIES=$(CXXDEPS) $(CCDEPS) $(CPPDEPS) $(CDEPS)
+
+ifndef NO_AUTODEPENDENCY
+
+make-dir := $(shell echo shtool mkdir $(1))
+
+ifneq ($(DEPENDENCIES),)
+# $(call map,make-dir,$(dir $(DEPENDENCIES)))
+# $(shell echo zort)
+include $(DEPENDENCIES)
+endif
+
+endif

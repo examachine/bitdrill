@@ -1,0 +1,196 @@
+t = <3 : e,d,c>
+t = <3 : e,d,c>
+t = <4 : g,d,a,c>
+t = <3 : g,e,a>
+t = <4 : g,d,b,f>
+t = <3 : g,e,d>
+t = <3 : g,a,f>
+t = <3 : g,e,b>
+t = <3 : d,a,b>
+t = <3 : g,e,a>
+t = <3 : g,a,b>
+t = <3 : e,d,c>
+t = <3 : g,d,b>
+t = <3 : a,b,f>
+t = <4 : e,b,f,c>
+t = <4 : g,e,d,f>
+t = <4 : g,e,a,f>
+query t1 not found
+query <g,e,a> freq 3
+node a : node e : node g : node ÿ : 
+node list of 103
+node 103 : 
+node list of 101
+node 101 : node 101 : 
+node list of 98
+node 98 : node 98 : node 98 : node 98 : node 98 : node 98 : 
+node list of 97
+node 97 : node 97 : node 97 : node 97 : node 97 : 
+fp_tree = [ (ÿ:18) [ (e:4) [ (d:3) [ (c:3)  ] ][ (b:1) [ (f:1) [ (c:1)  ] ] ] ][ (g:11) [ (d:3) [ (a:1) [ (c:1)  ] ][ (b:2) [ (f:1)  ] ] ][ (e:6) [ (a:3) [ (f:1)  ] ][ (d:2) [ (f:1)  ] ][ (b:1)  ] ][ (a:2) [ (f:1)  ][ (b:1)  ] ] ][ (d:1) [ (a:1) [ (b:1)  ] ] ][ (a:1) [ (b:1) [ (f:1)  ] ] ] ]
+fp_tree dot written to fp_tree.dot 
+item table<[97,0x806b260][98,0x806b2c0][99,0x806b300][100,0x806b1e0][101,0x806b0e0][102,0x806b340][103,0x806b060]>
+discover patterns, epsilon=5
+discover patterns(...)
+mining item 97
+count_symbols: 97
+examining node 97:1
+examining node 97:1
+examining node 100:1
+examining node 97:2
+examining node 103:11
+examining node 97:3
+examining node 101:6
+examining node 103:11
+examining node 97:1
+examining node 100:3
+examining node 103:11
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0,2,3,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {97,103}
+get_pattern: <0 : >:1
+pattern = <0 : >:1
+get_pattern: <1 : 100>:1
+pattern = <0 : >:1
+get_pattern: <1 : 103>:2
+pattern = <1 : 103>:2
+get_pattern: <2 : 101,103>:3
+pattern = <1 : 103>:3
+get_pattern: <2 : 100,103>:1
+pattern = <1 : 103>:1
+our conditional fp-tree [ (ÿ:9) [ (g:5)  ] ]
+all patterns 103:5 
+mining item 98
+count_symbols: 98
+examining node 98:1
+examining node 101:4
+examining node 98:1
+examining node 97:1
+examining node 98:1
+examining node 97:2
+examining node 103:11
+examining node 98:1
+examining node 97:1
+examining node 100:1
+examining node 98:1
+examining node 101:6
+examining node 103:11
+examining node 98:2
+examining node 100:3
+examining node 103:11
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,7,0,3,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {98}
+get_pattern: <1 : 101>:1
+pattern = <0 : >:1
+get_pattern: <1 : 97>:1
+pattern = <0 : >:1
+get_pattern: <2 : 97,103>:1
+pattern = <0 : >:1
+get_pattern: <2 : 97,100>:1
+pattern = <0 : >:1
+get_pattern: <2 : 101,103>:1
+pattern = <0 : >:1
+get_pattern: <2 : 100,103>:2
+pattern = <0 : >:2
+our conditional fp-tree [ (ÿ:8)  ]
+mining item 99
+count_symbols: 99
+examining node 99:1
+examining node 102:1
+examining node 98:1
+examining node 101:4
+examining node 99:1
+examining node 97:1
+examining node 100:3
+examining node 103:11
+examining node 99:3
+examining node 100:3
+examining node 101:4
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,5,4,4,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {99}
+get_pattern: <3 : 102,98,101>:1
+pattern = <0 : >:1
+get_pattern: <3 : 97,100,103>:1
+pattern = <0 : >:1
+get_pattern: <2 : 100,101>:3
+pattern = <0 : >:3
+our conditional fp-tree [ (ÿ:6)  ]
+mining item 100
+count_symbols: 100
+examining node 100:1
+examining node 100:2
+examining node 101:6
+examining node 103:11
+examining node 100:3
+examining node 103:11
+examining node 100:3
+examining node 101:4
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {100,101,103}
+get_pattern: <0 : >:1
+pattern = <0 : >:1
+get_pattern: <2 : 101,103>:2
+pattern = <2 : 103,101>:2
+get_pattern: <1 : 103>:3
+pattern = <1 : 103>:3
+get_pattern: <1 : 101>:3
+pattern = <1 : 101>:3
+our conditional fp-tree [ (ÿ:10) [ (g:4) [ (e:1)  ] ] ]
+all patterns 103:4 101:1 
+mining item 101
+count_symbols: 101
+examining node 101:6
+examining node 103:11
+examining node 101:4
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {101,103}
+get_pattern: <1 : 103>:6
+pattern = <1 : 103>:6
+get_pattern: <0 : >:4
+pattern = <0 : >:4
+our conditional fp-tree [ (ÿ:11) [ (g:1)  ] ]
+all patterns 103:1 
+mining item 102
+count_symbols: 102
+examining node 102:1
+examining node 97:3
+examining node 101:6
+examining node 103:11
+examining node 102:1
+examining node 100:2
+examining node 101:6
+examining node 103:11
+examining node 102:1
+examining node 98:1
+examining node 101:4
+examining node 102:1
+examining node 98:1
+examining node 97:1
+examining node 102:1
+examining node 97:2
+examining node 103:11
+examining node 102:1
+examining node 98:2
+examining node 100:3
+examining node 103:11
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,2,3,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {102}
+get_pattern: <3 : 97,101,103>:1
+pattern = <0 : >:1
+get_pattern: <3 : 100,101,103>:1
+pattern = <0 : >:1
+get_pattern: <2 : 98,101>:1
+pattern = <0 : >:1
+get_pattern: <2 : 98,97>:1
+pattern = <0 : >:1
+get_pattern: <2 : 97,103>:1
+pattern = <0 : >:1
+get_pattern: <3 : 98,100,103>:1
+pattern = <0 : >:1
+our conditional fp-tree [ (ÿ:7)  ]
+mining item 103
+count_symbols: 103
+examining node 103:11
+count: <122 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+F: {103}
+get_pattern: <0 : >:11
+pattern = <0 : >:11
+our conditional fp-tree [ (ÿ:12)  ]

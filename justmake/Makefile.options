@@ -1,0 +1,28 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Options
+
+include build/Makefile.options
+
+CPPFLAGS += $(INCLUDES)
+CFLAGS += $(GENERAL_WARN) $(GENERAL_OTHER) $(CWARN) $(COTHER)
+CXXFLAGS += $(GENERAL_WARN) $(GENERAL_OTHER) $(CXXWARN) $(CXXOTHER) 
+ifeq ($(BUILD),dbg)
+CFLAGS += $(GENERAL_DEBUG) $(CDEBUG)
+CXXFLAGS += $(GENERAL_DEBUG) $(CXXDEBUG)
+endif
+ifeq ($(BUILD),opt)
+CFLAGS += $(GENERAL_OPTIMISE) $(COPTIMISE)
+CXXFLAGS += $(GENERAL_OPTIMISE) $(CXXOPTIMISE)
+endif
+ifeq ($(BUILD),optdbg)
+CFLAGS += $(GENERAL_OPTIMISE) $(COPTIMISE) $(GENERAL_DEBUG) $(CDEBUG)
+CXXFLAGS += $(GENERAL_OPTIMISE) $(CXXOPTIMISE) $(GENERAL_DEBUG) $(CXXDEBUG)
+endif
+ifeq ($(BUILD),prof)
+CFLAGS += $(GENERAL_OPTIMISE) $(COPTIMISE) -pg -fprofile-arcs
+CXXFLAGS += $(GENERAL_OPTIMISE) $(CXXOPTIMISE) -pg -fprofile-arcs
+endif

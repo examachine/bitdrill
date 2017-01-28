@@ -1,0 +1,12 @@
+# -*-makefile-*-
+# The makefile to be included first
+# see COPYING file
+# by exa aka Eray Ozkural 2001
+
+SHELL = /bin/bash
+
+.SUFFIXES: .c .cc .cxx .o .flex .flex.c .bison .bison.c .tex .dvi
+
+include build/Makefile.first
+
+default: all

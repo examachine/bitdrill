@@ -1,0 +1,79 @@
+# -*-makefile-*-
+#
+# by exa aka Eray Ozkural 2001
+# see COPYING file that comes with this distribution
+
+# Build Rules
+
+# Generic exec build rules
+
+programs: $(PROGRAMS)
+
+define build-exec
+	@echo Building executable: $@
+	@echo from $^
+	@echo LD flags: $(LDFLAGS)
+	@echo Libraries used: $(LIBS) $($(notdir $@)_LIBS)
+	$(LIBTOOL) --tag=CXX --mode=link $(LD) $(LDFLAGS) $(CXXFLAGS) $(LIBDIR) \
+	       $^ -L$(workingdir) $(LIBS) $($(notdir $@)_LIBS) $(OUTPUTFLAG) $@
+endef
+
+define call-build-exec
+
+	$$(build-exec)
+endef
+
+prog-deprule = $(call eval,$(1): checkdir $$($(1)_FILE) install-output-$(1))
+$(call map,prog-deprule,$(PROGRAMS))
+
+prog-buildrule = $(call eval,$$($(1)_FILE): $$($(1)_OBJFILES) $(call-build-exec))
+$(call map,prog-buildrule,$(PROGRAMS))
+
+define prog-output
+
+	mkdir bin; cd bin; ln -fs ../$$^ .
+endef
+
+prog-output-rule = $(call eval,install-output-$(1): \
+$$($(1)_FILE) $(prog-output))
+$(call map,prog-output-rule,$(PROGRAMS))
+
+
+# Generic lib build rules
+
+libraries: $(libinfo) $(LIBRARIES)
+
+libinfo:
+	@echo Libraries: $(LIBRARIES)
+
+define build-lib
+	@echo Building library: $@
+	@echo From: $^
+	@echo LD flags: $(LDFLAGS)
+	$(LIBTOOL) --tag=CXX --mode=link $(LD) $(LDFLAGS) $(CXXFLAGS) $(LIBDIR) \
+	       $^ $(OUTPUTFLAG) $@
+endef
+
+define call-build-lib
+
+	$$(build-lib)
+endef
+
+lib-deprule = $(call eval,$(1): checkdir $$($(1)_FILE) install-output-$(1))
+$(call map,lib-deprule,$(LIBRARIES))
+
+lib-buildrule = $(call eval,$$($(1)_FILE): \
+$$($(1)_OBJFILES) $(call-build-lib))
+$(call map,lib-buildrule,$(LIBRARIES))
+
+# Library output rules
+
+define lib-output
+
+	-mkdir lib; cd lib; ln -fs ../$$^ .
+endef
+
+lib-output-rule = $(call eval,install-output-$(1): \
+$$($(1)_FILE) $(lib-output))
+$(call map,lib-output-rule,$(LIBRARIES))
+

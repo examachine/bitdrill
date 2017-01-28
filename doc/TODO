@@ -1,0 +1,185 @@
+todo list
+---------
+
++/ bitdrill
+   - fix memory deallocation bug with use of that silly boost lib pool allocator
+   - optimize memory use in Trie class
+     / write own allocator based on the old Hullavi class
+     - make a K-Trie class and get rid of the boolean
+   + renumber items in decreasing order of frequency
+   + add option processing to CLI
+     + add "dense" option to relevant member functions
+   + if sparse, check all supports in candidate generation (with a flag)
+   + if dense, don't check all supports in candidate generation (default)
+   + implement bit vector with fast count routines
+   - if a tidlist is sparse enough, use a 2d bit array to store tidlist,
+     rather than the 1d bit vector we use now.
+     - corresponding intersection routines should be written
+       - sparse & sparse
+       - sparse & dense
+-- optimizations
+   - investigate and fix the bottleneck in decoding of buffers in redist.
+   ? use the temp file trick only if input file is ascii
+++ performance calculations
+   + percentage of data replication (non-zeros in S/all non-zeros)
+   + make all nonzeros include infrequent items
++- serial algorithm
+   / use any fimi algorithm for serial mining
+     - define an interface over memory files (fmemopen)
+     - use the communication encoding directly
+-- extend the algorithm to out-of-core
+   - write to external file at each node after redist.
+   ? MPI2 I/O
+-- C interface
+   - over encoding array (int *)
+   - FIMI flat format, file handle (FILE *)
+++ performance calculations
+   + percentage of data replication (non-zeros in S/all non-zeros)
+   + make all nonzeros include infrequent items
+++ parfreq runs
+   + serial times
+     + for superlinear cases: 4-way simulation on single processor
+   + comparison of fpgrowth, fpgrowth*, apriori, etc.
+   + new charts
+     + f2 timing
+     + f2 speedup
+     + partition timing/speedup
+   + times for f2
+/- misc
+   / options for controlling input format (ascii, binary, ...)
+   + make sure parfreq generates correct output at all nodes
+   - serial binaries hould not require linking MPI (how to do that?)
+     - generate MPI and non-MPI versions of libraries?
+++ check real data sets
+   + available market-basket/etc. data
+   + stock market data (already did this, didn't publish)
+   + text data 
++/ parallel GPVS
+   + run GPVS with different seed on each processor (instead of single)
+   + communicate (the quality of) results
+   + choose the best one - use new function/criteria
+   + broadcast best result
+   ? use high quality random seed
+++ init-pardb
+   + use lamexec to copy over files (kludge)
+   + run in parallel
+++ documentation
+   + build system
+   + fix check-ts and read-ts bitrot
+   + example transaction set
+   + example F_2 graph, and GPVS of it
+   + TS partition that corresponds to that GPVS
+++ performance/test suite
+   + generate experiments from custom .experiments files
+   + add ashok's stuff
+   + num of items in parfreq args
+   + transfer orig. experiments
+   + variable support threshold and num of processors
+   + add zaki's stuff
+   + timing
+   + speedup
+   + generate plots of experiments
+   + add serial execution support
+   + determine experiment parameters, and perform them
+   + take timings for different support thresholds
+   + perf build system that runs only required tests?
+   + decide on which datasets and thresholds to plot
+   + give proper names to artificial datasets
+++ recursive partitioner
+   + estimate load balance for given |F| and |T|
+   + do nested dissection
+   + distribute partitioning to procs
+   + redistribute data AAPC
+   + mine locally
++\ optimize
+   + do reduce sum instead of gather all when not doing distributed prune
+   + don't scan disk multiple times, scan stuff when there's RAM?
+   + optimize matrix sizes for space. (use |F| rows/cols)
+   / substantial size optimizations required, nodes overflow
+++ fp-tree cleanup
+   + make it produce correct output
+   + fix count_symbols, seems to count wrong for some (extreme) cases
+   + don't generate patterns of length 1, already known
+++ two-way partitioner
+   + forked from partitioner
+   + compute derived counter from original counter
+   + compute itemsets in partitions
+   + fix: recursive F2 graph doesn't get computed
+   + fix: compute_part_sizes crashes on non_root nodes (because they don't have
+     all the necessary info?)
+     + fix: Twoway_Partition::part_items same in all procs...
+   + broadcast graph to procs
+++ recursive step
+   + higher order function for partitioning
+   + a flag to avoid recursion (to benchmark first level)
+   + pass MPI communicators where needed.
+   + generalize ops to processor groups
+   + move counting codes into TS_Counter where it belongs
+   + use TS_Counter::Scanner everwhere to abstract the scanning process
+   + make the mining codes work with _absolute_ threshold
+   + cons TS_Counter using Transaction_Set
+   + add "internal" scanning mode to scanner
+   + recursive partitioning routine
+   + pass Transaction_Set instead of filenames.
+   + extend transaction set for more friendly interface
+   + fix: recursive partitioning class can't figure out which part
+   + fix: do we limit collective tasks to proc. groups?
+   + fix: what to do when a part has 0 large items/edges?
+   + fix: tell each processor the total number of edges on F2
+   + fix: if there is only one non-zero sized part assign a single processor to it.
+   + fix: if a part has 0 size, don't consider it while partitioning processors
+   ? do different kinds of mining on P1, P2
+   + a recursive partitioning class to drive the parallel recursion
+/- check hypergraph model perf
+   + haskell Hypergraph code
+   + haskell Graph code
+   + read metis graph into haskell code
+   ? compute cliques from graph
+   - compute hgraph that corresponds to our model
+   - compute hgraph statistics
+++ run fp-tree on part'd databases locally
+   + simulate that by manually operating on part db's
+   + call fp growth for the basis of recursion
+     + give Pattern_Miner a standard TS using interface
+     + embed into partition
+   + fix: sort(..) seems to crash on ashok3, investigate.
+++ misc
+   + suspect: Transaction::prune_not_in
+   + more stats when doing recursive partitioning for grokking the dbs
+++ check nested partitioning performance
+   + serial
+   + parallel
+++ implement fp-tree
+   + consruct cond. fp tree in a smart way
+   +? fix memory leaks
+   + cli front end to mine a transaction db
+   + handle precedent patterns of conditional fp tree's
+   + fix bug in construction of cond. fp tree
+   + see if we can make some memory optimizations
++- justmake
+   - fix interdependencies in build system.
+   - better treatment of prog->library dependencies
+++ partition ts db in parallel
+   + vertex separator in parallel (trivial version)
+   + scan in parallel
+   + partition processors
+   + map parts to actual processors, buffering
+   + exchange stuff
+   + encode/decode stuff
+   + factor partition code
+++ transaction-db
+   + scanners in transaction
+   + move application code out
+++ partitioning
+   + partition ts database into 3 databases
+   + move partitioning code to partition lib
+   + prune transactions (|t_i|<3) while partitioning
+   + partition processor space
++  two items
+   + find 2-items in parallel with tree based LAM reduce code
+   + optimize 2-items: use upper triangular matrix for representing graph
++ provide faster method for iteration in Mtx_Graph
++ reorg: separate db, 2-items and part code to libs cleanly.
++ compute inverse map when translating to metis graph
++ a vertex separator adapter that translates sep in metis graph to orig graph
++ use the separator in F
