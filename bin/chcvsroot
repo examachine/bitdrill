@@ -1,0 +1,6 @@
+#! /bin/sh
+
+for x in `find . -iname Root`; do
+  echo $1 >$x;
+done
+

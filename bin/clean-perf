@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find . -iname '*.timing' | xargs rm -f
+find . -iname '*.speedup' | xargs rm -f
