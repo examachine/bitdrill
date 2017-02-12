@@ -1,6 +1,6 @@
 # Bitdrill
 
-Bitdrill is a high-performance sequential frequent itemset mining tool, library, and assorted scripts, tools and bits and pieces.
+Bitdrill is a highly efficient sequential frequent itemset mining tool, library, and assorted scripts, tools and bits and pieces.
 
 The algorithm uses kDCI up to level 2, and then uses a vertical mining algorithm which dynamically switches between tidlists or a dense representation for items according to sparsity.
 
