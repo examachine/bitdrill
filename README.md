@@ -12,11 +12,24 @@ In our benchmarks, bitdrill turned out to be the *fastest* frequent itemset mini
 
 The package also includes other sequential miners for comparison and inclusion in a larger framework that permits some algorithmic experimentation. In particular, take a look at the python scripts which might be quite useful when prototyping an algorithm.
 
-## Contents
+## Package contents
 
-* doc: documents
+* aux: auxiliary data mining tools
+* bin: sh scripts and local binary install dir
+* build: justmake build configuration
+* config: automatic configuration files
+* data: test and benchmark data
+  * assoc-gen: synthetic data generator
+  * graphs: some sample F2 graphs
+  * test: small test datasets
+* doc: documents (see README's)
+* justmake: justmake Makefile library
+* lib: local library install dir
+* perf: python benchmark scripts
+* scripts: python data mining scripts
 * src: C++, and haskell source code
-* scripts: ython scripts
+
+KDCI, AIM, DCIClosed codes have been used for some of the programs in the distribution.
 
 ## Citation
 
