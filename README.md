@@ -1,5 +1,9 @@
 # Bitdrill
 
+_Author: Eray Ozkural, PhD_
+
+## Description
+
 Bitdrill is a highly efficient sequential frequent itemset mining tool, library, and assorted scripts, tools and bits and pieces.
 
 The algorithm uses kDCI up to level 2, and then uses a vertical mining algorithm which dynamically switches between tidlists or a dense representation for items according to sparsity.
@@ -7,6 +11,14 @@ The algorithm uses kDCI up to level 2, and then uses a vertical mining algorithm
 In our benchmarks, bitdrill turned out to be the *fastest* frequent itemset mining algorithm.
 
 The package also includes other sequential miners for comparison and inclusion in a larger framework that permits some algorithmic experimentation. In particular, take a look at the python scripts which might be quite useful when prototyping an algorithm.
+
+## Contents
+
+* doc: documents
+* src: C++, and haskell source code
+* scripts: ython scripts
+
+## Citation
 
 Bitdrill is the sequential miner used in this paper:
 http://ieeexplore.ieee.org/document/5703072/
@@ -17,12 +29,3 @@ Parallel Frequent Item Set Mining with Selective Item Replication. IEEE Trans. P
 Please cite it if you use it in your research.
 
 We are making this tool publicly available for the sake of sharing our results with the data mining community. Thanks a lot to the researchers in the data mining and parallel computing community who read our work and cited the paper. We are likely going to release the parallel version, as well, but it needs a bit of a cleanup.
-
-Just using make should build everything, but to avoid the compilation of auxiliary tools and everything you might want to try:
-
-$ make programs
-
-Note: does not compile with Clang compiler currently, requires g++
-
-Eray Ozkural, PhD
-
